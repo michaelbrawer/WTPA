@@ -1,0 +1,1 @@
+var Itinerary = require('../models/itinerary');
