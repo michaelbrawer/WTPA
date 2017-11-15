@@ -6,6 +6,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 
+// connect to the database with Mongoose
+require('./config/database');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
