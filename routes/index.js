@@ -1,13 +1,9 @@
 var express = require('express');
 var router = express.Router();
+var yelpCtrl = require('./../controllers/yelpCtrl.js')
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('landing', { title: 'Express' });
-});
-
-router.get('/index', function(req, res, next){
-  res.render('index');
-});
+router.get('/', yelpCtrl.landing);
+router.post('/', yelpCtrl.returnSearch);
 
 module.exports = router;
