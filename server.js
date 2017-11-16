@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
+require('dotenv').config();
 
 // connect to the database with Mongoose
 require('./config/database');
