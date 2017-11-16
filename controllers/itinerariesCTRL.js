@@ -11,7 +11,6 @@ module.exports = {
 
 function show(req, res){
   res.render('itineraries/show');
-  console.log('show');
 }
 
 function newItinerary(req, res){
