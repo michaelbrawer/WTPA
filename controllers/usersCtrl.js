@@ -1,8 +1,8 @@
-var Itinerary = require('../models/Itinerary');
+var User = require('../models/User');
 
 module.exports = {
   index: index,
-  new: newItinerary,
+  new: newUser,
   create: create,
   edit: edit,
   update: update,
@@ -10,11 +10,11 @@ module.exports = {
 };
 
 function index(req, res){
-
+ res.render('users/show');
 }
 
-function newItinerary(req, res){
-
+function newUser(req, res){
+  res.render('users/new');
 }
 
 function create(req, res){
