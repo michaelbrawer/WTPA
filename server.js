@@ -10,8 +10,10 @@ var methodOverride = require('method-override');
 require('./config/database');
 
 
-var index = require('./routes/index');
+
 var users = require('./routes/users');
+var itineraries = require('./routes/itineraries');
+var index = require('./routes/index');
 
 var app = express();
 

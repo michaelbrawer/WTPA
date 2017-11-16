@@ -1,7 +1,7 @@
 var Itinerary = require('../models/Itinerary');
 
 module.exports = {
-  index: index,
+  show: show,
   new: newItinerary,
   create: create,
   edit: edit,
@@ -9,8 +9,9 @@ module.exports = {
   remove: remove
 };
 
-function index(req, res){
-  res.render('itineraries.show');
+function show(req, res){
+  res.render('itineraries/show');
+  console.log('show');
 }
 
 function newItinerary(req, res){

@@ -4,7 +4,7 @@ var Itinerary = require('../models/Itinerary');
 
 
 function getAllItineraries(req, res){
-  res.render('itineraries.show');
+
 }
 
 function getOneItinerary(req, res){
