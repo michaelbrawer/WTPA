@@ -1,0 +1,18 @@
+<%- include('./_partials/header') %>
+
+<h1 class="jumbotron text-center">Yelp search</h1>
+<div class="row">
+    <div class="col-xs-6 col-xs-offset-6">
+        <form action="/" method="POST">
+            <div class="input-group">
+                <input type="text" name="term" class="form-control" placeholder="What would you like to eat?">
+                <input type ="text" name="location" class="form-control" placeholder="Where?">
+                <span class="input-group-btn">
+                <button class="btn btn-success" type="submit">Go!</button>
+                </span>
+            </div>
+        </form>
+    </div>
+</div>
+
+<%- include('./_partials/footer') %>

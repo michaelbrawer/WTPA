@@ -5,6 +5,4 @@
 ### Game Development:
 #### [Trello Board](https://trello.com/b/ELxyn47s/blue-jays-nite-out)
 
-MCB Branch Test
-
-Devin is adding 2 
+### ![Initial ERD](https://i.imgur.com/54Z4v4H.png)

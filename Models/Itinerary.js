@@ -9,4 +9,4 @@ var mongooseSchema = new Schema({
 });
 //schema goes here
 
-module.exports = mongoose.model("Itinerary", itinerarySchema);
+// module.exports = mongoose.model("Itinerary", itinerarySchema);
