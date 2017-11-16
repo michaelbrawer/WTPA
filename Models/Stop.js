@@ -9,6 +9,6 @@ var stopSchema = new Schema({
     image: String,
     rating: Number
 });
-//schema goes here
 
-// module.exports = mongoose.model("Stop", stopSchema);
+
+module.exports = mongoose.model("Stop", stopSchema);

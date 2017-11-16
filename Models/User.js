@@ -9,6 +9,6 @@ var userSchema = new Schema({
     photo: String,
     itinerary: [{type: mongoose.Schema.Types.ObjectId, ref: "Itinerary"}]
 });
-//schema goes here
 
-// module.exports = mongoose.model("User", userSchema);
+
+module.exports = mongoose.model("User", userSchema);

@@ -7,6 +7,6 @@ var mongooseSchema = new Schema({
     date: String,
     stops: [{type: mongoose.Schema.Types.ObjectId, ref: "Stop"}]
 });
-//schema goes here
 
-// module.exports = mongoose.model("Itinerary", itinerarySchema);
+
+module.exports = mongoose.model("Itinerary", itinerarySchema);
