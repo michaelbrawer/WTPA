@@ -10,7 +10,7 @@ module.exports = {
 };
 
 function index(req, res){
-
+  res.render('itineraries.show');
 }
 
 function newItinerary(req, res){
@@ -30,5 +30,5 @@ function update(req, res, next){
 }
 
 function remove(req, res){
-  
+
 }
