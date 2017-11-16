@@ -10,15 +10,16 @@ module.exports = {
 };
 
 function show(req, res){
+  //show a single itinerary
   res.render('itineraries/show');
 }
 
 function newItinerary(req, res){
-
+  //bring down form to create itinerary, do we need?
 }
 
 function create(req, res){
-
+  
 }
 
 function edit(req, res, next){
