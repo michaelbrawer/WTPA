@@ -4,4 +4,4 @@ var Schema = mongoose.Schema;
 
 //schema goes here
 
-module.exports = mongoose.model("Stop", stopSchema);
+// module.exports = mongoose.model("Stop", stopSchema);
