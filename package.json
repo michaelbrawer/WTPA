@@ -15,6 +15,7 @@
     "method-override": "^2.3.10",
     "mongoose": "^4.13.2",
     "morgan": "~1.9.0",
-    "serve-favicon": "~2.4.5"
+    "serve-favicon": "~2.4.5",
+    "yelp-fusion": "^1.0.4"
   }
 }
