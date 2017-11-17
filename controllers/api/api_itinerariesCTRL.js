@@ -1,4 +1,4 @@
-var Itinerary = require('../models/itinerary');
+var Itinerary = require('../models/Itinerary');
 
 function getAllItineraries(req, res){
 
