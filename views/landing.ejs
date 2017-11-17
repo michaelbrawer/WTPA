@@ -9,7 +9,7 @@
                 <input type ="text" name="location" class="form-control" placeholder="Where?">
                 <span class="btn-group-vertical">
                 <button class="btn btn-success" type="submit">Go!</button>
-                <button class="btn" formaction="/?random=true" type="submit">I'm feeling adventurous</button>
+                <button class="btn btn-danger" formaction="/?random=true" type="submit">I'm feeling adventurous</button>
                 </span>
             </div>
         </form>
@@ -23,6 +23,7 @@
         Name: <%= elem.name %><br>
         Rating: <%= elem.rating %><br>
         Location: <%= elem.location.address1 %><br>
+        <button class='btn btn-xs btn-warning'>add</button>
         </div>
     <% }) %>
 <% } %>
