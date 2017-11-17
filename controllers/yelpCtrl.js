@@ -47,5 +47,5 @@ function decideSearch(req, res, next) {
 }
 
 function landing(req, res, next) {
-    res.render('landing', {restaurantInfo}, { user: req.user });
+    res.render('landing', {restaurantInfo, user: req.user});
 }

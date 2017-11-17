@@ -7,3 +7,12 @@
     </head>
     <body>
      <h1>Where's The Party App?</h1>
+     <!-- new html below -->
+     <ul class="right">
+       <% if (user) { %>
+       <li><a href="/logout">Logout</a></li>
+       <% } else { %>
+       <li><a href="/auth/google">Login with Google</a></li>
+       <% } %>
+     </ul>
+    
