@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var passport = require('passport');
 var yelpCtrl = require('./../controllers/yelpCtrl.js')
 
 /* GET home page. */
