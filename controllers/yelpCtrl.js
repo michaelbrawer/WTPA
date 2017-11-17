@@ -21,6 +21,7 @@ limit: limitVal
 };
 //get access token
 yelp.accessToken(clientId, clientSecret).then(response => {
+<<<<<<< HEAD
 const client = yelp.client(response.jsonBody.access_token);
 // execute search 
 client.search(searchRequest).then(response => {
@@ -33,6 +34,20 @@ client.search(searchRequest).then(response => {
     // render index view with new information
     res.render('landing', {restaurantInfo});
   });
+=======
+  const client = yelp.client(response.jsonBody.access_token);
+  // execute search 
+  client.search(searchRequest).then(response => {
+    const results = response.jsonBody.businesses;
+    restaurantInfo = [];
+    // store results as objects in restaurantInfo array
+    for (var i = 0; i < results.length; i++) {
+      restaurantInfo.push(results[i]);
+      }
+      // render index view with new information
+      res.render('landing', {restaurantInfo, user: req.user});
+    });
+>>>>>>> 8ce570a45eb20d14864a636485201e906882c78d
 });
 }
 function decideSearch(req, res, next) {
