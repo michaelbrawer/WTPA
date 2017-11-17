@@ -36,7 +36,6 @@ yelp.accessToken(clientId, clientSecret).then(response => {
 }
 function decideSearch(req, res, next) {
   if (req.query.random == 'true') {
-    console.log(req.query.random);
     var num = Math.floor(Math.random() * (25));
     returnSearch(req, res, next, num, 1)
   }
