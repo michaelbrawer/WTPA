@@ -11,6 +11,9 @@ var userSchema = new Schema({
     created: { type: Date, default: Date.now },
     itinerary: [{type: mongoose.Schema.Types.ObjectId, ref: "Itinerary"}]
 });
-//schema goes here
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 4a9867b4511d760e9aec697683eb82fa482a550d
 module.exports = mongoose.model("User", userSchema);

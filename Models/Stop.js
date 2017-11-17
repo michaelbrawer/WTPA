@@ -9,6 +9,9 @@ var stopSchema = new Schema({
     image: String,
     rating: Number
 });
-//schema goes here
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 4a9867b4511d760e9aec697683eb82fa482a550d
 module.exports = mongoose.model("Stop", stopSchema);
