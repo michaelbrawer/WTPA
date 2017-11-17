@@ -7,12 +7,26 @@
             <div class="input-group">
                 <input type="text" name="term" class="form-control" placeholder="What would you like to eat?">
                 <input type ="text" name="location" class="form-control" placeholder="Where?">
-                <span class="input-group-btn">
+                <span class="btn-group-vertical">
                 <button class="btn btn-success" type="submit">Go!</button>
+                <button class="btn btn-danger" formaction="/?random=true" type="submit">I'm feeling adventurous</button>
                 </span>
             </div>
         </form>
     </div>
 </div>
+<br>
+<div class="results">
+<% if (restaurantInfo[0]) {%>
+    <% restaurantInfo.forEach(function(elem) { %>
+        <div style="border: 1px solid black; margin: 0 auto; width: 300px">
+        Name: <%= elem.name %><br>
+        Rating: <%= elem.rating %><br>
+        Location: <%= elem.location.address1 %><br>
+        <button class='btn btn-xs btn-warning'>add</button>
+        </div>
+    <% }) %>
+<% } %>
+</div>	
 
 <%- include('./_partials/footer') %>

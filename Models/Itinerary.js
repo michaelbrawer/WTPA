@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 var Schema = mongoose.Schema; 
 
-var mongooseSchema = new Schema({
+var itinerarySchema = new Schema({
     admin: [],
     date: String,
     stops: [{type: mongoose.Schema.Types.ObjectId, ref: "Stop"}]
