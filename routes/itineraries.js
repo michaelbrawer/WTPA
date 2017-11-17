@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var passport = require('passport');
 var itinerariesCtrl = require('../controllers/itinerariesCtrl');
 
 // router.get('/:id', function(req, res){
