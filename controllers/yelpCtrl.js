@@ -14,6 +14,7 @@ function returnSearch(req, res, next, offsetVal, limitVal) {
 searchRequest = {
   term: req.body.term,
   location: req.body.location,
+  categories: 'restaurants, bars',
   sort_by: 'rating',
   offset: offsetVal,
   limit: limitVal
