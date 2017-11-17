@@ -31,7 +31,7 @@ yelp.accessToken(clientId, clientSecret).then(response => {
       restaurantInfo.push(results[i]);
       }
       // render index view with new information
-      res.render('landing', {restaurantInfo});
+      res.render('landing', {restaurantInfo, user: req.user});
     });
 });
 }
