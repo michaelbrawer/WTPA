@@ -1,4 +1,9 @@
 <%- include('./../_partials/header') %>
 <h1>here is the user show page</h1>
+
+  <% if (user) { %>
+  <h3>Hello <%= user.name %> </h2>
+  <% } %>
+
 <h3>list of all itineraries goes here</h3>
 <%- include('./../_partials/footer') %>

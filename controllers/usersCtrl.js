@@ -10,11 +10,11 @@ module.exports = {
 };
 
 function index(req, res){
- res.render('users/show');
+ res.render('users/show', {user: req.user});
 }
 
 function newUser(req, res){
-  res.render('users/new');
+  res.render('users/new', {user: req.user});
 }
 
 function create(req, res){
