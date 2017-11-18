@@ -7,7 +7,6 @@ var itinerariesCtrl = require('../controllers/itinerariesCtrl');
 //   res.render('itineraries/show');
 // });
 
-
 router.get('/new', itinerariesCtrl.new);
 router.post('/', itinerariesCtrl.create);
 router.get('/:id', itinerariesCtrl.show); 
