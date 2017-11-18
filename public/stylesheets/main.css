@@ -32,10 +32,6 @@ a {
   width: 550px;
 }
 
-.thumb {
-  max-width: 100px;
-}
-
 span {
   color: transparent;
   -webkit-text-stroke-width: 0.8px;
