@@ -12,24 +12,24 @@ a {
 }
 
 .left {
-  text-align: left
+  text-align: left;
 }
 
 .background-photo {
   background: url(/images/benni-talent-238911.jpg) no-repeat center center fixed; 
-  background-size: cover
+  background-size: cover;
 }
 
 .btn-success {
   background-color: black; 
-  border-color: black
+  border-color: black;
 }
 
 .results {
   color: white; 
   border: 1px solid white; 
   padding: 20px 50px; 
-  width: 550px
+  width: 550px;
 }
 
 span {
@@ -39,9 +39,9 @@ span {
   text-align: center; 
   font-family: Cabin;
   letter-spacing: 2px;
-  font-size: 60px
+  font-size: 60px;
 }
 
 span b {
-  font-size: 15px
+  font-size: 15px;
 }
