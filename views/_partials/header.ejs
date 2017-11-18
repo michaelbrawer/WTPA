@@ -15,8 +15,9 @@
      <ul style="color: white; border: red 2px solid">Hello, <%=user.name %> </ul>
      <% } %>
      <ul class="left">
+        <% if (user) { %>
 
-        <h3>Hello <%= user.name %> </h2>
+        <h3>Hello <%= user.name %> </h3>
             <h5>for dev: <%= user.googleId %> </h5>
         <% } %>
         </ul>
