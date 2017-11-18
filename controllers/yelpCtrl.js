@@ -37,12 +37,11 @@ client.search(searchRequest).then(response => {
 }
 function decideSearch(req, res, next) {
 if (req.query.random == 'true') {
-  console.log(req.query.random);
   var num = Math.floor(Math.random() * (25));
   returnSearch(req, res, next, num, 1, "rating");
 }
 else {
-  returnSearch(req, res, next, 0, 4, "best_match");
+  returnSearch(req, res, next, 0, 6, "best_match");
 }
 }
 
