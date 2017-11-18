@@ -7,7 +7,8 @@ var stopSchema = new Schema({
     time: Number,
     location: String,
     image: String,
-    rating: Number
+    rating: Number,
+    itinerary: String
 });
 
 module.exports = mongoose.model("Stop", stopSchema);

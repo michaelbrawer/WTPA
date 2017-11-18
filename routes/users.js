@@ -6,7 +6,7 @@ var usersCtrl = require('../controllers/usersCtrl');
 /* GET users listing. */
 router.get('/new', usersCtrl.new);
 router.get('/:id', usersCtrl.index);
-router.post('/:id', usersCtrl.add);
+router.post('/:id', usersCtrl.checkItinerary);
 router.post('/', usersCtrl.create);
 
 
