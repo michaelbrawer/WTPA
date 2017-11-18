@@ -20,44 +20,45 @@
 
 
 <% if (restaurantInfo[0]) {%>
-    <div class="row results"></div>
+    <div class="row results">
     <% restaurantInfo.forEach(function(elem) { %>
-
         <div style="border: 1px solid black; margin: 0 auto; width: 300px">
-        Name: <%= elem.name %><br>
-        Rating: <%= elem.rating %><br>
-        Location: <%= elem.location.address1 %><br>
-
-        <% if (elem.rating > 4.5) { %>
-            <img src="https://i.imgur.com/Txb8gc7.png" alt="">
+            Name: <%= elem.name %><br>
+            Rating: <%= elem.rating %><br>
+            Location: <%= elem.location.address1 %><br>
+            <% if (elem.rating > 4.5) { %>
+                <img src="https://i.imgur.com/Txb8gc7.png" alt="">
             <% } else if (elem.rating > 4) { %>
-            <img src="https://i.imgur.com/gqda4ac.png" alt="">
+                <img src="https://i.imgur.com/gqda4ac.png" alt="">
             <% } else if (elem.rating > 3.5) { %>
-            <img src="https://i.imgur.com/6SAS36b.png" alt="">
+                <img src="https://i.imgur.com/6SAS36b.png" alt="">
             <% } else if (elem.rating > 3) { %>
-            <img src="https://i.imgur.com/6vTujHW.png" alt="">
+                <img src="https://i.imgur.com/6vTujHW.png" alt="">
             <% } else if (elem.rating > 2.5) { %>
-            <img src="https://i.imgur.com/fGWvIdW.png" alt="">
+                <img src="https://i.imgur.com/fGWvIdW.png" alt="">
             <% } else if (elem.rating > 2) { %>
-            <img src="https://i.imgur.com/foXPxGQ.png" alt="">
+                <img src="https://i.imgur.com/foXPxGQ.png" alt="">
             <% } else if (elem.rating > 1.5) { %>
-            <img src="https://i.imgur.com/efkDsmw.png" alt="">
+                <img src="https://i.imgur.com/efkDsmw.png" alt="">
             <% } else if (elem.rating > 1) { %>
-            <img src="https://i.imgur.com/7CYmk0E.png" alt="">
+                <img src="https://i.imgur.com/7CYmk0E.png" alt="">
             <% } else if (elem.rating > 0) { %>
-            <img src="https://i.imgur.com/URy6dxD.png" alt="">
+                <img src="https://i.imgur.com/URy6dxD.png" alt="">
             <% } else { %>
-            <img src="https://i.imgur.com/2bEGMs1.png" alt="">
+                <img src="https://i.imgur.com/2bEGMs1.png" alt="">
             <% } %>
-
-        <button href="#" class='btn btn-xs btn-warning'>add</button>
-        <a href="<%= elem.url %> ">To Yelp</a>
+            <% if (user) {%>
+                <form class="form-inline" action="/users/<%=user.id%>" method="POST">
+                    <input type="hidden" value="<%=elem.name%>" name="name">
+                    <input type="hidden" value="<%=elem.location.address1%>" name="location">
+                    <button type="submit" class='btn btn-xs btn-warning'>add</button>
+                </form>
+            <% } %>
+                <a href="<%= elem.url %> ">To Yelp</a>
         </div>
-    
     <% }) %>
+    </div>
 <% } %>
-    
-</div>	
-</div>
+
 
 <%- include('./_partials/footer') %>

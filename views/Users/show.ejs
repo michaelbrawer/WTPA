@@ -1,9 +1,16 @@
 <%- include('./../_partials/header') %>
 <h1>here is the user show page</h1>
+<a href='/'>back to search</a>
 
-  <% if (user) { %>
-  <h3>Hello <%= user.name %> </h3>
-  <% } %>
+<% if (firstItinerary) {%>
+  <div class="row results">
+  <% firstItinerary.stops.forEach(function(elem) { %>
+      <div style="border: 1px solid black; margin: 0 auto; width: 300px">
+          Name: <%= elem.name %><br>
+          Location: <%= elem.location %><br>
+      </div>
+  <% }) %>
+  </div>
+<% } %>
 
-<h3>list of all itineraries goes here</h3>
 <%- include('./../_partials/footer') %>
