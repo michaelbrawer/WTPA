@@ -6,10 +6,10 @@
         <div class="col-xs-12 text-center">
             <form class="form-inline" action="/" method="POST">
                 <div class="form-group">
-                    <input size="50" type="text" name="term" class="form-control" placeholder="What would you like to eat?">
+                    <input size="50" type="text" name="term" class="form-control" placeholder="What would you like to eat?" <% if (searchRequest.term) { %> value="<%=searchRequest.term%>" <% }%> >
                 </div>
                 <div class="form-group">
-                    <input size="50" type="text" name="location" class="form-control" placeholder="Where?">
+                    <input size="50" type="text" name="location" class="form-control" placeholder="Where?" <% if (searchRequest.location) { %> value="<%=searchRequest.location%>" <% } %> >
                     <span class="btn-group-vertical"></span>
                 </div>
                     <button class="btn btn-success" type="submit">Go!</button><br><br>
