@@ -1,23 +1,38 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Where's The Party At?</title>
+        <title>Where The Party At?</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link rel="stylesheet" href="/stylesheets/main.css">
+        <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+        
     </head>
-    <body>
-     <h1>Where's The Party App?</h1>
-     <!-- new html below -->
+    <body class="background-photo">
+    <!-- new html below -->
+    <div class="container">
      <% if (user) { %>
+
+     <ul style="color: white; border: red 2px solid">Hello, <%=user.name %> </ul>
+     <% } %>
+     <ul class="left">
+
         <h3>Hello <%= user.name %> </h2>
             <h5>for dev: <%= user.googleId %> </h5>
         <% } %>
+        </ul>
      <ul class="right">
+
        <% if (user) { %>
-       <li><a href="/logout">Logout</a></li>
+        
+       <li class="btn btn-primary-outline"><a style="color: white" href="/logout">Logout</a></li>
        <% } else { %>
-       <li><a href="/auth/google">Login with Google</a></li>
+       <li class="btn btn-primary-outline"><a style="color: white" href="/auth/google">Log in with Google</a></li>
        <% } %>
-     </ul>
+
+    </ul><br>
     
-    
+    <div style="border: red 2px solid" class="col-xs-12 text-center">
+       <span>WHERE THE PARTY? <b>APP</b></span>
+    </div> 
+    </div>
+

@@ -1,22 +1,27 @@
 <%- include('./_partials/header') %>
 
-<h1 class="jumbotron text-center">Yelp search</h1>
-<div class="row">
-    <div class="col-xs-6 col-xs-offset-6">
-        <form action="/" method="POST">
-            <div class="input-group">
-                <input type="text" name="term" class="form-control" placeholder="What would you like to eat?" <% if (searchRequest.term) { %> value="<%=searchRequest.term%>" <% }%> >
-                <input type ="text" name="location" class="form-control" placeholder="Where?" <% if (searchRequest.location) { %> value="<%=searchRequest.location%>" <% } %> >
-                <span class="btn-group-vertical">
-                <button class="btn btn-success" type="submit">Go!</button>
-                <button class="btn btn-danger" formaction="/?random=true" type="submit">I'm feeling adventurous</button>
-                </span>
-            </div>
-        </form>
+<div class ="container">
+<br><br>
+    <div class="row">
+        <div class="col-xs-12 text-center">
+            <form class="form-inline" action="/" method="POST">
+                <div class="form-group">
+                    <input size="50" type="text" name="term" class="form-control" placeholder="What would you like to eat?">
+                </div>
+                <div class="form-group">
+                    <input size="50" type="text" name="location" class="form-control" placeholder="Where?">
+                    <span class="btn-group-vertical"></span>
+                </div>
+                    <button class="btn btn-success" type="submit">Go!</button><br><br>
+                    <button class="btn btn-danger" formaction="/?random=true" type="submit">I'm feeling adventurous</button>
+            </form>
+        </div>
     </div>
 </div>
 <br>
-<div class="results">
+
+
+<!-- <div class="results">
 <% if (restaurantInfo[0]) {%>
     <% restaurantInfo.forEach(function(elem) { %>
         
@@ -31,5 +36,6 @@
     <% }) %>
 <% } %>
 </div>	
+</div> -->
 
 <%- include('./_partials/footer') %>
