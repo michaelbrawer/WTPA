@@ -42,7 +42,7 @@ if (req.query.random == 'true') {
   returnSearch(req, res, next, num, 1, "rating");
 }
 else {
-  returnSearch(req, res, next, 0, 5, "best_match");
+  returnSearch(req, res, next, 0, 4, "best_match");
 }
 }
 

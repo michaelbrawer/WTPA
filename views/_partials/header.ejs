@@ -12,13 +12,13 @@
     <div class="container">
      <% if (user) { %>
 
-     <ul style="color: white; border: red 2px solid">Hello, <%=user.name %> </ul>
+     <ul style="color: white">Hello, <%=user.name %> </ul>
      <% } %>
      <ul class="left">
         <% if (user) { %>
 
-        <h3>Hello <%= user.name %> </h3>
-            <h5>for dev: <%= user.googleId %> </h5>
+        <!-- <h3>Hello <%= user.name %> </h3>
+            <h5>for dev: <%= user.googleId %> </h5> -->
         <% } %>
         </ul>
      <ul class="right">
@@ -32,7 +32,7 @@
 
     </ul><br>
     
-    <div style="border: red 2px solid" class="col-xs-12 text-center">
+    <div class="col-xs-12 text-center">
        <span>WHERE THE PARTY? <b>APP</b></span>
     </div> 
     </div>
