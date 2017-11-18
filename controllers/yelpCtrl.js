@@ -10,12 +10,12 @@ var clientSecret = process.env.YELP_SECRET;
 var searchRequest = {};
 var restaurantInfo = [];
 
-function returnSearch(req, res, next, offsetVal, limitVal) {
+function returnSearch(req, res, next, offsetVal, limitVal, sortVal) {
 searchRequest = {
 term: req.body.term,
 location: req.body.location,
 categories: 'restaurants, bars',
-sort_by: 'rating',
+sort_by: sortVal,
 offset: offsetVal,
 limit: limitVal
 };
@@ -39,10 +39,10 @@ function decideSearch(req, res, next) {
 if (req.query.random == 'true') {
   console.log(req.query.random);
   var num = Math.floor(Math.random() * (25));
-  returnSearch(req, res, next, num, 1);
+  returnSearch(req, res, next, num, 1, "rating");
 }
 else {
-  returnSearch(req, res, next, 0, 5);
+  returnSearch(req, res, next, 0, 5, "best_match");
 }
 }
 
