@@ -11,18 +11,28 @@
     <!-- new html below -->
     <div class="container">
      <% if (user) { %>
+
      <ul style="color: white; border: red 2px solid">Hello, <%=user.name %> </ul>
      <% } %>
      <ul class="left">
+
+        <h3>Hello <%= user.name %> </h2>
+            <h5>for dev: <%= user.googleId %> </h5>
+        <% } %>
+        </ul>
+     <ul class="right">
+
        <% if (user) { %>
         
        <li class="btn btn-primary-outline"><a style="color: white" href="/logout">Logout</a></li>
        <% } else { %>
        <li class="btn btn-primary-outline"><a style="color: white" href="/auth/google">Log in with Google</a></li>
        <% } %>
+
     </ul><br>
     
     <div style="border: red 2px solid" class="col-xs-12 text-center">
        <span>WHERE THE PARTY? <b>APP</b></span>
     </div> 
     </div>
+

@@ -11,6 +11,5 @@ var userSchema = new Schema({
     created: { type: Date, default: Date.now },
     itinerary: [{type: mongoose.Schema.Types.ObjectId, ref: "Itinerary"}]
 });
-//schema goes here
 
 module.exports = mongoose.model("User", userSchema);
