@@ -23,6 +23,7 @@
     <div class="row results">
     <% restaurantInfo.forEach(function(elem) { %>
         <div style="border: 1px solid black; margin: 0 auto; width: 300px">
+            <img class='thumb' src="<%=elem.image_url%>" alt="">
             Name: <%= elem.name %><br>
             Rating: <%= elem.rating %><br>
             Location: <%= elem.location.address1 %><br>
