@@ -3,6 +3,7 @@ var router = express.Router();
 var passport = require('passport');
 var itinerariesCtrl = require('../controllers/itinerariesCtrl');
 
+
 // router.get('/:id', function(req, res){
 //   res.render('itineraries/show');
 // });
