@@ -1,6 +1,6 @@
 var User = require('../models/User');
 var Itinerary = require('../models/Itinerary');
-var Stop = require('../models/Stop')
+var Stop = require('../models/Stop');
 var firstItinerary;
 var itineraryStops;
 
@@ -24,19 +24,19 @@ function newUser(req, res){
 }
 
 function addStop(req, res, itin){
-  user = req.user
+  user = req.user;
   firstItinerary = itin;
   var newStop = new Stop({
     name: req.body.name,
     location: req.body.location,
     itinerary: firstItinerary.id
-  })
+  });
   newStop.save(function(err, newStop) {
-  })
+  });
   Stop.find({itinerary: firstItinerary.id}, function(err, stops) {
     itineraryStops = stops;
-    res.render('users/show', {user, itineraryStops})    
-  })
+    res.render('users/show', {user, itineraryStops});
+  });
 }
 
 function checkItinerary(req, res) {
@@ -49,22 +49,22 @@ function checkItinerary(req, res) {
     else {
       var newItinerary = new Itinerary({
         user: user.id,
-      })
+      });
       newItinerary.save(function(err, newItinerary) {
         user.save(function(err, user) {
           Itinerary.findOne({user: user.id}, function(err, itin) {
-            addStop(req, res, itin)
-          })
-        })
-      })
+            addStop(req, res, itin);
+          });
+        });
+      });
     }
-  })
+  });
 }
 
 function removeStop(req, res, id){
   Stop.findByIdAndRemove(id, function(err) {
-    res.render({user: req.user, itineraryStops})
-  })
+    res.render({user: req.user, itineraryStops});
+  });
 }
 
 function create(req, res){
