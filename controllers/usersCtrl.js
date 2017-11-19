@@ -1,6 +1,8 @@
 var User = require('../models/User');
 var Itinerary = require('../models/Itinerary');
 var Stop = require('../models/Stop');
+var Comment = require('../models/Comment');
+var middleware = require("../middleware/index.js");
 var firstItinerary;
 var itineraryStops;
 
