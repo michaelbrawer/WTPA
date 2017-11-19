@@ -50,10 +50,12 @@ function checkItinerary(req, res) {
       var newItinerary = new Itinerary({
         user: user.id,
       })
-      user.save(function(err, user) {
-      })
-      Itinerary.findById(user.itinerary[0], function(err, itin) {
-        addStop(req, res, itin)
+      newItinerary.save(function(err, newItinerary) {
+        user.save(function(err, user) {
+          Itinerary.findOne({user: user.id}, function(err, itin) {
+            addStop(req, res, itin)
+          })
+        })
       })
     }
   })
