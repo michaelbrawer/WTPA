@@ -1,7 +1,7 @@
 var User = require('../models/User');
 var Itinerary = require('../models/Itinerary');
 var Comment = require('../models/Comment');
-var Stop = require('../models/Stop');
+// var Stop = require('../models/Stop');
 var middleware = require("../middleware/index.js");
 
 module.exports ={
@@ -25,7 +25,6 @@ module.exports ={
 
   function createComment(req, res){
    //lookup campground using ID
-   var userPage = User.findById(req.params.id);
    User.findById(req.params.id, function(err, user){
     if(err){
         console.log(err);
@@ -45,7 +44,7 @@ module.exports ={
             user.save();
             console.log(comment);
             req.flash("success", "Successfully added comment");
-            res.redirect('/users/' + user._id);
+            res.redirect('/users/<%= user._id%>');
         }
      });
     }
@@ -53,9 +52,7 @@ module.exports ={
 }
 
 
-function editComment(req, res){
-  
-}
+function editComment(req, res){}
 
 function updateComment(req, res){}
 
