@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema; 
 
 var itinerarySchema = new Schema({
-    user: [],
+    user: String,
     date: String,
     stops: [{type: mongoose.Schema.Types.ObjectId, ref: "Stop"}]
 });

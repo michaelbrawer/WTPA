@@ -2,12 +2,14 @@
 <h1>here is the user show page</h1>
 <a href='/'>back to search</a>
 
-<% if (firstItinerary) {%>
+<% if (itineraryStops) {%>
+  console.log(itineraryStops);
   <div class="row results">
-  <% firstItinerary.stops.forEach(function(elem) { %>
+  <% itineraryStops.forEach(function(elem) { %>
       <div style="border: 1px solid black; margin: 0 auto; width: 300px">
           Name: <%= elem.name %><br>
           Location: <%= elem.location %><br>
+          <button class="btn btn-xs btn-danger">remove</button>
       </div>
   <% }) %>
   </div>
