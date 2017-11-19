@@ -7,10 +7,11 @@ var middleware = require("../middleware/index.js");
 
 
 //COMMENT CREATE ROUTE
-router.get("/new", commentsCtrl.newComment);
+router.get("/new", middleware.isLoggedIn, commentsCtrl.newComment);
 
 router.post("/", middleware.isLoggedIn, commentsCtrl.createComment);
 // // COMMENT EDIT ROUTE
+
 router.get("/:comment_id/edit", middleware.checkCommentOwnership, commentsCtrl.editComment);
 
 // // COMMENT UPDATE
@@ -18,9 +19,5 @@ router.put("/:comment_id", middleware.checkCommentOwnership, commentsCtrl.update
 
 // // COMMENT DESTROY ROUTE
 router.delete("/:comment_id", middleware.checkCommentOwnership, commentsCtrl.deleteComment);
-
-
-
-
 
 module.exports = router;
