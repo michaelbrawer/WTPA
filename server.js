@@ -14,7 +14,7 @@ require('./config/database');
 require('./config/passport');
 
 
-
+var comments = require ('./routes/comments');
 var users = require('./routes/users');
 var itineraries = require('./routes/itineraries');
 var index = require('./routes/index');
