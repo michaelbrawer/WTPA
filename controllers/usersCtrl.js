@@ -18,7 +18,14 @@ module.exports = {
 };
 
 function index(req, res){
- res.render('users/show', {user: req.user, itineraryStops});
+  user = req.user ? req.user : null;
+  User.findById(req.params.id, function(err, userPage) {
+    Itinerary.findById(userPage.itinerary[0], function(err, itin) {
+      Stop.find({itinerary: itin.id}, function(err, itineraryStops) {
+        res.render('users/show', {user, itineraryStops, pageId: req.params.id});
+      })      
+    })
+  })
 }
 
 function newUser(req, res){
@@ -36,9 +43,11 @@ function addStop(req, res, itin)
   });
   newStop.save(function(err, newStop) {
   // });
+  console.log("itin " + itin);
   Stop.find({itinerary: itin.id}, function(err, itineraryStops) {
     // itineraryStops = stops;
-    res.render('users/show', {user, itineraryStops});
+    console.log("stops " + itineraryStops)
+    res.render('users/show', {user, itineraryStops, pageId: req.params.id});
   });
 })}
 
