@@ -1,6 +1,6 @@
 <%- include('./../_partials/header') %>
 <h1 class="showtop">When's The Party At?</h1>
-<div class="backdiv">
+<div>
 <a class="back" href='/'>Add More to Your Itinerary</a> <br> 
 </div>
 <br>
@@ -17,9 +17,9 @@
   </div>
 <% } %>
 
-<div class=btnholder>
+
     <a class="btn btn-success" href="/users/<%= user._id %>/comments/new">Add New Comment</a>
-</div>
+
 
 <% user.comments.forEach(function(comment){ %>
     <div class="row">
