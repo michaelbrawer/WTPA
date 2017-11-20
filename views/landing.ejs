@@ -19,6 +19,25 @@
 </div>
 <br><br>
 
+<div class="container devborder">
+    <% if (restaurantInfo[0]) {%>
+    <div class="row devborder">
+    <% restaurantInfo.forEach(function(elem) { %>
+    <div class="col-sm-6 col-md-4 results devborder">
+    
+<div class="card devborder" style="width: 20rem;">
+        <img class="card-img-top img-fluid" src="<%=elem.image_url%>" alt="Card image cap">
+        <div class="card-block">
+          <h4 class="card-title"><%= elem.name %></h4>
+          <p class="card-text"><%= elem.location.address1 %></p>
+          <a href="<%= elem.url %> " class="btn btn-primary btn-sm">To Yelp</a>
+        </div>
+    </div>
+    <% }) %>
+</div>
+</div>
+<% } %>
+</div>
 
 <% if (restaurantInfo[0]) {%>
     <div class="row results">
@@ -61,7 +80,5 @@
     <% }) %>
     </div>
 <% } %>
-
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 
 <%- include('./_partials/footer') %>
