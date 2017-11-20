@@ -20,11 +20,21 @@ a.back {
 }
 
 
-.btn-primary-outline {
+/* .btn-primary-outline {
   background-color: transparent;
   background: rgb(240, 84, 80);
+} */
+
+.btn-primary {
+  background-color: transparent;
+  background: rgb(240, 84, 80);
+  border-color: rgb(240, 84, 80);
 }
 
+.btn-warning {
+  background-color: rgba(245, 219, 70, 0.8);
+  border: rgba(245, 219, 70, .8);
+}
 /* .left {
   text-align: left;
 } */
@@ -42,7 +52,7 @@ a.back {
 }
 
 .btn-success:hover {
-  background-color: rgba(245, 219, 70, .8);
+  background-color: rgba(245, 219, 70, 0.8);
   border: rgba(245, 219, 70, .8);
 }
 
@@ -50,7 +60,7 @@ a.back {
   color: white; 
   border: 1px solid; 
   border-color: rgba(240, 84, 80, .3);
-  padding: 20px 50px; 
+  /* padding: 20px 50px;  */
   /* max-width: 100; */
 }
 
@@ -118,11 +128,20 @@ span b {
 
 .card {
   color: black;
-  float: center;
   margin: 10px auto;
-  width: 95%;
+  /* width: 95%; */
 }
 
-.devborder {
-  border: 1px solid red
+
+
+.container.devborder {
+  background: rgba(250, 250, 250, .5);
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+
+.card-img-top.img-fluid {
+  background-position: center center;
+  background-repeat: no-repeat;
 }
