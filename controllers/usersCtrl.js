@@ -74,10 +74,10 @@ function checkItinerary(req, res) {
   });
 }
 
-function removeStop(req, res, id){
-  Stop.findByIdAndRemove(id, function(err) {
-    res.render({user: req.user, itineraryStops});
-  });
+function removeStop(req, res){
+  Stop.findByIdAndRemove(req.body.stop_id, function(err, doc) {
+    res.redirect(`/users/${req.params.id}`)
+  })
 }
 
 function create(req, res){
