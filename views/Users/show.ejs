@@ -5,38 +5,43 @@
 </div>
 <br>
 <% if (itineraryStops) {%>
-  <div class="d-inline-flex p-2" id"=col">
-  <% itineraryStops.forEach(function(elem) { %>
+  <div class="d-inline-flex p-2" id="col">
+  <% itineraryStops.forEach(function(stop) { %>
       <div class="itin">
-          Name: <%= elem.name %><br>
-          Location: <%= elem.location %><br>
+          Name: <%= stop.name %><br>
+          Location: <%= stop.location %><br>
           <button class="btn btn-xs btn-danger">remove</button>
-          <a href="<%= elem.url %> " class="yelp">To Yelp</a><br>
+          <a href="<%= stop.url %> " class="yelp">To Yelp</a><br>
       </div>
   <% }) %>
   </div>
 <% } %>
 
 
-    <a class="btn btn-success" href="/users/<%= user._id %>/comments/new">Add New Comment</a>
+<div class="btnholder">
+    <a class="btn btn-success" href="/users/<%= pageId %>/comments/new">Add New Comment</a>
+</div>
 
 
-<% user.comments.forEach(function(comment){ %>
-    <div class="row">
-        <div class="col-md-12">
-            <strong><%= comment.author.name %></strong>
-            <p>
-                <%= comment.text %> 
-            </p>
-        <% if(user && comment.author.id.equals(user._id)){ %>
-            <a class="btn btn-xs btn-warning" 
-               href="/users/<%=user._id %>/comments/<%=comment._id %>/edit">Edit</a>
-            <form id="delete-form" action="/campgrounds/<%=user._id %>/comments/<%=comment._id %>?_method=DELETE" method="POST">
-                <input type="submit" class="btn btn-xs btn-danger" value="Delete">
-            </form>
-        <% } %>
+<% if (pageId.comments) {%>
+    <% pageId.comments.forEach(function(comment){ %>
+        <div class="row">
+            <div class="col-md-12">
+                <strong><%= comment.author.name %></strong>
+                <p>
+                    <%= comment.text %> 
+                </p>
+            <% if (user && comment.author.id.equals(user.id)){ %>
+                <a class="btn btn-xs btn-warning" 
+                href="/users/<%=user._id %>/comments/<%=comment._id %>/edit">Edit</a>
+                <form id="delete-form" action="/campgrounds/<%=user._id %>/comments/<%=comment._id %>?_method=DELETE" method="POST">
+                    <input type="submit" class="btn btn-xs btn-danger" value="Delete">
+                </form>
+            <% } %>
+            </div>
         </div>
-    </div>
-<% }) %>
+    <% }) %>
+<% } %>
+
 
 <%- include('./../_partials/footer') %>
