@@ -31,6 +31,13 @@
               <h4 class="card-title"><%= elem.name %></h4>
               <p class="card-text"><%= elem.location.address1 %></p>
               <a href="<%= elem.url %> " class="btn btn-primary btn-sm">To Yelp</a>
+              <% if (user) {%>
+                <form class="form-inline" action="/users/<%=user.id%>" method="POST">
+                    <input type="hidden" value="<%=elem.name%>" name="name">
+                    <input type="hidden" value="<%=elem.location.address1%>" name="location">
+                    <button type="submit" class='btn btn-xs btn-warning'>add</button>
+                </form>
+            <% } %>
             </div>
         </div>
         </div>        
