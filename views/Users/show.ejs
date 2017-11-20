@@ -1,20 +1,25 @@
 <%- include('./../_partials/header') %>
-<h1>here is the user show page</h1>
-<a href='/'>back to search</a>
-
+<h1 class="showtop">When's The Party At?</h1>
+<div class="backdiv">
+<a class="back" href='/'>Add More to Your Itinerary</a> <br> 
+</div>
+<br>
 <% if (itineraryStops) {%>
-  <div class="row results">
+  <div class="d-inline-flex p-2" id"=col">
   <% itineraryStops.forEach(function(elem) { %>
-      <div style="border: 1px solid black; margin: 0 auto; width: 300px">
+      <div class="itin">
           Name: <%= elem.name %><br>
           Location: <%= elem.location %><br>
           <button class="btn btn-xs btn-danger">remove</button>
+          <a href="<%= elem.url %> " class="yelp">To Yelp</a><br>
       </div>
   <% }) %>
   </div>
 <% } %>
 
-<a class="btn btn-success" href="/users/<%= user._id %>/comments/new">Add New Comment</a>
+<div class=btnholder>
+    <a class="btn btn-success" href="/users/<%= user._id %>/comments/new">Add New Comment</a>
+</div>
 
 <% user.comments.forEach(function(comment){ %>
     <div class="row">
