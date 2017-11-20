@@ -9,6 +9,7 @@ router.get('/new', usersCtrl.new);
 router.get('/:id', usersCtrl.index);
 router.post('/:id', usersCtrl.checkItinerary);
 router.post('/', usersCtrl.create);
+router.delete('/:id', usersCtrl.remove)
 
 
 module.exports = router;

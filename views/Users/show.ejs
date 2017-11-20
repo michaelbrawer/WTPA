@@ -1,27 +1,28 @@
 <%- include('./../_partials/header') %>
 <h1 class="showtop">When's The Party At?</h1>
-<div>
+<div class="backdiv">
 <a class="back" href='/'>Add More to Your Itinerary</a> <br> 
 </div>
 <br>
 <% if (itineraryStops) {%>
   <div class="d-inline-flex p-2" id="col">
   <% itineraryStops.forEach(function(stop) { %>
-      <div class="itin">
+    <div class="itin">
           Name: <%= stop.name %><br>
           Location: <%= stop.location %><br>
-          <button class="btn btn-xs btn-danger">remove</button>
+          <form action='/users/<%= pageId %>?_method=DELETE' method='POST'>
+            <input type='hidden' value='<%=stop.id%>' name="stop_id" class="btn btn-xs btn-danger">
+            <button>remove<button>
+          </form>
           <a href="<%= stop.url %> " class="yelp">To Yelp</a><br>
       </div>
   <% }) %>
   </div>
 <% } %>
 
-
 <div class="btnholder">
     <a class="btn btn-success" href="/users/<%= pageId %>/comments/new">Add New Comment</a>
 </div>
-
 
 <% if (pageId.comments) {%>
     <% pageId.comments.forEach(function(comment){ %>
