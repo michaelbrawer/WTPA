@@ -13,6 +13,8 @@
                 </div>
                     <button class="btn btn-success" type="submit">Go!</button><br><br>
                     <button class="btn btn-danger" formaction="/?random=true" type="submit">I'm feeling adventurous</button>
+                    <a href='/users/<%=user.id%>' class="btn btn-success">Go to itinerary</a>
+                    
             </form>
         </div>
     </div>
@@ -58,6 +60,7 @@
                 <form class="form-inline" action="/users/<%=user.id%>" method="POST">
                     <input type="hidden" value="<%=elem.name%>" name="name">
                     <input type="hidden" value="<%=elem.location.address1%>" name="location">
+                    <input type="hidden" value="<%=elem.url%>" name="url">
                     <button type="submit" class='btn btn-warning'>add</button>
                 </form>
                 <% } %>
