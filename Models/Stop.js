@@ -6,6 +6,7 @@ var stopSchema = new Schema({
     name: String,
     time: Number,
     location: String,
+    url: String,
     image: String,
     rating: Number,
     itinerary: String

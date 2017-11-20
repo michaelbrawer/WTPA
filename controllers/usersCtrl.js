@@ -40,6 +40,7 @@ function addStop(req, res, itin)
   var newStop = new Stop({
     name: req.body.name,
     location: req.body.location,
+    url: req.body.url,
     itinerary: itin.id
   });
   newStop.save(function(err, newStop) {
