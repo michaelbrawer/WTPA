@@ -25,27 +25,29 @@ function newUser(req, res){
   res.render('users/new', {user: req.user});
 }
 
-function addStop(req, res, itin){
+function addStop(req, res, itin)
+{
   user = req.user;
-  firstItinerary = itin;
+  // firstItinerary = itin;
   var newStop = new Stop({
     name: req.body.name,
     location: req.body.location,
-    itinerary: firstItinerary.id
+    itinerary: itin.id
   });
   newStop.save(function(err, newStop) {
-  });
-  Stop.find({itinerary: firstItinerary.id}, function(err, stops) {
-    itineraryStops = stops;
+  // });
+  Stop.find({itinerary: itin.id}, function(err, itineraryStops) {
+    // itineraryStops = stops;
     res.render('users/show', {user, itineraryStops});
   });
-}
+})}
+
 
 function checkItinerary(req, res) {
   user = req.user;
   Itinerary.findById(user.itinerary[0], function(err, itin) {
-    firstItinerary = itin;
-    if (firstItinerary) {
+    // firstItinerary = itin;
+    if (itin) {
       addStop(req, res, itin);
     }
     else {
