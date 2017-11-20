@@ -18,6 +18,7 @@ var comments = require ('./routes/comments');
 var users = require('./routes/users');
 var itineraries = require('./routes/itineraries');
 var index = require('./routes/index');
+var api = require('./routes/api')
 
 var app = express();
 
@@ -45,6 +46,7 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/itineraries', itineraries);
 app.use('/users/:id/comments', comments);
+app.use('/api/itineraries', api);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
