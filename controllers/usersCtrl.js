@@ -20,7 +20,8 @@ module.exports = {
 function index(req, res){
   user = req.user ? req.user : null;
   User.findById(req.params.id, function(err, userPage) {
-    Itinerary.findById(userPage.itinerary[0], function(err, itin) {
+    console.log(userPage);
+    Itinerary.findOne({user: userPage.id}, function(err, itin) {
       Stop.find({itinerary: itin.id}, function(err, itineraryStops) {
         res.render('users/show', {user, itineraryStops, pageId: req.params.id});
       })      
