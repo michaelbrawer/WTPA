@@ -55,7 +55,7 @@ function addStop(req, res, itin)
 
 function checkItinerary(req, res) {
   user = req.user;
-  Itinerary.findOne({user: userPage.id}, function(err, itin) {
+  Itinerary.findOne({user: user.id}, function(err, itin) {
     // firstItinerary = itin;
     if (itin) {
       addStop(req, res, itin);
