@@ -9,17 +9,16 @@ module.exports = {
   create,
   update,
   remove: removeStop,
+  deleteAll: removeAllStops,
   edit,
-  deleteAll
+  // deleteAll
 };
 
 function index(req, res){
   edit = req.query.edit ? req.query.edit : null;
   user = req.user ? req.user : null;
-  User.findById(req.params.id, function(err, userPage) {
-      Stop.find({user: userPage.id}, null, {sort: "time"}, function(err, stops) {
-        res.render('users/show', {user, edit, stops, pageId: req.params.id});
-      });     
+  User.findById(req.params.id).populate('stops').exec(function(err, userPage) {
+      res.render('users/show', {user, edit, stops: userPage.stops, pageId: req.params.id});
   });
 }
 
@@ -34,26 +33,25 @@ function addStop(req, res, itin){
     name: req.body.name,
     location: req.body.location,
     yelpUrl: req.body.url,
-    user: user.id
+    user: user._id
   });
   newStop.save(function(err, newStop) {
-    Stop.find({user: user.id}, null, {sort: 'time'}, function(err, stops) {
-      res.render('users/show', {user, edit, stops, pageId: req.params.id});
+    req.user.stops.push(newStop);
+    req.user.save(function(err) {
+      req.user.populate('stops', function(err) {
+        res.render('users/show', {user, edit, stops: req.user.stops, pageId: req.params.id});
+      });
     });
   });
 }
 
 // delete all stops from one user
 
-function deleteAll(req, res){
-  user = req.user ? req.user : null;
-  User.findById(req.params.id, function(err, userPage) {
-    Itinerary.findOne({user: userPage.id}, function(err, itin) {
-      Stop.remove({itinerary: itin.id}, function(err, itineraryStops) {
-      res.redirect(`/users/${req.params.id}`)
-    })      
-    })
-  })
+function removeAllStops(req, res){
+  req.user.stops = [];
+  req.user.save(function(err) {
+    res.redirect(`/users/${req.user._id}`)
+  });
 }
 
 // remove a single stop
@@ -61,7 +59,7 @@ function deleteAll(req, res){
 
 function removeStop(req, res){
   Stop.findByIdAndRemove(req.body.stop_id, function(err, doc) {
-    res.redirect(`/users/${req.params.id}`);
+    res.redirect(`/users/${req.user._id}`);
   });
 }
 
