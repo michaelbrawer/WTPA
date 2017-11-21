@@ -26,9 +26,9 @@ function index(req, res){
     Itinerary.findOne({user: userPage.id}, function(err, itin) {
       Stop.find({itinerary: itin.id}, null, {sort: "time"}, function(err, itineraryStops) {
         res.render('users/show', {user, edit, itineraryStops, pageId: req.params.id});
-      })      
-    })
-  })
+      });     
+    });
+  });
 }
 
 function newUser(req, res){
@@ -47,7 +47,7 @@ function addStop(req, res, itin){
   newStop.save(function(err, newStop) {
     Stop.find({itinerary: itin.id}, null, {sort: 'time'}, function(err, itineraryStops) {
       res.render('users/show', {user, edit, itineraryStops, pageId: req.params.id});
-    })
+    });
   });
 }
 
@@ -92,8 +92,8 @@ function deleteAll(req, res){
 
 function removeStop(req, res){
   Stop.findByIdAndRemove(req.body.stop_id, function(err, doc) {
-    res.redirect(`/users/${req.params.id}`)
-  })
+    res.redirect(`/users/${req.params.id}`);
+  });
 }
 
 function create(req, res){

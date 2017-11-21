@@ -23,21 +23,26 @@
                 <% if (user.id === pageId) { %>
                     <form action='/users/<%= pageId %>?_method=DELETE' method='POST'>
                         <input type='hidden' value='<%=stop.id%>' name="stop_id">
-                        <button>remove</button>
+                        <button class="btn btn-danger btn-sm">remove</button>
                     </form>
                     <form action="?_edit=<%= stop.id %>" method="GET">
                         <input type='hidden' value='<%=stop.id%>' name="edit">
-                        <button>edit</button>
+                        <div class="btn-group-vertical">
+                        <button class="btn btn-warning btn-sm">edit</button>
                     </form>
                     <% if (edit == stop.id) { %>
                     <form>
                         <input type="text" value="<%stop.time%>" name="time">
                         <button>edit</button>
                     </form>
+            
                     <% } %>
                 <% } %>
             <% } %>
-          <a href="<%= stop.url %>" target="blank" class="yelp">To Yelp</a><br>
+            
+          <button class="btn btn-info btn-sm"><a style="color: white;" href="<%= stop.url %>" target="blank" class="yelp">To Yelp</a><br></button>
+        </div>
+        
         </td>
         </td>  
   <% }) %>
@@ -45,13 +50,14 @@
 <% } %>
 </table>
 </div>
+
 <!-- remove all stops button goes here -->
 <div class="btnholder">
-    
+ 
     <!-- <a href="/users/<%= pageId %>" onclick="deleteAll()">delete</a> -->
     
 </div>
-
+<br>
 
 <!-- comments go here -->
 <div class="btnholder">
