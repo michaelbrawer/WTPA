@@ -13,7 +13,7 @@
 
 ### Additional Libraries / Frameworks:
 - jQuery for DOM traversal / event handling
-- Bootstrap - for styleing / responsive box sizing
+- Bootstrap - for styling / responsive box sizing
 - fontAwesome - for icons
 - Passport.js / Google oAuth - for authentication / authorization
 ----
@@ -23,9 +23,8 @@ Where the Party App? is designed to address a centuries old problem for humanity
 
 This answer to these questions are relatively simple.  Human beings are creatures of habit.  We aim to break those habits.
 
-By accessing the excellent Yelp! Fusion Api our app enables users to search for nightlife options available near them.  Bars & Restaurants can the be added by users to an itinerary which can then be shared with friends.
+By accessing the excellent Yelp! Fusion Api our app enables users to search for nightlife options available near them.  Bars & Restaurants can the be added by users to an itinerary which can then be shared with friends.  So when you next ask yourself, "Where the party app?"; boot up our site.  Then you will know!
 
-So when you next ask yourself, "Where the party app?"; boot up our site.  Then you will know!
 ----
 ### Next Steps / Planned Features:
 - Geolocation
@@ -39,5 +38,3 @@ So when you next ask yourself, "Where the party app?"; boot up our site.  Then y
 ### ![Initial ERD](https://i.imgur.com/54Z4v4H.png)
 
 ### [Initial Wires](https://i.imgur.com/XTe15kP.jpg)
-
-test note from devin
