@@ -46,7 +46,7 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/itineraries', itineraries);
 app.use('/users/:id/comments', comments);
-app.use('/api/itineraries', api);
+app.use('/api', api);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
