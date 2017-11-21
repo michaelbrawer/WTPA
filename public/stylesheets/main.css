@@ -173,9 +173,6 @@ color: rgba(223, 179, 51, .75)
   margin-top: 20px;
 }
 
-#copyright {
+#copyright, #burger {
   color: rgba(240, 84, 80, .8);
 }
-/* .custom-toggler.navbar-toggler {
-  border-color: rgb(255,102,203);
-} */
