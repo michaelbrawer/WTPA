@@ -14,9 +14,7 @@ require('./config/database');
 require('./config/passport');
 
 
-var comments = require ('./routes/comments');
 var users = require('./routes/users');
-var itineraries = require('./routes/itineraries');
 var index = require('./routes/index');
 var api = require('./routes/api')
 
@@ -44,8 +42,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
-app.use('/itineraries', itineraries);
-app.use('/users/:id/comments', comments);
 app.use('/api', api);
 
 // catch 404 and forward to error handler
