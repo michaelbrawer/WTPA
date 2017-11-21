@@ -45,21 +45,20 @@ function addStop(req, res, itin){
   });
 }
 
+// remove a single stop
+
+function removeStop(req, res){
+  Stop.findByIdAndRemove(req.body.stop_id, function(err, doc) {
+    res.redirect(`/party/${req.user._id}`);
+  });
+}
+
 // delete all stops from one user
 
 function removeAllStops(req, res){
   req.user.stops = [];
   req.user.save(function(err) {
     res.redirect(`/party/${req.user._id}`)
-  });
-}
-
-// remove a single stop
-
-
-function removeStop(req, res){
-  Stop.findByIdAndRemove(req.body.stop_id, function(err, doc) {
-    res.redirect(`/party/${req.user._id}`);
   });
 }
 
