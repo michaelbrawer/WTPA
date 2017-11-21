@@ -1,5 +1,4 @@
 var User = require("../models/User");
-var Comment = require("../models/Comment");
 
 // all the middleware goes here
 var middlewareObj = {};
