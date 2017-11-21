@@ -1,6 +1,6 @@
 <%- include('./../_partials/header') %>
 <div class="backdiv">
-<a class="back" href='/'>Add More to Your Itinerary</a> <br> 
+<a class="btn btn-warning" href='/'>Add More to Your Itinerary</a> <br> 
 </div>
 <br>
 
@@ -28,7 +28,6 @@
                         </form>
                         <form action="?_edit=<%= stop.id %>" method="GET">
                             <input type='hidden' value='<%=stop.id%>' name="edit">
-                            <div class="btn-group-vertical">
                                 <button class="btn btn-warning btn-sm">edit</button>
                             </div>
                         </form>
@@ -47,13 +46,8 @@
     <% }); %>
     <% } %>
 </table>
-<% if (stops && stops.length) { %>
-    <form action="/party/all?_method=DELETE" method="POST">
-        <button type="submit" class="btn btn-danger btn-sm">remove</button>
-    </form>
-<% } %>
 
-</div>
+
 <!-- remove all stops button goes here -->
 <div class="btnholder">
     
@@ -63,7 +57,12 @@
 
 <!-- comments go here -->
 <div class="btnholder">
-    <a class="btn btn-success" href="/party/<%= pageId %>/comments/new">Add New Comment</a>
+    <a class="btn btn-warning" href="/party/<%= pageId %>/comments/new">Add New Comment</a>
+    <% if (stops && stops.length) { %>
+        <form action="/party/all?_method=DELETE" method="POST">
+            <button type="submit" class="btn btn-danger">Clear Party</button>
+        </form>
+    <% } %>
 </div>
 
 <% if (pageId.comments) {%>
@@ -77,6 +76,7 @@
             <% if (user && comment.author.id.equals(user.id)){ %>
                 <a class="btn btn-xs btn-warning" 
                 href="/party/<%=user._id %>/comments/<%=comment._id %>/edit">Edit</a>
+                <br>
                 <form id="delete-form" action="/campgrounds/<%=user._id %>/comments/<%=comment._id %>?_method=DELETE" method="POST">
                     <input type="submit" class="btn btn-xs btn-danger" value="Delete">
                 </form>
