@@ -9,6 +9,8 @@ body {
 
 a {
   color: #00B7FF;
+  text-decoration: none !important;
+  font-weight: 200;
 }
 
 a.back {
@@ -178,6 +180,7 @@ color: rgba(223, 179, 51, .75)
 table {
   margin: auto;
 }
+
 
 .backdiv, .btnholder {
   text-align: center;
