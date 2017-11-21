@@ -29,8 +29,8 @@ module.exports ={
                 user.comments.push(comment);
                 user.save(function(err, user) {
                     req.flash("success", "Successfully added comment");
-                    res.redirect('/user/<%=req.params.id')
-                })
+                    res.redirect('/user/<%=req.params.id');
+                });
             }
             );
         }

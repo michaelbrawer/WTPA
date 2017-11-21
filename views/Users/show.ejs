@@ -18,29 +18,34 @@
           Name: <%= stop.name %><br>
           Location: <%= stop.location %><br>
           Time: <%= stop.time %>
-          <td style="border: 1px solid black">
-          <% if (user) { %>
-                <% if (user.id === pageId) { %>
-                    <form action='/users/<%= pageId %>?_method=DELETE' method='POST'>
-                        <input type='hidden' value='<%=stop.id%>' name="stop_id">
-                        <button>remove</button>
-                    </form>
-                    <form action="?_edit=<%= stop.id %>" method="GET">
-                        <input type='hidden' value='<%=stop.id%>' name="edit">
-                        <button>edit</button>
-                    </form>
-                    <% if (edit == stop.id) { %>
-                    <form>
-                        <input type="text" value="<%stop.time%>" name="time">
-                        <button>edit</button>
-                    </form>
-                    <% } %>
+        </td>
+        <td style="border: 1px solid black">
+        <% if (user) { %>
+            <% if (user.id === pageId) { %>
+                <form action='/users/<%= pageId %>?_method=DELETE' method='POST'>
+                    <input type='hidden' value='<%=stop.id%>' name="stop_id">
+                    <button class="btn btn-danger btn-sm">remove</button>
+                </form>
+                <form action="?_edit=<%= stop.id %>" method="GET">
+                    <input type='hidden' value='<%=stop.id%>' name="edit">
+                    <div class="btn-group-vertical">
+                    <button class="btn btn-warning btn-sm">edit</button>
+                    </div>
+                </form>
+                <% if (edit == stop.id) { %>
+                <form>
+                    <input type="text" value="<%stop.time%>" name="time">
+                    <button>edit</button>
+                </form>
+        
                 <% } %>
             <% } %>
-          <a href="<%= stop.url %>" target="blank" class="yelp">To Yelp</a><br>
-        </td>
-        </td>  
-  <% }) %>
+        <% } %>
+        
+        <button class="btn btn-info btn-sm"><a style="color: white;" href="<%= stop.url %>" target="blank" class="yelp">To Yelp</a><br></button>
+        
+    </td>  
+    <% }) %>
 </tr>
 <% } %>
 </table>
@@ -51,7 +56,6 @@
     <!-- <a href="/users/<%= pageId %>" onclick="deleteAll()">delete</a> -->
     
 </div>
-
 
 <!-- comments go here -->
 <div class="btnholder">
