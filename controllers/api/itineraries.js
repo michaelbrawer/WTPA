@@ -7,7 +7,9 @@ function getAllItineraries(req, res){
 }
 
 function getOneItinerary(req, res){
-
+  Itinerary.findById(req.params.id, function (err, itin) {
+    res.status(200).json(itin);
+  })
 }
 
 module.exports = {
