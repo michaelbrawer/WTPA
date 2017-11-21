@@ -7,7 +7,6 @@ table {
   margin: auto;
 }
 
-
 a {
   color: #00B7FF;
   text-decoration: none !important;
@@ -86,6 +85,7 @@ img {
     padding: 0;
     margin-bottom: 0;
     position: sticky;
+    border-top: 1px solid rgba(240, 84, 80, .8);
   }
 
 .itin {
@@ -151,7 +151,6 @@ color: rgba(223, 179, 51, .75)
   bottom: 0;
   width: 100%;
   background-color: rgba(0, 0, 0, .7);
-  color: white;
   text-align: center;
 }
 
@@ -160,12 +159,13 @@ color: rgba(223, 179, 51, .75)
 }
 
 .custom-toggler.navbar-toggler {
-  border-color: rgb(240, 84, 80);
+  border-color: rgba(240, 84, 80, .8);
 }
 
 #navHeader{
   background-color: rgba(0, 0, 0, .7);
-  color: red;
+  color: rgb(240, 84, 80);
+  border-bottom: 1px solid rgba(240, 84, 80, .8);
 }
 
 #headLogo{
@@ -173,6 +173,9 @@ color: rgba(223, 179, 51, .75)
   margin-top: 20px;
 }
 
+#copyright {
+  color: rgba(240, 84, 80, .8);
+}
 /* .custom-toggler.navbar-toggler {
   border-color: rgb(255,102,203);
 } */
