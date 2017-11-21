@@ -10,6 +10,8 @@ var userSchema = new Schema({
     googleId: String,
     created: { type: Date, default: Date.now },
     itinerary: [{type: mongoose.Schema.Types.ObjectId, ref: "Itinerary"}],
+    stop: [{type: mongoose.Schema.Types.ObjectId, ref: "Stop"}],
+    
     comments: [
         {
            type: mongoose.Schema.Types.ObjectId,

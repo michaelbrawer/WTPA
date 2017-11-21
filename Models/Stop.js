@@ -12,7 +12,7 @@ var stopSchema = new Schema({
     itinerary: String,
     time: {
         type: Date,
-        default: new Date()
+        default: new Date().toDateString()
     }
 });
 

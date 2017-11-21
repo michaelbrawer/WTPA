@@ -14,7 +14,8 @@ module.exports = {
   create,
   update,
   remove: removeStop,
-  edit
+  edit,
+  deleteAll
 };
 
 function index(req, res){
@@ -72,6 +73,22 @@ function checkItinerary(req, res) {
     }
   });
 }
+
+// delete all stops from one user
+
+function deleteAll(req, res){
+  user = req.user ? req.user : null;
+  User.findById(req.params.id, function(err, userPage) {
+    Itinerary.findOne({user: userPage.id}, function(err, itin) {
+      Stop.remove({itinerary: itin.id}, function(err, itineraryStops) {
+      res.redirect(`/users/${req.params.id}`)
+    })      
+    })
+  })
+}
+
+// remove a single stop
+
 
 function removeStop(req, res){
   Stop.findByIdAndRemove(req.body.stop_id, function(err, doc) {
