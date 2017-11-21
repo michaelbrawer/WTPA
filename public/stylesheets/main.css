@@ -164,6 +164,11 @@ color: rgba(223, 179, 51, .75)
   color: red;
 }
 
+#headLogo{
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
 /* .custom-toggler.navbar-toggler {
   border-color: rgb(255,102,203);
 } */
