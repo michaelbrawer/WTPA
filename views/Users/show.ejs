@@ -4,16 +4,23 @@
 <a class="back" href='/'>Add More to Your Itinerary</a> <br> 
 </div>
 <br>
+
+<!-- container to hold all itinerary stops -->
+<div class="container">
+<table>
+    
 <% if (itineraryStops) {%>
-  <div class="d-inline-flex p-2" id="col">
   <% itineraryStops.forEach(function(stop) { %>
-    <div class="itin">
+    <tr class="itin">
+        <!--will hold future time data -->
+        <td style="border: 1px solid black; padding: 0 5px 0 5px">Time</td>
+        <!-- holds stop data -->
+        <td style="border: 1px solid black">
           Name: <%= stop.name %><br>
           Location: <%= stop.location %><br>
-          Time: <%= stop.time.getDay() %> <%= stop.time.getMonth()+1%>/<%=stop.time.getDate() %> <%=stop.time.getHours()%>:<%=stop.time.getMinutes()%>
-        <a href="<%= stop.url %>" target="blank" class="yelp">To Yelp</a><br>
-
-            <% if (user) { %>
+          Time: <%= stop.time.getDay()+1 %> <%= stop.time.getMonth()+1%>/<%=stop.time.getDate() %> <%=stop.time.getHours()%>:<%=stop.time.getMinutes()%>
+          <td style="border: 1px solid black">
+          <% if (user) { %>
                 <% if (user.id === pageId) { %>
                     <form action='/users/<%= pageId %>?_method=DELETE' method='POST'>
                         <input type='hidden' value='<%=stop.id%>' name="stop_id">
@@ -31,11 +38,15 @@
                     <% } %>
                 <% } %>
             <% } %>
-      </div>
+          <a href="<%= stop.url %>" target="blank" class="yelp">To Yelp</a><br>
+        </td>
+        </td>  
   <% }) %>
-  </div>
+</tr>
 <% } %>
-
+</table>
+</div>
+<!-- comments go here -->
 <div class="btnholder">
     <a class="btn btn-success" href="/users/<%= pageId %>/comments/new">Add New Comment</a>
 </div>
