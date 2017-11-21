@@ -9,7 +9,11 @@ var stopSchema = new Schema({
     url: String,
     image: String,
     rating: Number,
-    itinerary: String
+    itinerary: String,
+    time: {
+        type: Date,
+        default: new Date()
+    }
 });
 
 module.exports = mongoose.model("Stop", stopSchema);
