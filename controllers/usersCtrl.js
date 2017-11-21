@@ -22,7 +22,7 @@ function index(req, res){
   User.findById(req.params.id, function(err, userPage) {
     console.log(userPage);
     Itinerary.findOne({user: userPage.id}, function(err, itin) {
-      Stop.find({itinerary: itin.id}, function(err, itineraryStops) {
+      Stop.find({itinerary: itin.id}, null, {sort: "time"}, function(err, itineraryStops) {
         res.render('users/show', {user, itineraryStops, pageId: req.params.id});
       })      
     })
@@ -33,10 +33,8 @@ function newUser(req, res){
   res.render('users/new', {user: req.user});
 }
 
-function addStop(req, res, itin)
-{
+function addStop(req, res, itin){
   user = req.user;
-  // firstItinerary = itin;
   var newStop = new Stop({
     name: req.body.name,
     location: req.body.location,
@@ -44,14 +42,11 @@ function addStop(req, res, itin)
     itinerary: itin.id
   });
   newStop.save(function(err, newStop) {
-  // });
-  console.log("itin " + itin);
-  Stop.find({itinerary: itin.id}, function(err, itineraryStops) {
-    // itineraryStops = stops;
-    console.log("stops " + itineraryStops)
-    res.render('users/show', {user, itineraryStops, pageId: req.params.id});
+    Stop.find({itinerary: itin.id}, null, {sort: 'time'}, function(err, itineraryStops) {
+      res.render('users/show', {user, itineraryStops, pageId: req.params.id});
+    })
   });
-})}
+}
 
 
 function checkItinerary(req, res) {

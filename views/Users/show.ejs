@@ -10,6 +10,7 @@
     <div class="itin">
           Name: <%= stop.name %><br>
           Location: <%= stop.location %><br>
+          Time: <%= stop.time.getDay()+1 %> <%= stop.time.getMonth()+1%>/<%=stop.time.getDate() %> <%=stop.time.getHours()%>:<%=stop.time.getMinutes()%>
           <form action='/users/<%= pageId %>?_method=DELETE' method='POST'>
             <input type='hidden' value='<%=stop.id%>' name="stop_id" class="btn btn-xs btn-danger">
             <button>remove<button>
