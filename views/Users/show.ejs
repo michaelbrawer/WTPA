@@ -27,7 +27,6 @@
                     </form>
                     <form action="?_edit=<%= stop.id %>" method="GET">
                         <input type='hidden' value='<%=stop.id%>' name="edit">
-                        <div class="btn-group-vertical">
                         <button class="btn btn-warning btn-sm">edit</button>
                     </form>
                     <% if (edit == stop.id) { %>
@@ -35,15 +34,10 @@
                         <input type="text" value="<%stop.time%>" name="time">
                         <button>edit</button>
                     </form>
-            
                     <% } %>
                 <% } %>
             <% } %>
-            
           <button class="btn btn-info btn-sm"><a style="color: white;" href="<%= stop.url %>" target="blank" class="yelp">To Yelp</a><br></button>
-        </div>
-        
-        </td>
         </td>  
   <% }) %>
 </tr>
