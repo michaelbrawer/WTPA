@@ -10,12 +10,27 @@
     <div class="itin">
           Name: <%= stop.name %><br>
           Location: <%= stop.location %><br>
-          Time: <%= stop.time.getDay()+1 %> <%= stop.time.getMonth()+1%>/<%=stop.time.getDate() %> <%=stop.time.getHours()%>:<%=stop.time.getMinutes()%>
-          <form action='/users/<%= pageId %>?_method=DELETE' method='POST'>
-            <input type='hidden' value='<%=stop.id%>' name="stop_id" class="btn btn-xs btn-danger">
-            <button>remove<button>
-          </form>
-          <a href="<%= stop.url %>" target="blank" class="yelp">To Yelp</a><br>
+          Time: <%= stop.time.getDay() %> <%= stop.time.getMonth()+1%>/<%=stop.time.getDate() %> <%=stop.time.getHours()%>:<%=stop.time.getMinutes()%>
+        <a href="<%= stop.url %>" target="blank" class="yelp">To Yelp</a><br>
+
+            <% if (user) { %>
+                <% if (user.id === pageId) { %>
+                    <form action='/users/<%= pageId %>?_method=DELETE' method='POST'>
+                        <input type='hidden' value='<%=stop.id%>' name="stop_id">
+                        <button>remove</button>
+                    </form>
+                    <form action="?_edit=<%= stop.id %>" method="GET">
+                        <input type='hidden' value='<%=stop.id%>' name="edit">
+                        <button>edit</button>
+                    </form>
+                    <% if (edit == stop.id) { %>
+                    <form>
+                        <input type="text" value="<%stop.time%>" name="time">
+                        <button>edit</button>
+                    </form>
+                    <% } %>
+                <% } %>
+            <% } %>
       </div>
   <% }) %>
   </div>

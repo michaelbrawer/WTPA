@@ -18,12 +18,13 @@ module.exports = {
 };
 
 function index(req, res){
+  edit = req.query.edit ? req.query.edit : null;
   user = req.user ? req.user : null;
   User.findById(req.params.id, function(err, userPage) {
     console.log(userPage);
     Itinerary.findOne({user: userPage.id}, function(err, itin) {
       Stop.find({itinerary: itin.id}, null, {sort: "time"}, function(err, itineraryStops) {
-        res.render('users/show', {user, itineraryStops, pageId: req.params.id});
+        res.render('users/show', {user, edit, itineraryStops, pageId: req.params.id});
       })      
     })
   })
@@ -35,6 +36,7 @@ function newUser(req, res){
 
 function addStop(req, res, itin){
   user = req.user;
+  edit = req.query.edit ? req.query.edit : null;  
   var newStop = new Stop({
     name: req.body.name,
     location: req.body.location,
@@ -43,7 +45,7 @@ function addStop(req, res, itin){
   });
   newStop.save(function(err, newStop) {
     Stop.find({itinerary: itin.id}, null, {sort: 'time'}, function(err, itineraryStops) {
-      res.render('users/show', {user, itineraryStops, pageId: req.params.id});
+      res.render('users/show', {user, edit, itineraryStops, pageId: req.params.id});
     })
   });
 }
