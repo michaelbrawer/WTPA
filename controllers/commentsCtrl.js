@@ -13,43 +13,33 @@ module.exports ={
 };
 
   function newComment(req, res){
-    console.log(req.params.id);
     User.findById(req.params.id, function(err, user){
-        if(err){
-            console.log(err);
-        } else {
-             res.render("comments/new", {user: req.user});
-        }
+        res.render("comments/new", {user: req.user});
     });
   }
 
   function createComment(req, res){
-   //lookup campground using ID
-   User.findById(req.params.id, function(err, user){
-    if(err){
-        console.log(err);
-        res.redirect("/");
-    } else {
-     Comment.create(req.body.comment, function(err, comment){
-        if(err){
-            req.flash("error", "Something went wrong");
-            console.log(err);
-        } else {
+    User.findById(req.params.id, function(err, user){
+        Comment.create(req.body.comment, function(err, comment){
             //add username and id to comment
-            comment.author.id = req.user._id;
+            comment.author.id = req.user.id;
             comment.author.name = req.user.name;
             //save comment
-            comment.save();
-            user.comments.push(comment);
-            user.save();
-            console.log(comment);
-            req.flash("success", "Successfully added comment");
-            res.redirect('/users/<%= user._id%>');
+            comment.save(function(err, comment) {
+                user.comments.push(comment);
+                user.save(function(err, user) {
+                    req.flash("success", "Successfully added comment");
+                    res.redirect('/user/<%=req.params.id')
+                })
+            }
+            );
         }
-     });
+     );
     }
-});
+);
 }
+
+
 
 
 function editComment(req, res){}
