@@ -1,8 +1,6 @@
 var User = require('../models/User');
 var Stop = require('../models/Stop');
 var middleware = require("../middleware/index.js");
-var firstItinerary;
-var itineraryStops;
 
 module.exports = {
   index: index,
@@ -19,9 +17,8 @@ function index(req, res){
   edit = req.query.edit ? req.query.edit : null;
   user = req.user ? req.user : null;
   User.findById(req.params.id, function(err, userPage) {
-    console.log(userPage.stops)
-      Stop.find({}, null, {sort: "time"}, function(err, itineraryStops) {
-        res.render('users/show', {user, edit, itineraryStops, pageId: req.params.id});
+      Stop.find({user: userPage.id}, null, {sort: "time"}, function(err, stops) {
+        res.render('users/show', {user, edit, stops, pageId: req.params.id});
       });     
   });
 }
@@ -36,12 +33,12 @@ function addStop(req, res, itin){
   var newStop = new Stop({
     name: req.body.name,
     location: req.body.location,
-    url: req.body.url,
-    itinerary: itin.id
+    yelpUrl: req.body.url,
+    user: user.id
   });
   newStop.save(function(err, newStop) {
-    Stop.find({itinerary: itin.id}, null, {sort: 'time'}, function(err, itineraryStops) {
-      res.render('users/show', {user, edit, itineraryStops, pageId: req.params.id});
+    Stop.find({user: user.id}, null, {sort: 'time'}, function(err, stops) {
+      res.render('users/show', {user, edit, stops, pageId: req.params.id});
     });
   });
 }
