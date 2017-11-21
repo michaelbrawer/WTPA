@@ -13,7 +13,7 @@
 
 ### Additional Libraries / Frameworks:
 - jQuery for DOM traversal / event handling
-- Bootstrap - for styleing / responsive box sizing
+- Bootstrap - for styling / responsive box sizing
 - fontAwesome - for icons
 - Passport.js / Google oAuth - for authentication / authorization
 ----
@@ -39,5 +39,3 @@ So when you next ask yourself, "Where the party app?"; boot up our site.  Then y
 ### ![Initial ERD](https://i.imgur.com/54Z4v4H.png)
 
 ### [Initial Wires](https://i.imgur.com/XTe15kP.jpg)
-
-test note from devin
