@@ -1,5 +1,9 @@
+html {
+  font-family: 'Dosis', sans-serif;
+}
+
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Dosis', sans-serif
   margin-bottom: 100px;
 }
 
