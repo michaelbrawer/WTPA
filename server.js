@@ -14,7 +14,7 @@ require('./config/database');
 require('./config/passport');
 
 
-var users = require('./routes/users');
+var party = require('./routes/party');
 var index = require('./routes/index');
 var api = require('./routes/api')
 
@@ -41,7 +41,7 @@ app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-app.use('/users', users);
+app.use('/party', party);
 app.use('/api', api);
 
 // catch 404 and forward to error handler

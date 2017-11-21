@@ -58,7 +58,7 @@
               <div class="btn-group">
               <a href="<%= elem.url %> " class="btn btn-primary">To Yelp</a><br><br>
              <% if (user) {%>
-                <form class="form-inline" action="/users/<%=user.id%>" method="POST">
+                <form class="form-inline" action="/party/<%=user.id%>" method="POST">
                     <input type="hidden" value="<%=elem.name%>" name="name">
                     <input type="hidden" value="<%=elem.location.address1%>" name="location">
                     <input type="hidden" value="<%=elem.url%>" name="url">

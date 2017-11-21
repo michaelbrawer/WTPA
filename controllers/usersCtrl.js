@@ -18,12 +18,12 @@ function index(req, res){
   edit = req.query.edit ? req.query.edit : null;
   user = req.user ? req.user : null;
   User.findById(req.params.id).populate('stops').exec(function(err, userPage) {
-      res.render('users/show', {user, edit, stops: userPage.stops, pageId: req.params.id});
+      res.render('party/show', {user, edit, stops: userPage.stops, pageId: req.params.id});
   });
 }
 
 function newUser(req, res){
-  res.render('users/new', {user: req.user});
+  res.render('party/new', {user: req.user});
 }
 
 function addStop(req, res, itin){
@@ -39,7 +39,7 @@ function addStop(req, res, itin){
     req.user.stops.push(newStop);
     req.user.save(function(err) {
       req.user.populate('stops', function(err) {
-        res.render('users/show', {user, edit, stops: req.user.stops, pageId: req.params.id});
+        res.render('party/show', {user, edit, stops: req.user.stops, pageId: req.params.id});
       });
     });
   });
@@ -50,7 +50,7 @@ function addStop(req, res, itin){
 function removeAllStops(req, res){
   req.user.stops = [];
   req.user.save(function(err) {
-    res.redirect(`/users/${req.user._id}`)
+    res.redirect(`/party/${req.user._id}`)
   });
 }
 
@@ -59,7 +59,7 @@ function removeAllStops(req, res){
 
 function removeStop(req, res){
   Stop.findByIdAndRemove(req.body.stop_id, function(err, doc) {
-    res.redirect(`/users/${req.user._id}`);
+    res.redirect(`/party/${req.user._id}`);
   });
 }
 
