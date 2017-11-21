@@ -8,6 +8,7 @@ var stopSchema = new Schema({
     yelpUrl: String,
     imageUrl: String,
     rating: Number,
+    user: Schema.Types.ObjectId,
     time: {
         type: Date,
         default: Date.now
