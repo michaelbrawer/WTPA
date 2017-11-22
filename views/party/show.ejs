@@ -15,10 +15,10 @@
             <td style="border: 1px solid black; padding: 0 5px 0 5px">
                  <% if (user) { %>   
                     <% if (idx == 0) { %>
+                    <span><i class="dead fa fa-3x fa-arrow-circle-up" aria-hidden="true"></i></span>
                     <a href="/party/move?dir=d&id=<%=stop.id%>">
                         <i class="downArrow fa fa-3x fa-arrow-circle-down" aria-hidden="true"></i>
                     </a>
-                    <span><i class="dead fa fa-3x fa-arrow-circle-up" aria-hidden="true"></i></span>
                     <% } else if (idx < stops.length -1) { %>
                     <a href="/party/move?dir=u&id=<%=stop.id%>">
                         <i class="fa fa-3x fa-arrow-circle-up" aria-hidden="true"></i>
@@ -62,64 +62,45 @@
                     <% } %>
                 <% } %>
                             
-                <button class="btn btn-info btn-sm"><a style="color: white;" href="<%= stop.url %>" target="blank" class="yelp"><i class="fa fa-yelp" aria-hidden="true"></i>To Yelp</a><br></button>
+                <button class="btn btn-info btn-sm"><a style="color: white;" href="<%= stop.yelpUrl %>" target="blank" class="yelp"><i class="fa fa-yelp" aria-hidden="true"></i>To Yelp</a><br></button>
             </td>  
         </tr>
     <% }); %>
     <% } %>
 </table>
 
-<!-- comments go here -->
+<!-- clears party -->
 <div class="btnholder">
-    <!-- <a class="btn btn-warning" href="/party/<%= pageId %>/comments/new">Add New Comment</a> -->
     <% if (stops && stops.length) { %>
         <form action="/party/all?_method=DELETE" method="POST">
             <button type="submit" class="btn btn-danger">Clear Party</button>
         </form>
     <% } %><br><br>
 
+    <!-- comments go here -->
     <form action="/party/comment" method="POST">
         <input type="text" name="text" class="form-control" placeholder="add comment..."><br>
         <button type="submit" class="btn btn-danger">add comment</button>
     </form><br>
-    
-    <h4 style="color:white">Comments:</h4>
-    <% user.comments.forEach(comment => { %>
-        <div class="row">
-            <div style="background-color: black; color:white"><%= comment.text %></div>
-        </div>
-        <form action='/party/out?_method=DELETE' method='POST'>
-            <input type='hidden' value='<%=comment.id%>' name="comment_id">
-            <button class="btn btn-danger btn-sm">remove comment</button>
-        </form>
-    <% }) %>
-</div>
 
-</div>
+    <h4 style="color: red;">Comments:</h4>
 
-
-<!-- 
-
-<% if (pageId.comments) {%>
-    <% pageId.comments.forEach(function(comment){ %>
-        <div class="row">
-            <div class="col-md-12">
-                <strong><%= comment.author.name %></strong>
-                <p>
-                    <%= comment.text %> 
-                </p>
-            <% if (user && comment.author.id.equals(user.id)){ %>
-                <a class="btn btn-xs btn-warning" 
-                href="/party/<%=user._id %>/comments/<%=comment._id %>/edit">Edit</a>
-                <br>
-                <form id="delete-form" action="/campgrounds/<%=user._id %>/comments/<%=comment._id %>?_method=DELETE" method="POST">
-                    <input type="submit" class="btn btn-xs btn-danger" value="Delete">
+    <table>
+        <% user.comments.forEach(comment => { %>
+            <tr class="itin">
+                <td>Name Goes Here</td>
+                <td><%= comment.text %></td>
+                <td>
+                <form action='/party/out?_method=DELETE' method='POST'>
+                    <input type='hidden' value='<%=comment.id%>' name="comment_id">
+                    <button class="btn btn-danger btn-sm">remove comment</button>
                 </form>
-            <% } %>
-            </div>
-        </div>
-    <% }) %>
-<% } %> -->
+            </td>
+            </tr>
+            <% }) %>
+    </table>
+</div>
+</div>
 
 
 <%- include('./../_partials/footer') %>
