@@ -13,16 +13,15 @@
         <tr class="itin">
             <!--will up down arrows -->
             <td style="border: 1px solid black; padding: 0 5px 0 5px">
-                
-                <% if (idx == 0) { %>
-                <a href="/stops/:id/move?dir=u"><i class="downArrow fa fa-arrow-circle-down fa-3x" aria-hidden="true"></i></a>
-                <span><i class="dead fa fa-arrow-circle-up fa-3x" aria-hidden="true"></i></span>
-                <% } else if (idx < stops.length -1) { %>
-                <a href="/stops/:id/move?dir=u"><i class="downArrow fa fa-arrow-circle-down fa-3x" aria-hidden="true"></i></a>
-                <a href="/stops/:id/move?dir=d"><i class="fa fa-arrow-circle-up fa-3x" aria-hidden="true"></i></a>
-                <% } else { %>
-                <span><i class="dead fa fa-arrow-circle-down fa-3x" aria-hidden="true"></i></span>
-                <a href="/stops/:id/move?dir=d"><i class="fa fa-arrow-circle-up fa-3x" aria-hidden="true"></i></a>
+                 <% if (user) { %>   
+                    <% if (idx == 0) { %>
+                    <a href="/party/move?dir=d&id=<%=stop.id%>">DOWN</a>
+                    <% } else if (idx < stops.length -1) { %>
+                    <a href="/party/move?dir=u&id=<%=stop.id%>">UP</a>
+                    <a href="/party/move?dir=d&id=<%=stop.id%>">DOWN</a>
+                    <% } else { %>
+                    <a href="/party/move?dir=u&id=<%=stop.id%>">UP</a>
+                    <% } %>
                 <% } %>
             </td>
             <!-- holds stop data -->
