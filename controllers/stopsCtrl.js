@@ -1,6 +1,5 @@
 var User = require('../models/User');
 var Stop = require('../models/Stop');
-var middleware = require("../middleware/index.js");
 
 module.exports = {
   index: index,
