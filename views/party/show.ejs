@@ -13,14 +13,16 @@
         <tr class="itin">
             <!--will up down arrows -->
             <td style="border: 1px solid black; padding: 0 5px 0 5px">
-                    
+                
                 <% if (idx == 0) { %>
-                <a href="/stops/:id/move?dir=u">UP</a>
+                <a href="/stops/:id/move?dir=u"><i class="fa fa-arrow-circle-down fa-3x" aria-hidden="true"></i></a>
+                <span><i class="dead fa fa-arrow-circle-up fa-3x" aria-hidden="true"></i></span>
                 <% } else if (idx < stops.length -1) { %>
-                <a href="/stops/:id/move?dir=u">UP</a>
-                <a href="/stops/:id/move?dir=d">DOWN</a>
+                <a href="/stops/:id/move?dir=u"><i class="fa fa-arrow-circle-down fa-3x" aria-hidden="true"></i></a>
+                <a href="/stops/:id/move?dir=d"><i class="fa fa-arrow-circle-up fa-3x" aria-hidden="true"></i></a>
                 <% } else { %>
-                <a href="/stops/:id/move?dir=d">DOWN</a>
+                <span><i class="dead fa fa-arrow-circle-down fa-3x" aria-hidden="true"></i></span>
+                <a href="/stops/:id/move?dir=d"><i class="fa fa-arrow-circle-up fa-3x" aria-hidden="true"></i></a>
                 <% } %>
             </td>
             <!-- holds stop data -->

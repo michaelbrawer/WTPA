@@ -181,3 +181,7 @@ color: rgba(223, 179, 51, .75)
 #copyright, #burger {
   color: rgba(240, 84, 80, .8);
 }
+
+.dead {
+  color: grey;
+}
