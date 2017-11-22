@@ -51,6 +51,7 @@ a.back {
 input.form-control {
   /* background-color: darkgrey;
   color: rgb(240, 84, 80); */
+  border: 1px solid #00B7FF;
   text-align: center;
   font-family: 'Dosis', sans-serif;
 }
