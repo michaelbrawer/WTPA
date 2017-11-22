@@ -14,13 +14,13 @@ table {
 }
 
 a {
-  color: #00B7FF;
+  color: #5bc0de;
   text-decoration: none !important;
   /* font-weight: 200; */
 }
 
 h4 {
-  color: #00B7FF;
+  color: #5bc0de;
   font-size: 30px;
   text-align: center;
   color: rgba(240, 84, 80, .9);
@@ -45,7 +45,7 @@ footer {
 
 a.back {
   color: white;
-  background-color: rgba(0, 183, 255, .75);
+  background-color: rgba(91, 192, 222, .75);
   border-radius: 2px;
   font-size: 18px;
 }
@@ -59,7 +59,7 @@ td {
 input.form-control {
   /* background-color: darkgrey;
   color: rgb(240, 84, 80); */
-  border: 1px solid #00B7FF;
+  border: 1px solid #5bc0de;
   text-align: center;
   font-family: 'Dosis', sans-serif;
 }
@@ -95,8 +95,8 @@ input.form-control {
 }
 
 .btn-success:hover {
-  background-color: rgba(0, 183, 255, 0.8);
-  border: rgba(0, 183, 255, .8);
+  background-color: rgba(91, 192, 222, 0.8);
+  border: rgba(91, 192, 222, .8);
 }
 
 .btn-xs.btn-danger {
@@ -154,20 +154,22 @@ input.form-control {
 
 .custom-toggler.navbar-toggler {
   margin-top: 5px;
-  border-color: #00B7FF;
+  border-color: #5bc0de;
 }
 
 .star {
   margin-bottom: 15px;
 }
 
-.dead {
+.dead, .dead.fa-arrow-circle-up {
   color: grey;
 }
 
-.downArrow {
-  color: rgba(91, 192, 222, .75);
+
+.downArrow, .fa-arrow-circle-up {
+  color: rgb(91, 192, 222);
 }
+
 
 .tableHead{
   font-size: 30px;
