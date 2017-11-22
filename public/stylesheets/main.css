@@ -24,6 +24,10 @@ img {
   height: auto;
 }
 
+a.nav-link {
+  font-size: 20px;
+}
+
 footer {
   color: white;
   padding: 0;
@@ -39,14 +43,6 @@ a.back {
   font-size: 18px;
 }
 
-.background-photo {
-  background: url(/images/benni-talent-238911.jpg) no-repeat center center fixed;
-  background-size: cover;
-}
-
-.forms {
-  overflow: hidden;
-}
 
 input.form-control {
   /* background-color: darkgrey;
@@ -54,6 +50,15 @@ input.form-control {
   border: 1px solid #00B7FF;
   text-align: center;
   font-family: 'Dosis', sans-serif;
+}
+
+.background-photo {
+  background: url(/images/benni-talent-238911.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+.forms {
+  overflow: hidden;
 }
 
 .btn-primary {
@@ -132,6 +137,7 @@ input.form-control {
 }
 
 .custom-toggler.navbar-toggler {
+  margin-top: 5px;
   border-color: #00B7FF;
 }
 
@@ -153,7 +159,7 @@ input.form-control {
 }
 
 #navHeader {
-  background-color: rgba(0, 0, 0, .7);
+  background-color: rgba(0, 0, 0, .8);
   color: rgb(240, 84, 80);
   border-bottom: 1px solid rgba(240, 84, 80, .8);
 }
