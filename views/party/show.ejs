@@ -1,12 +1,13 @@
 <%- include('./../_partials/header') %>
 
 <!-- container to hold all itinerary stops -->
-<div class="container">
+<div class="container row">
+    <div class="mainBlock col-xs-12 col-sm-8 col-md-8">
 <table class="col-xs-12 col-sm-11 col-md-10">
     <% if (user) { %>
         <% if (user.id === pageId) { %>
 <tr class="itin">
-    <td><a class="btn btn-warning" href='/'>Add More to Your Itinerary</a> </td>
+    <td><a class="btn btn-warning" href='/'>Add More</a> </td>
     <td class="tableHead">Where The Party's App:</td>
     <td>
         <% if (stops && stops.length) { %>
@@ -63,13 +64,12 @@
     <% }); %>
     <% } %>
 </table>
+</div>
 
     <!-- comments go here -->
-
+    <div class="commentBlock col-sm-3 col-md-3" style="margin-left: 1px;">
     <% if (user) { %>
-
     <div style="text-align: center; width:80%" class="container">
-
     <form action="/party/comment" method="POST">
         <input type="text" name="text" class="form-control" placeholder="add comment..." style="margin-bottom: 5px">
         <input type="hidden" name="name" class="form-control" placeholder="">
@@ -78,11 +78,10 @@
 
     <% } %>
     <div class='commentTable container'>
-    <div class="itin">
-    <h4 class= style="min-width: 100% border-radius: none;">Comments:</h4>
-    </div>
-
-
+    
+        <div class="itin" style="min-width: 130px">
+    <h4 class="" style="border-radius: none;">Comments</h4>
+</div>
     <table id="comments">
         <% userPage.comments.forEach(comment => { %>
             <tr class="itin">
@@ -92,7 +91,7 @@
                 <% if (user) { %>
                     <form action='/party/out?_method=DELETE' method='POST'>
                         <input type='hidden' value='<%=comment.id%>' name="comment_id">
-                        <button class="btn btn-danger btn-sm">remove comment</button>
+                        <button class="btn btn-danger btn-sm">remove</button>
                     </form>
                 <% } %>
                 </td>
@@ -101,6 +100,8 @@
     </table>
 </div>
 </div>
+</div>
+
 </div>
 
 
