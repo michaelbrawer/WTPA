@@ -45,7 +45,7 @@ footer {
 
 a.back {
   color: white;
-  background-color: rgba(223, 179, 51, .75);
+  background-color: rgba(0, 183, 255, .75);
   border-radius: 2px;
   font-size: 18px;
 }
@@ -80,8 +80,13 @@ input.form-control {
 }
 
 .btn-warning {
-  background-color: rgba(223, 179, 51, 0.8);
-  /* border: rgba(223, 179, 51, .8); */
+  background-color: #5bc0de;
+  border: #5bc0de;
+}
+
+.btn-warning:hover {
+  background-color: #4da5c6;
+  border: #4da5c6;
 }
 
 .btn-success {
@@ -90,13 +95,13 @@ input.form-control {
 }
 
 .btn-success:hover {
-  background-color: rgba(223, 179, 51, 0.8);
-  border: rgba(223, 179, 51, .8);
+  background-color: rgba(0, 183, 255, 0.8);
+  border: rgba(0, 183, 255, .8);
 }
 
 .btn-xs.btn-danger {
-  background-color: rgba(223, 179, 51, .75);
-  border-color: rgba(223, 179, 51, .75);
+  background-color: rgba(91, 192, 222, .75);
+  border-color: rgba(91, 192, 222, .75);
 }
 
 .results {
@@ -131,7 +136,7 @@ input.form-control {
 }
 
 .nav-link {
-  color: rgba(223, 179, 51, .75);
+  color: rgba(91, 192, 222, .75);
 }
 
 .footer {
@@ -161,7 +166,7 @@ input.form-control {
 }
 
 .downArrow {
-  color: rgba(223, 179, 51, .75);
+  color: rgba(91, 192, 222, .75);
 }
 
 #burger,#NavbarNavDropdown, .btn:focus, .btn:active:focus, .btn.active:focus {
