@@ -12,7 +12,7 @@
     <% stops.forEach(function(stop, idx) { %>
         <tr class="itin">
             <!--will up down arrows -->
-            <td style="border: 1px solid black; padding: 0 5px 0 5px">
+            <td>
                  <% if (user) { %>   
                     <% if (idx == 0) { %>
                     <span><i class="dead fa fa-3x fa-arrow-circle-up" aria-hidden="true"></i></span>
@@ -35,12 +35,12 @@
                 <% } %>
             </td>
             <!-- holds stop data -->
-            <td style="border: 1px solid black">
+            <td>
             Name: <%= stop.name %><br>
             Location: <%= stop.location %><br>
             Time: <%= stop.time %>
             </td>
-            <td style="border: 1px solid black">
+            <td>
                 <% if (user) { %>
                     <% if (user.id === pageId) { %>
                         <form action='/party/<%= pageId %>?_method=DELETE' method='POST'>
@@ -79,8 +79,8 @@
     <table>
         <% userPage.comments.forEach(comment => { %>
             <tr class="itin">
-                <td><%= comment.text %></td>
                 <td><%= comment.name %></td>
+                <td><%= comment.text %></td>
                 <td>
                 <form action='/party/out?_method=DELETE' method='POST'>
                     <input type='hidden' value='<%=comment.id%>' name="comment_id">
