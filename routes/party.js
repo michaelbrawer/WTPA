@@ -1,16 +1,17 @@
 var express = require('express');
 var router = express.Router();
 var passport = require('passport');
-var partyCtrl = require('../controllers/partyCtrl');
+var stopsCtrl = require('../controllers/stopsCtrl');
 
 
 /* GET users listing. */
-router.get('/new', partyCtrl.new);
-router.get('/:id', partyCtrl.index);
-router.post('/:id', partyCtrl.add);
-router.post('/', partyCtrl.create);
-router.delete('/all', partyCtrl.deleteAll)
-router.delete('/:id', partyCtrl.remove);
+router.get('/new', stopsCtrl.new);
+router.get('/:id/', stopsCtrl.index);
+router.get(':id/stops', stopsCtrl.move)
+router.post('/:id', stopsCtrl.add);
+router.post('/', stopsCtrl.create);
+router.delete('/all', stopsCtrl.deleteAll)
+router.delete('/:id', stopsCtrl.remove);
 
 
 module.exports = router;
