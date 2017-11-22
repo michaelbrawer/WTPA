@@ -15,12 +15,22 @@
             <td style="border: 1px solid black; padding: 0 5px 0 5px">
                  <% if (user) { %>   
                     <% if (idx == 0) { %>
-                    <a href="/party/move?dir=d&id=<%=stop.id%>">DOWN</a>
+                    <a href="/party/move?dir=d&id=<%=stop.id%>">
+                        <i class="downArrow fa fa-3x fa-arrow-circle-down" aria-hidden="true"></i>
+                    </a>
+                    <span><i class="dead fa fa-3x fa-arrow-circle-up" aria-hidden="true"></i></span>
                     <% } else if (idx < stops.length -1) { %>
-                    <a href="/party/move?dir=u&id=<%=stop.id%>">UP</a>
-                    <a href="/party/move?dir=d&id=<%=stop.id%>">DOWN</a>
+                    <a href="/party/move?dir=u&id=<%=stop.id%>">
+                        <i class="fa fa-3x fa-arrow-circle-up" aria-hidden="true"></i>
+                    </a>
+                    <a href="/party/move?dir=d&id=<%=stop.id%>">
+                        <i class="downArrow fa fa-3x fa-arrow-circle-down" aria-hidden="true"></i>
+                    </a>
                     <% } else { %>
-                    <a href="/party/move?dir=u&id=<%=stop.id%>">UP</a>
+                    <a href="/party/move?dir=u&id=<%=stop.id%>">
+                        <i class="fa fa-3x fa-arrow-circle-up" aria-hidden="true"></i>
+                    </a>
+                    <span><i class="dead fa fa-3x fa-arrow-circle-down" aria-hidden="true"></i></span>
                     <% } %>
                 <% } %>
             </td>
