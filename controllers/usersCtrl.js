@@ -8,7 +8,7 @@ function createComment (req, res) {
     User.findById(req.params.id, function(err) {
         user.comments.push({text:req.body.text, name: req.body.name});
         user.save(function(err) {
-            res.redirect(`/party/${req.user.id}`, )
+            res.redirect(`/party/${req.user.id}#comments`, )
         })
     })
 }
@@ -19,7 +19,7 @@ function removeComment(req, res){
     User.findById(req.params.id, function(err) {
         user.comments.remove(req.body.comment_id);
         user.save(function (err){
-        res.redirect(`/party/${req.user._id}`);
+        res.redirect(`/party/${req.user._id}#comments`);
     })})}
 
 
