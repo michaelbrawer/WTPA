@@ -65,7 +65,9 @@
         </form>
     <% } %><br><br>
 
+
     <!-- comments go here -->
+    <div style="width:50%" class="container">
     <form action="/party/comment" method="POST">
         <input type="text" name="text" class="form-control" placeholder="add comment..."><br>
         <input type="text" name="name" class="form-control" placeholder="who?"><br>
@@ -74,7 +76,7 @@
 
     <h4 class="itin" style="color: red;">Comments:</h4>
 
-    <table class="col-xs-12 col-sm-11 col-md-10">
+    <table>
         <% userPage.comments.forEach(comment => { %>
             <tr class="itin">
                 <td><%= comment.text %></td>
