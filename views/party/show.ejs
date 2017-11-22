@@ -24,23 +24,25 @@
     <% stops.forEach(function(stop, idx) { %>
         <tr class="itin">
             <td>
-                 <% if (user.id === pageId) { %>   
-                    <% if (idx === 0 && stops.length === 1) { %>
-                    <span><i class="dead fa fa-3x fa-arrow-circle-up" aria-hidden="true"></i></span>
-                    <span><i class="dead fa fa-3x fa-arrow-circle-down" aria-hidden="true"></i></span>
-                    <% } else if (idx == 0) { %>
-                    <span><i class="dead fa fa-3x fa-arrow-circle-up" aria-hidden="true"></i></span>
-                    <a href="/party/move?dir=d&id=<%=stop.id%>"><i class="downArrow fa fa-3x fa-arrow-circle-down" aria-hidden="true"></i></a>
-                    <% } else if (idx < stops.length -1) { %>
-                    <a href="/party/move?dir=u&id=<%=stop.id%>"><i class="fa fa-3x fa-arrow-circle-up" aria-hidden="true"></i></a>
-                    <a href="/party/move?dir=d&id=<%=stop.id%>"><i class="downArrow fa fa-3x fa-arrow-circle-down" aria-hidden="true"></i></a>
+                <% if (user) { %>
+                    <% if (user.id === pageId) { %>   
+                        <% if (idx === 0 && stops.length === 1) { %>
+                        <span><i class="dead fa fa-3x fa-arrow-circle-up" aria-hidden="true"></i></span>
+                        <span><i class="dead fa fa-3x fa-arrow-circle-down" aria-hidden="true"></i></span>
+                        <% } else if (idx == 0) { %>
+                        <span><i class="dead fa fa-3x fa-arrow-circle-up" aria-hidden="true"></i></span>
+                        <a href="/party/move?dir=d&id=<%=stop.id%>"><i class="downArrow fa fa-3x fa-arrow-circle-down" aria-hidden="true"></i></a>
+                        <% } else if (idx < stops.length -1) { %>
+                        <a href="/party/move?dir=u&id=<%=stop.id%>"><i class="fa fa-3x fa-arrow-circle-up" aria-hidden="true"></i></a>
+                        <a href="/party/move?dir=d&id=<%=stop.id%>"><i class="downArrow fa fa-3x fa-arrow-circle-down" aria-hidden="true"></i></a>
+                        <% } else { %>
+                        <a href="/party/move?dir=u&id=<%=stop.id%>"><i class="fa fa-3x fa-arrow-circle-up" aria-hidden="true"></i></a>
+                        <span><i class="dead fa fa-3x fa-arrow-circle-down" aria-hidden="true"></i></span>
+                        <% } %>
                     <% } else { %>
-                    <a href="/party/move?dir=u&id=<%=stop.id%>"><i class="fa fa-3x fa-arrow-circle-up" aria-hidden="true"></i></a>
-                    <span><i class="dead fa fa-3x fa-arrow-circle-down" aria-hidden="true"></i></span>
+                        <span><i class="dead fa fa-3x fa-arrow-circle-up" aria-hidden="true"></i></span>
+                        <span><i class="dead fa fa-3x fa-arrow-circle-down" aria-hidden="true"></i></span>
                     <% } %>
-                <% } else { %>
-                    <span><i class="dead fa fa-3x fa-arrow-circle-up" aria-hidden="true"></i></span>
-                    <span><i class="dead fa fa-3x fa-arrow-circle-down" aria-hidden="true"></i></span>
                 <% } %>
             </td>
             <!-- holds stop data -->
