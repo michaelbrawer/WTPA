@@ -11,12 +11,10 @@ function createComment (req, res) {
 }
 
 function removeComment(req, res){
-    console.log('hell!!!');
-    console.log(req.user);
-    User.findById(req.params.id, function(err) {
-        user.comments.remove(req.body.comment_id);
-        user.save(function (err){
-        res.redirect(`/party/${req.user._id}#comments`);
+    User.findById(req.params.id, function(err, doc) {
+        doc.comments.remove(req.body.comment_id);
+        doc.save(function (err){
+        res.redirect(`/party/${req.params.id}#comments`);
     });
 });
 }

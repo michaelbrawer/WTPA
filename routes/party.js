@@ -10,7 +10,7 @@ router.get('/new', stopsCtrl.new);
 router.get('/move', stopsCtrl.move);
 router.get('/:id/', stopsCtrl.index);
 router.post('/comment/:id', usersCtrl.createComment);
-router.delete('/out', usersCtrl.removeComment);
+router.delete('/out/:id', usersCtrl.removeComment);
 router.post('/:id', stopsCtrl.add);
 router.post('/', stopsCtrl.create);
 router.delete('/all', stopsCtrl.deleteAll);
