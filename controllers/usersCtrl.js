@@ -1,30 +1,31 @@
 var User = require('../models/User');
 var Stop = require('../models/Stop');
-var middleware = require("../middleware/index.js");
 
 function createComment (req, res) {
     User.findById(req.params.id, function(err) {
         user.comments.push({text:req.body.text, name: req.user.name});
         user.save(function(err) {
-            res.redirect(`/party/${req.user.id}`, )
-        })
-    })
+            res.redirect(`/party/${req.user.id}#comments`);
+        });
+    });
 }
 
 function removeComment(req, res){
-    console.log('hell!!!')
-    console.log(req.user)
+    console.log('hell!!!');
+    console.log(req.user);
     User.findById(req.params.id, function(err) {
         user.comments.remove(req.body.comment_id);
         user.save(function (err){
-        res.redirect(`/party/${req.user._id}`);
-    })})}
+        res.redirect(`/party/${req.user._id}#comments`);
+    });
+});
+}
 
 
 module.exports = {
     createComment,
     removeComment
-}
+};
 
 
 

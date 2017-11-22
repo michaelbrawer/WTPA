@@ -12,9 +12,12 @@
     <% stops.forEach(function(stop, idx) { %>
         <tr class="itin">
             <!--will up down arrows -->
-            <td style="border: 1px solid black; padding: 0 5px 0 5px">
+            <td>
                  <% if (user) { %>   
-                    <% if (idx == 0) { %>
+                    <% if (idx === 0 && stops.length === 1) { %>
+                        <span><i class="dead fa fa-3x fa-arrow-circle-up" aria-hidden="true"></i></span>
+                        <span><i class="dead fa fa-3x fa-arrow-circle-down" aria-hidden="true"></i></span>
+                    <% } else if (idx == 0) { %>
                     <span><i class="dead fa fa-3x fa-arrow-circle-up" aria-hidden="true"></i></span>
                     <a href="/party/move?dir=d&id=<%=stop.id%>">
                         <i class="downArrow fa fa-3x fa-arrow-circle-down" aria-hidden="true"></i>
@@ -35,12 +38,12 @@
                 <% } %>
             </td>
             <!-- holds stop data -->
-            <td style="border: 1px solid black">
+            <td>
             Name: <%= stop.name %><br>
             Location: <%= stop.location %><br>
             Time: <%= stop.time %>
             </td>
-            <td style="border: 1px solid black">
+            <td>
                 <% if (user) { %>
                     <% if (user.id === pageId) { %>
                         <form action='/party/<%= pageId %>?_method=DELETE' method='POST'>
@@ -65,21 +68,33 @@
         </form>
     <% } %><br><br>
 
+
     <!-- comments go here -->
+
     <% if (user) { %>
+
+    <div style="text-align: center; width:80%" class="container">
+
     <form action="/party/comment" method="POST">
-        <input type="text" name="text" class="form-control" placeholder="add comment..."><br>
-        <input type="hidden" name="name" class="form-control" placeholder=""><br>
-        <button type="submit" class="btn btn-danger">add comment</button>
+        <input type="text" name="text" class="form-control" placeholder="add comment...">
+        <input type="hidden" name="name" class="form-control" placeholder="">
+        <button type="submit" class="btn btn-info"><i class="fa fa-plus" aria-hidden="true"></i>Add Comment</button>
     </form><br>
+
     <% } %>
     <h4 style="color: red;">Comments:</h4>
 
-    <table>
+    <div class='commentTable container'>
+    <div class="itin">
+    <h4 class= style="min-width: 100% border-radius: none;">Comments:</h4>
+    </div>
+
+
+    <table id="comments">
         <% userPage.comments.forEach(comment => { %>
             <tr class="itin">
-                <td><%= comment.text %></td>
                 <td><%= comment.name %></td>
+                <td><%= comment.text %></td>
                 <td>
                 <% if (user) { %>
                     <form action='/party/out?_method=DELETE' method='POST'>
@@ -91,6 +106,7 @@
             </tr>
         <% }) %>
     </table>
+</div>
 </div>
 </div>
 
