@@ -43,7 +43,7 @@ a.back {
 
 .btn-warning {
   background-color: rgba(223, 179, 51, 0.8);
-  border: rgba(223, 179, 51, .8);
+  /* border: rgba(223, 179, 51, .8); */
 }
 
 .background-photo {
