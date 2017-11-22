@@ -66,12 +66,13 @@
     <% } %><br><br>
 
     <!-- comments go here -->
+    <% if (user) { %>
     <form action="/party/comment" method="POST">
         <input type="text" name="text" class="form-control" placeholder="add comment..."><br>
         <input type="hidden" name="name" class="form-control" placeholder=""><br>
         <button type="submit" class="btn btn-danger">add comment</button>
     </form><br>
-
+    <% } %>
     <h4 style="color: red;">Comments:</h4>
 
     <table>
@@ -80,13 +81,15 @@
                 <td><%= comment.text %></td>
                 <td><%= comment.name %></td>
                 <td>
-                <form action='/party/out?_method=DELETE' method='POST'>
-                    <input type='hidden' value='<%=comment.id%>' name="comment_id">
-                    <button class="btn btn-danger btn-sm">remove comment</button>
-                </form>
-            </td>
+                <% if (user) { %>
+                    <form action='/party/out?_method=DELETE' method='POST'>
+                        <input type='hidden' value='<%=comment.id%>' name="comment_id">
+                        <button class="btn btn-danger btn-sm">remove comment</button>
+                    </form>
+                <% } %>
+                </td>
             </tr>
-            <% }) %>
+        <% }) %>
     </table>
 </div>
 </div>
