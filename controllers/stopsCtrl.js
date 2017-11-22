@@ -64,13 +64,13 @@ function removeAllStops(req, res){
 }
 
 function move(req, res) {
-  var idx = req.user.stops.findIndex(stop=>stop._id.equals(req.params.id));
-  var temp = splice(idx, 1)[0]
-  if (req.query.dir === 'up') {
-    req.user.stops.splice(idx - 1, 0, temp)
+  var idx = req.user.stops.indexOf(req.query.id);
+  var temp = req.user.stops.splice(idx, 1)[0]
+  if (req.query.dir === 'u') {
+    req.user.stops.splice(idx-1, 0, temp)
   }
-  else if (req.query.dir === 'down') {
-    req.user.stops.splice(idx + 1, 0, temp)
+  else if (req.query.dir === 'd') {
+    req.user.stops.splice(idx+1, 0, temp)
   }
   req.user.save(function(err) {
     res.redirect(`/party/${req.user._id}`)
