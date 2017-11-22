@@ -61,7 +61,17 @@ a.back {
   border-color: rgba(240, 84, 80, .3);
 }
 
+.container {
+  text-align: center;
+}
 
+.form-control{
+  text-align: center;
+}
+
+.forms {
+  overflow: hidden;
+}
 
 span b {
   font-size: 15px;
