@@ -72,27 +72,13 @@
 </div>
 
     <!-- comments go here -->
-    <div class="commentBlock col-sm-3 col-md-3" style="margin: 0 auto;">
-    <% if (user) { %>
-    <div style="text-align: center; width:80%" class="container">
-    <form action="/party/comment/<%= pageId %>" method="POST">
-        <input type="text" name="text" class="form-control" placeholder="add comment..." style="margin-bottom: 5px">
-        <button type="submit" class="btn btn-info"><i class="fa fa-plus" aria-hidden="true"></i>Add Comment</button>
-    </form><br>
-    <% } %>
-    <h4 style="color: red;">Comments:</h4>
-
-    
-    <div class='commentTable container'>
-    <div class="itin">
-    <h4 class= style="min-width: 100% border-radius: none;">Comments:</h4>
-    </div>
-
-    
-        <div class="itin" style="min-width: 130px">
-    <h4 class="" style="border-radius: none;">Comments</h4>
-</div>
-    <table id="comments">
+    <div class="commentBlock col-md-3" style="margin: 0 auto;">
+            <div class='commentTable container'>
+                    <div class="itin col-12" style="min-width: 130px">
+                <h4>Comments</h4>
+            </div>
+   
+    <table id="comments" class="col-12">
         <% userPage.comments.forEach(comment => { %>
             <tr class="itin">
                 <td><%= comment.name %></td>
@@ -110,6 +96,14 @@
             </tr>
         <% }) %>
     </table>
+    <% if (user) { %>
+        <div class="" style="margin: 0 auto; text-align: center; width:80%" class="container">
+        <form action="/party/comment/<%= pageId %>" method="POST">
+            <input type="text" name="text" class="form-control" placeholder="add comment..." style="margin-bottom: 5px">
+            <button type="submit" class="btn btn-info"><i class="fa fa-plus" aria-hidden="true"></i>Add Comment</button>
+        </form><br>
+        </div>
+        <% } %>
 </div>
 </div>
 </div>
