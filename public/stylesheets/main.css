@@ -4,7 +4,8 @@ html {
 
 body {
   font-family: 'Dosis', sans-serif;
-  margin-bottom: 100px;;
+  margin-bottom: 100px;
+  ;
 }
 
 table {
@@ -41,13 +42,13 @@ a.back {
 }
 
 .background-photo {
-  background: url(/images/benni-talent-238911.jpg) no-repeat center center fixed; 
+  background: url(/images/benni-talent-238911.jpg) no-repeat center center fixed;
   background-size: cover;
 }
 
 .btn-success {
-  background-color: rgba(240, 84, 80, .5); 
-  border-color: rgba(240, 84, 80, .5); 
+  background-color: rgba(240, 84, 80, .5);
+  border-color: rgba(240, 84, 80, .5);
 }
 
 .btn-success:hover {
@@ -56,8 +57,8 @@ a.back {
 }
 
 .results {
-  color: white; 
-  border: 1px solid; 
+  color: white;
+  border: 1px solid;
   border-color: rgba(240, 84, 80, .3);
 }
 
@@ -65,7 +66,7 @@ a.back {
   text-align: center;
 }
 
-.form-control{
+.form-control {
   text-align: center;
 }
 
@@ -80,15 +81,15 @@ span b {
 img {
   max-width: 100%;
   height: auto;
-  }
+}
 
-  footer {
-    color: white;
-    padding: 0;
-    margin-bottom: 0;
-    position: sticky;
-    border-top: 1px solid rgba(240, 84, 80, .8);
-  }
+footer {
+  color: white;
+  padding: 0;
+  margin-bottom: 0;
+  position: sticky;
+  border-top: 1px solid rgba(240, 84, 80, .8);
+}
 
 .itin {
   border: 1px solid;
@@ -103,7 +104,6 @@ img {
   color: white;
 }
 
-
 .yelp {
   color: rgb(240, 84, 80);
   -webkit-text-stroke: 1px;
@@ -117,7 +117,7 @@ img {
 .card {
   color: black;
   margin: 10px auto;
-  background-color:rgba(250,250,250,0.8);
+  background-color: rgba(250, 250, 250, 0.8);
   width: 19rem;
 }
 
@@ -125,15 +125,15 @@ img {
   border-radius: 25px;
 }
 
- .devborder {
-   border-color: rgba(240, 84, 80, .8);
- }
+.devborder {
+  border-color: rgba(240, 84, 80, .8);
+}
 
- .card-holder {
-   padding: 10px !important;
- }
+.card-holder {
+  padding: 10px !important;
+}
 
- .card-block {
+.card-block {
   background-color: rgba(250, 250, 250, .2) !important;
 }
 
@@ -142,7 +142,7 @@ img {
 }
 
 .nav-link {
-color: rgba(223, 179, 51, .75)
+  color: rgba(223, 179, 51, .75);
 }
 
 .footer {
@@ -154,14 +154,14 @@ color: rgba(223, 179, 51, .75)
   text-align: center;
 }
 
-.backdiv, .btnholder {
+.backdiv,
+.btnholder {
   text-align: center;
 }
 
 .custom-toggler.navbar-toggler {
   border-color: rgba(240, 84, 80, .8);
 }
-
 
 .dead {
   color: grey;
@@ -171,17 +171,18 @@ color: rgba(223, 179, 51, .75)
   color: rgba(240, 84, 80, .8);
 }
 
-#navHeader{
+#navHeader {
   background-color: rgba(0, 0, 0, .7);
   color: rgb(240, 84, 80);
   border-bottom: 1px solid rgba(240, 84, 80, .8);
 }
 
-#headLogo{
+#headLogo {
   margin-bottom: 10px;
   margin-top: 90px;
 }
 
-#copyright, #burger {
+#copyright,
+#burger {
   color: rgba(240, 84, 80, .8);
 }
