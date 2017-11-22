@@ -2,10 +2,10 @@ var User = require('../models/User');
 var Stop = require('../models/Stop');
 
 function createComment (req, res) {
-    User.findById(req.params.id, function(err) {
-        user.comments.push({text:req.body.text, name: req.user.name});
-        user.save(function(err) {
-            res.redirect(`/party/${req.user.id}#comments`);
+    User.findById(req.params.id, function(err, doc) {
+        doc.comments.push({text:req.body.text, name: req.user.name});
+        doc.save(function(err) {
+            res.redirect(`/party/${req.params.id}#comments`);
         });
     });
 }
@@ -26,32 +26,3 @@ module.exports = {
     createComment,
     removeComment
 };
-
-
-
-// function newComment(req, res){
-//     User.findById(req.params.id, function(err, user){
-//         res.render("comments/new", {user: req.user});
-//     });
-//   }
-
-//   function createComment(req, res){
-//     User.findById(req.params.id, function(err, user){
-//         Comment.create(req.body.comment, function(err, comment){
-//             //add username and id to comment
-//             comment.author.id = req.user.id;
-//             comment.author.name = req.user.name;
-//             //save comment
-//             comment.save(function(err, comment) {
-//                 user.comments.push(comment);
-//                 user.save(function(err, user) {
-//                     req.flash("success", "Successfully added comment");
-//                     res.redirect('/user/<%=req.params.id');
-//                 });
-//             }
-//             );
-//         }
-//      );
-//     }
-// );
-// }

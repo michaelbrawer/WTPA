@@ -9,7 +9,7 @@ var usersCtrl = require('../controllers/usersCtrl');
 router.get('/new', stopsCtrl.new);
 router.get('/move', stopsCtrl.move);
 router.get('/:id/', stopsCtrl.index);
-router.post('/comment', usersCtrl.createComment);
+router.post('/comment/:id', usersCtrl.createComment);
 router.delete('/out', usersCtrl.removeComment);
 router.post('/:id', stopsCtrl.add);
 router.post('/', stopsCtrl.create);

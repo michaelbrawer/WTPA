@@ -20,7 +20,7 @@
 </tr>
     <% } %>
 <!--will up down arrows -->
-<% if (stops) {%>
+<% if (stops) { %>
     <% stops.forEach(function(stop, idx) { %>
         <tr class="itin">
             <td>
@@ -69,21 +69,17 @@
 </div>
 
     <!-- comments go here -->
-<<<<<<< HEAD
-=======
     <div class="commentBlock col-sm-3 col-md-3" style="margin: 0 auto;">
->>>>>>> master
     <% if (user) { %>
     <div style="text-align: center; width:80%" class="container">
-    <form action="/party/comment" method="POST">
+    <form action="/party/comment/<%= pageId %>" method="POST">
         <input type="text" name="text" class="form-control" placeholder="add comment..." style="margin-bottom: 5px">
-        <input type="hidden" name="name" class="form-control" placeholder="">
         <button type="submit" class="btn btn-info"><i class="fa fa-plus" aria-hidden="true"></i>Add Comment</button>
     </form><br>
     <% } %>
     <h4 style="color: red;">Comments:</h4>
 
-    <% } %>
+    
     <div class='commentTable container'>
     <div class="itin">
     <h4 class= style="min-width: 100% border-radius: none;">Comments:</h4>
