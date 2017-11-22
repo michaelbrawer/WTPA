@@ -48,14 +48,6 @@ a.back {
   background-size: cover;
 }
 
-.container {
-  text-align: center;
-}
-
-.form-control {
-  text-align: center;
-}
-
 .forms {
   overflow: hidden;
 }
@@ -136,7 +128,7 @@ a.back {
   text-align: center;
 }
 
-.backdiv, .btnholder {
+.backdiv, .btnholder, .container, .form-control {
   text-align: center;
 }
 
