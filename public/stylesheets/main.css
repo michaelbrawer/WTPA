@@ -1,10 +1,15 @@
+html {
+  font-family: 'Dosis', sans-serif;
+}
+
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  margin-bottom: 100px;
+  font-family: 'Dosis', sans-serif;
+  margin-bottom: 100px;;
 }
 
 table {
-  margin: auto;
+  margin: 0 auto;
+  margin-bottom: 10px;
 }
 
 a {
@@ -126,7 +131,7 @@ img {
 }
 
  .devborder {
-   border-color: red;
+   border-color: rgba(240, 84, 80, .8);
  }
 
  .card-holder {
