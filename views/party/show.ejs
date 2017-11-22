@@ -4,6 +4,7 @@
 <div class="container">
 <table class="col-xs-12 col-sm-11 col-md-10">
     <% if (user) { %>
+        <% if (user.id === pageId) { %>
 <tr class="itin">
     <td><a class="btn btn-warning" href='/'>Add More to Your Itinerary</a> </td>
     <td class="tableHead">Where The Party's App:</td>
@@ -12,6 +13,7 @@
         <form action="/party/all?_method=DELETE" method="POST">
             <button type="submit" class="btn btn-danger">Clear Party</button>
         </form>
+        <% } %>
     <% } %>
     </td>
 </tr>
