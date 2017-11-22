@@ -32,12 +32,19 @@
             <% if (user) { %>
                 <li class='nav-item'>
                     <a class="nav-link">Hello,
-                        <%=user.name %>
+                        <%= user.name %>
                     </a>
                 </li>
-                <li class='nav-item'>
-                    <a href='/party/<%=user.id%>' style="color: rgba(223, 179, 51, .75);" class="nav-link">Go To Itinerary</a>
-                </li>
+
+                <% try { %>
+                    <% if (goBack) { %>
+                        <li class='nav-item'>
+                            <a href='/party/<%=user.id%>' class="nav-link">Go To Itinerary</a>
+                        </li>
+                    <% } %>
+                <% } catch(e) { %>
+                    <% console.log(e) %>
+                <% } %>
                 <li class="nav-item">
                     <a class='nav-link' style="color: rgba(240, 84, 80, .8);" href="/logout">Logout</a>
                 </li>

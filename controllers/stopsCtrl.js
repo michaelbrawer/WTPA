@@ -11,6 +11,7 @@ module.exports = {
   remove: removeStop,
   deleteAll: removeAllStops,
   edit,
+  move
   // deleteAll
 };
 
@@ -18,7 +19,7 @@ function index(req, res){
   edit = req.query.edit ? req.query.edit : null;
   user = req.user ? req.user : null;
   User.findById(req.params.id).populate('stops').exec(function(err, userPage) {
-      res.render('party/show', {user, edit, stops: userPage.stops, pageId: req.params.id});
+      res.render('party/show', {user: user, edit: edit, stops: userPage.stops, pageId: req.params.id, goBack: false});
   });
 }
 
@@ -39,7 +40,7 @@ function addStop(req, res, itin){
     req.user.stops.push(newStop);
     req.user.save(function(err) {
       req.user.populate('stops', function(err) {
-        res.render('party/show', {user, edit, stops: req.user.stops, pageId: req.params.id});
+        res.render('party/show', {user, edit, stops: req.user.stops, pageId: req.params.id, goBack: false});
       });
     });
   });
@@ -61,6 +62,21 @@ function removeAllStops(req, res){
     res.redirect(`/party/${req.user._id}`)
   });
 }
+
+function move(req, res) {
+  var idx = req.user.stops.findIndex(stop=>stop._id.equals(req.params.id));
+  var temp = splice(idx, 1)[0]
+  if (req.query.dir === 'up') {
+    req.user.stops.splice(idx - 1, 0, temp)
+  }
+  else if (req.query.dir === 'down') {
+    req.user.stops.splice(idx + 1, 0, temp)
+  }
+  req.user.save(function(err) {
+    res.redirect(`/party/${req.user._id}`)
+  })
+}
+
 
 function create(req, res){
 
