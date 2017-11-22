@@ -30,6 +30,11 @@ a.back {
   font-size: 18px;
 }
 
+/* input.form-control {
+  background-color: darkgrey;
+  color: rgb(240, 84, 80);
+} */
+
 .btn-primary {
   background-color: transparent;
   background: rgb(240, 84, 80);
@@ -161,6 +166,10 @@ footer {
 
 .custom-toggler.navbar-toggler {
   border-color: rgba(240, 84, 80, .8);
+}
+
+.star {
+  margin-bottom: 15px;
 }
 
 .dead {
