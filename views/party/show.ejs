@@ -40,7 +40,7 @@
                         <form action="?_edit=<%= stop.id %>" method="GET">
                             <input type='hidden' value='<%=stop.id%>' name="edit">
                                 <button class="btn btn-warning btn-sm">edit</button>
-                            </div>
+                            
                         </form>
                         <% if (edit == stop.id) { %>
                             <form>
@@ -58,23 +58,36 @@
     <% } %>
 </table>
 
-
-<!-- remove all stops button goes here -->
-<div class="btnholder">
-    
-    <!-- <a href="/party/<%= pageId %>" onclick="deleteAll()">delete</a> -->
-    
-</div>
-
 <!-- comments go here -->
 <div class="btnholder">
-    <a class="btn btn-warning" href="/party/<%= pageId %>/comments/new">Add New Comment</a>
+    <!-- <a class="btn btn-warning" href="/party/<%= pageId %>/comments/new">Add New Comment</a> -->
     <% if (stops && stops.length) { %>
         <form action="/party/all?_method=DELETE" method="POST">
             <button type="submit" class="btn btn-danger">Clear Party</button>
         </form>
-    <% } %>
+    <% } %><br><br>
+
+    <form action="/party/comment" method="POST">
+        <input type="text" name="text" class="form-control" placeholder="add comment..."><br>
+        <button type="submit" class="btn btn-danger">add comment</button>
+    </form><br>
+    
+    <h4 style="color:white">Comments:</h4>
+    <% user.comments.forEach(comment => { %>
+        <div class="row">
+            <div style="background-color: black; color:white"><%= comment.text %></div>
+        </div>
+        <form action='/party/out?_method=DELETE' method='POST'>
+            <input type='hidden' value='<%=comment.id%>' name="comment_id">
+            <button class="btn btn-danger btn-sm">remove comment</button>
+        </form>
+    <% }) %>
 </div>
+
+</div>
+
+
+<!-- 
 
 <% if (pageId.comments) {%>
     <% pageId.comments.forEach(function(comment){ %>
@@ -95,7 +108,7 @@
             </div>
         </div>
     <% }) %>
-<% } %>
+<% } %> -->
 
 
 <%- include('./../_partials/footer') %>
