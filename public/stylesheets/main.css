@@ -16,11 +16,7 @@ table {
 a {
   color: #00B7FF;
   text-decoration: none !important;
-  font-weight: 200;
-}
-
-span b {
-  font-size: 15px;
+  /* font-weight: 200; */
 }
 
 img {
@@ -52,10 +48,13 @@ a.back {
   overflow: hidden;
 }
 
-/* input.form-control {
-  background-color: darkgrey;
-  color: rgb(240, 84, 80);
-} */
+input.form-control {
+  /* background-color: darkgrey;
+  color: rgb(240, 84, 80); */
+  border: 1px solid #00B7FF;
+  text-align: center;
+  font-family: 'Dosis', sans-serif;
+}
 
 .btn-primary {
   background-color: transparent;
@@ -133,7 +132,7 @@ a.back {
 }
 
 .custom-toggler.navbar-toggler {
-  border-color: rgba(240, 84, 80, .8);
+  border-color: #00B7FF;
 }
 
 .star {
@@ -146,6 +145,11 @@ a.back {
 
 .downArrow {
   color: rgba(240, 84, 80, .8);
+}
+
+#burger,#NavbarNavDropdown, .btn:focus, .btn:active:focus, .btn.active:focus {
+  outline: 0 none;
+  box-shadow: none;
 }
 
 #navHeader {
