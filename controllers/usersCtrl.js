@@ -3,10 +3,8 @@ var Stop = require('../models/Stop');
 var middleware = require("../middleware/index.js");
 
 function createComment (req, res) {
-    console.log('WHY!!!')
-    console.log(req.user)
     User.findById(req.params.id, function(err) {
-        user.comments.push({text:req.body.text, name: req.body.name});
+        user.comments.push({text:req.body.text, name: req.user.name});
         user.save(function(err) {
             res.redirect(`/party/${req.user.id}`, )
         })

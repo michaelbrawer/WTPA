@@ -4,8 +4,7 @@ var Schema = mongoose.Schema;
 
 var commentSchema = new Schema({
     text: String,
-    name: String,
-    author: Schema.Types.ObjectId
+    name: String
 },
     {timestamps: true}
 );
