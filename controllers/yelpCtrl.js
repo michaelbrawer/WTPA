@@ -39,7 +39,7 @@ yelp.accessToken(clientId, clientSecret).then(response => {
 function decideSearch(req, res, next) {
   if (req.query.random == 'true') {
     var num = Math.floor(Math.random() * (25));
-    returnSearch(req, res, next, num, 1, "rating");
+    returnSearch(req, res, next, num, 3, "rating");
   }
   else {
     returnSearch(req, res, next, 0, 6, "best_match");
