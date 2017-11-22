@@ -59,22 +59,22 @@ function removeStop(req, res){
 function removeAllStops(req, res){
   req.user.stops = [];
   req.user.save(function(err) {
-    res.redirect(`/party/${req.user._id}`)
+    res.redirect(`/party/${req.user._id}`);
   });
 }
 
 function move(req, res) {
   var idx = req.user.stops.indexOf(req.query.id);
-  var temp = req.user.stops.splice(idx, 1)[0]
+  var temp = req.user.stops.splice(idx, 1)[0];
   if (req.query.dir === 'u') {
-    req.user.stops.splice(idx-1, 0, temp)
+    req.user.stops.splice(idx-1, 0, temp);
   }
   else if (req.query.dir === 'd') {
-    req.user.stops.splice(idx+1, 0, temp)
+    req.user.stops.splice(idx+1, 0, temp);
   }
   req.user.save(function(err) {
-    res.redirect(`/party/${req.user._id}`)
-  })
+    res.redirect(`/party/${req.user._id}`);
+  });
 }
 
 
