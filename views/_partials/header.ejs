@@ -17,12 +17,12 @@
 <nav id="navHeader" class="navbar fixed-top navbar-inverse navbar-fluid navbar-toggleable-md">
     <button id="burger" class="navbar-toggler navbar-toggler-right custom-toggler"  type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon">
-        <i class="fa fa-bars" aria-hidden="true"></i>
+        <span class="">
+        <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
         </span>
     </button>
     <a class="navbar-brand" href="#">
-        <img src="https://i.imgur.com/o18gSg1.png" style="width:40px;">
+        <img src="https://i.imgur.com/o18gSg1.png" style="width:55px;">
     </a>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
@@ -39,7 +39,7 @@
                 <% try { %>
                     <% if (goBack) { %>
                         <li class='nav-item'>
-                            <a href='/party/<%=user.id%>' class="nav-link">Go To Itinerary</a>
+                            <a href='/party/<%=user.id%>' style="color: rgba(223, 179, 51, .75);" class="nav-link">Go To Itinerary</a>
                         </li>
                     <% } %>
                 <% } catch(e) { %>
