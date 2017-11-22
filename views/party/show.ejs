@@ -1,13 +1,10 @@
 <%- include('./../_partials/header') %>
-<!-- <div class="backdiv">
-<a class="btn btn-warning" href='/'>Add More to Your Itinerary</a> <br> 
-</div>
-<br> -->
 
 <!-- container to hold all itinerary stops -->
 <div class="container">
 <table class="col-xs-12 col-sm-11 col-md-10">
     <% if (user) { %>
+        <% if (user.id === pageId) { %>
 <tr class="itin">
     <td><a class="btn btn-warning" href='/'>Add More to Your Itinerary</a> </td>
     <td class="tableHead">Where The Party's App:</td>
@@ -16,6 +13,7 @@
         <form action="/party/all?_method=DELETE" method="POST">
             <button type="submit" class="btn btn-danger">Clear Party</button>
         </form>
+        <% } %>
     <% } %>
     </td>
 </tr>
@@ -48,7 +46,6 @@
             <td>
             Name: <%= stop.name %><br>
             Location: <%= stop.location %><br>
-            Time: <%= stop.time %>
             </td>
             <td>
             <!-- adds delete if user owns page -->
@@ -66,16 +63,6 @@
     <% }); %>
     <% } %>
 </table>
-
-<!-- clears party -->
-<div class="btnholder">
-    <% if (stops && stops.length) { %>
-        <form action="/party/all?_method=DELETE" method="POST">
-            <button type="submit" class="btn btn-danger">Clear Party</button>
-        </form>
-    <% } %>
-    
-    <br><br>
 
     <!-- comments go here -->
 
