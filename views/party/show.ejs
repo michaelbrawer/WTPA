@@ -94,9 +94,9 @@
             <tr class="itin">
                 <td><%= comment.name %></td>
                 <td><%= comment.text %></td>
-                <td>
+                <td style="min-width: 50px">
                 <% if (user) { %>
-                    <% if (user.id === pageId) { %>
+                    <% if (user.id === pageId || user.name == comment.name) { %>
                     <form action='/party/out?_method=DELETE' method='POST'>
                         <input type='hidden' value='<%=comment.id%>' name="comment_id">
                         <button class="btn btn-danger btn-sm">remove</button>
