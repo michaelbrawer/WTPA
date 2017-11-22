@@ -1,13 +1,25 @@
 <%- include('./../_partials/header') %>
-<div class="backdiv">
+<!-- <div class="backdiv">
 <a class="btn btn-warning" href='/'>Add More to Your Itinerary</a> <br> 
 </div>
-<br>
+<br> -->
 
 <!-- container to hold all itinerary stops -->
 <div class="container">
 <table class="col-xs-12 col-sm-11 col-md-10">
-
+    <% if (user) { %>
+<tr class="itin">
+    <td><a class="btn btn-warning" href='/'>Add More to Your Itinerary</a> </td>
+    <td class="tableHead">Where The Party's App:</td>
+    <td>
+        <% if (stops && stops.length) { %>
+        <form action="/party/all?_method=DELETE" method="POST">
+            <button type="submit" class="btn btn-danger">Clear Party</button>
+        </form>
+    <% } %>
+    </td>
+</tr>
+    <% } %>
 <!--will up down arrows -->
 <% if (stops) {%>
     <% stops.forEach(function(stop, idx) { %>
@@ -61,7 +73,9 @@
         <form action="/party/all?_method=DELETE" method="POST">
             <button type="submit" class="btn btn-danger">Clear Party</button>
         </form>
-    <% } %><br><br>
+    <% } %>
+    
+    <br><br>
 
     <!-- comments go here -->
 
