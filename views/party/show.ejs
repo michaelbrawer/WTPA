@@ -80,6 +80,7 @@
     <!-- comments go here -->
     <form action="/party/comment" method="POST">
         <input type="text" name="text" class="form-control" placeholder="add comment..."><br>
+        <input type="text" name="name" class="form-control" placeholder="who?"><br>
         <button type="submit" class="btn btn-danger">add comment</button>
     </form><br>
 
@@ -88,8 +89,8 @@
     <table>
         <% user.comments.forEach(comment => { %>
             <tr class="itin">
-                <td>Name Goes Here</td>
                 <td><%= comment.text %></td>
+                <td><%= comment.name %></td>
                 <td>
                 <form action='/party/out?_method=DELETE' method='POST'>
                     <input type='hidden' value='<%=comment.id%>' name="comment_id">
