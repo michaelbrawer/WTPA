@@ -14,7 +14,10 @@
             <!--will up down arrows -->
             <td>
                  <% if (user) { %>   
-                    <% if (idx == 0) { %>
+                    <% if (idx === 0 && stops.length === 1) { %>
+                        <span><i class="dead fa fa-3x fa-arrow-circle-up" aria-hidden="true"></i></span>
+                        <span><i class="dead fa fa-3x fa-arrow-circle-down" aria-hidden="true"></i></span>
+                    <% } else if (idx == 0) { %>
                     <span><i class="dead fa fa-3x fa-arrow-circle-up" aria-hidden="true"></i></span>
                     <a href="/party/move?dir=d&id=<%=stop.id%>">
                         <i class="downArrow fa fa-3x fa-arrow-circle-down" aria-hidden="true"></i>
@@ -67,17 +70,19 @@
 
 
     <!-- comments go here -->
-    <div style="width:50%" class="container">
+    <div style="text-align: center; width:80%" class="container">
     <form action="/party/comment" method="POST">
-        <input type="text" name="text" class="form-control" placeholder="add comment..."><br>
-        <input type="hidden" name="name" class="form-control" placeholder=""><br>
-        <button type="submit" class="btn btn-danger">add comment</button>
+        <input type="text" name="text" class="form-control" placeholder="add comment...">
+        <input type="hidden" name="name" class="form-control" placeholder="">
+        <button type="submit" class="btn btn-info"><i class="fa fa-plus" aria-hidden="true"></i>Add Comment</button>
     </form><br>
 
-    <h4 class="itin" style="color: red;">Comments:</h4>
+    <div class='commentTable container'>
+    <div class="itin">
+    <h4 class= style="min-width: 100% border-radius: none;">Comments:</h4>
+    </div>
 
     <table id="comments">
-
         <% userPage.comments.forEach(comment => { %>
             <tr class="itin">
                 <td><%= comment.name %></td>
@@ -91,6 +96,7 @@
             </tr>
             <% }) %>
     </table>
+</div>
 </div>
 </div>
 
