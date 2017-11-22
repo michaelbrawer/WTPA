@@ -7,32 +7,24 @@
 <!-- container to hold all itinerary stops -->
 <div class="container">
 <table class="col-xs-12 col-sm-11 col-md-10">
-    
+
+<!--will up down arrows -->
 <% if (stops) {%>
     <% stops.forEach(function(stop, idx) { %>
         <tr class="itin">
-            <!--will up down arrows -->
             <td>
                  <% if (user) { %>   
                     <% if (idx === 0 && stops.length === 1) { %>
-                        <span><i class="dead fa fa-3x fa-arrow-circle-up" aria-hidden="true"></i></span>
-                        <span><i class="dead fa fa-3x fa-arrow-circle-down" aria-hidden="true"></i></span>
+                    <span><i class="dead fa fa-3x fa-arrow-circle-up" aria-hidden="true"></i></span>
+                    <span><i class="dead fa fa-3x fa-arrow-circle-down" aria-hidden="true"></i></span>
                     <% } else if (idx == 0) { %>
                     <span><i class="dead fa fa-3x fa-arrow-circle-up" aria-hidden="true"></i></span>
-                    <a href="/party/move?dir=d&id=<%=stop.id%>">
-                        <i class="downArrow fa fa-3x fa-arrow-circle-down" aria-hidden="true"></i>
-                    </a>
+                    <a href="/party/move?dir=d&id=<%=stop.id%>"><i class="downArrow fa fa-3x fa-arrow-circle-down" aria-hidden="true"></i></a>
                     <% } else if (idx < stops.length -1) { %>
-                    <a href="/party/move?dir=u&id=<%=stop.id%>">
-                        <i class="fa fa-3x fa-arrow-circle-up" aria-hidden="true"></i>
-                    </a>
-                    <a href="/party/move?dir=d&id=<%=stop.id%>">
-                        <i class="downArrow fa fa-3x fa-arrow-circle-down" aria-hidden="true"></i>
-                    </a>
+                    <a href="/party/move?dir=u&id=<%=stop.id%>"><i class="fa fa-3x fa-arrow-circle-up" aria-hidden="true"></i></a>
+                    <a href="/party/move?dir=d&id=<%=stop.id%>"><i class="downArrow fa fa-3x fa-arrow-circle-down" aria-hidden="true"></i></a>
                     <% } else { %>
-                    <a href="/party/move?dir=u&id=<%=stop.id%>">
-                        <i class="fa fa-3x fa-arrow-circle-up" aria-hidden="true"></i>
-                    </a>
+                    <a href="/party/move?dir=u&id=<%=stop.id%>"><i class="fa fa-3x fa-arrow-circle-up" aria-hidden="true"></i></a>
                     <span><i class="dead fa fa-3x fa-arrow-circle-down" aria-hidden="true"></i></span>
                     <% } %>
                 <% } %>
@@ -44,6 +36,7 @@
             Time: <%= stop.time %>
             </td>
             <td>
+            <!-- adds delete if user owns page -->
                 <% if (user) { %>
                     <% if (user.id === pageId) { %>
                         <form action='/party/<%= pageId %>?_method=DELETE' method='POST'>
@@ -51,8 +44,7 @@
                             <button class="btn btn-danger btn-sm">remove</button>
                         </form>
                     <% } %>
-                <% } %>
-                            
+                <% } %>        
                 <button class="btn btn-info btn-sm"><a style="color: white;" href="<%= stop.yelpUrl %>" target="blank" class="yelp"><i class="fa fa-yelp" aria-hidden="true"></i>To Yelp</a><br></button>
             </td>  
         </tr>
@@ -68,11 +60,10 @@
         </form>
     <% } %><br><br>
 
-
     <!-- comments go here -->
     <div style="text-align: center; width:80%" class="container">
     <form action="/party/comment" method="POST">
-        <input type="text" name="text" class="form-control" placeholder="add comment...">
+        <input type="text" name="text" class="form-control" placeholder="add comment..." style="margin-bottom: 5px">
         <input type="hidden" name="name" class="form-control" placeholder="">
         <button type="submit" class="btn btn-info"><i class="fa fa-plus" aria-hidden="true"></i>Add Comment</button>
     </form><br>
