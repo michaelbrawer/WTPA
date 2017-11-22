@@ -9,10 +9,20 @@
 <table>
     
 <% if (stops) {%>
-    <% stops.forEach(function(stop) { %>
+    <% stops.forEach(function(stop, idx) { %>
         <tr class="itin">
-            <!--will hold future time data -->
-            <td style="border: 1px solid black; padding: 0 5px 0 5px">Time</td>
+            <!--will up down arrows -->
+            <td style="border: 1px solid black; padding: 0 5px 0 5px">
+                    
+                <% if (idx == 0) { %>
+                <a href="/stops/:id/move?dir=u">UP</a>
+                <% } else if (idx < stops.length -1) { %>
+                <a href="/stops/:id/move?dir=u">UP</a>
+                <a href="/stops/:id/move?dir=d">DOWN</a>
+                <% } else { %>
+                <a href="/stops/:id/move?dir=d">DOWN</a>
+                <% } %>
+            </td>
             <!-- holds stop data -->
             <td style="border: 1px solid black">
             Name: <%= stop.name %><br>
