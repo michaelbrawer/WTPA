@@ -47,11 +47,13 @@
                             <input type='hidden' value='<%=stop.id%>' name="stop_id">
                             <button class="btn btn-danger btn-sm">remove</button>
                         </form>
-                        <form action="?_edit=<%= stop.id %>" method="GET">
+
+                        <!-- <form action="?_edit=<%= stop.id %>" method="GET">
                             <input type='hidden' value='<%=stop.id%>' name="edit">
                                 <button class="btn btn-warning btn-sm">edit</button>
                             </div>
-                        </form>
+                        </form> -->
+                        
                         <% if (edit == stop.id) { %>
                             <form>
                                 <input type="text" value="<%stop.time%>" name="time">
@@ -67,14 +69,6 @@
     <% }); %>
     <% } %>
 </table>
-
-
-<!-- remove all stops button goes here -->
-<div class="btnholder">
-    
-    <!-- <a href="/party/<%= pageId %>" onclick="deleteAll()">delete</a> -->
-    
-</div>
 
 <!-- comments go here -->
 <div class="btnholder">
