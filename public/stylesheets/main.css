@@ -112,7 +112,6 @@ img {
 .btn-xs.btn-danger {
   background-color: rgba(223, 179, 51, .75);
   border-color: rgba(223, 179, 51, .75);
-  border-radius: 5px;
 }
 
 .card {
@@ -180,7 +179,7 @@ color: rgba(223, 179, 51, .75)
 
 #headLogo{
   margin-bottom: 10px;
-  margin-top: 60px;
+  margin-top: 90px;
 }
 
 #copyright, #burger {
