@@ -43,6 +43,11 @@ a.back {
   font-size: 18px;
 }
 
+td {
+  border: 1px solid black; 
+  padding: 0 5px 0 5px";
+}
+
 
 input.form-control {
   /* background-color: darkgrey;
