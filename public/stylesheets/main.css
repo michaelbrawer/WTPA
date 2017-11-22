@@ -4,7 +4,8 @@ html {
 
 body {
   font-family: 'Dosis', sans-serif;
-  margin-bottom: 100px;;
+  margin-bottom: 100px;
+  ;
 }
 
 table {
@@ -15,11 +16,24 @@ table {
 a {
   color: #00B7FF;
   text-decoration: none !important;
-  font-weight: 200;
+  /* font-weight: 200; */
 }
 
-span b {
-  font-size: 15px;
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a.nav-link {
+  font-size: 20px;
+}
+
+footer {
+  color: white;
+  padding: 0;
+  margin-bottom: 0;
+  position: sticky;
+  border-top: 1px solid rgba(240, 84, 80, .8);
 }
 
 a.back {
@@ -27,6 +41,24 @@ a.back {
   background-color: rgba(223, 179, 51, .75);
   border-radius: 2px;
   font-size: 18px;
+}
+
+
+input.form-control {
+  /* background-color: darkgrey;
+  color: rgb(240, 84, 80); */
+  border: 1px solid #00B7FF;
+  text-align: center;
+  font-family: 'Dosis', sans-serif;
+}
+
+.background-photo {
+  background: url(/images/benni-talent-238911.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+.forms {
+  overflow: hidden;
 }
 
 .btn-primary {
@@ -37,17 +69,12 @@ a.back {
 
 .btn-warning {
   background-color: rgba(223, 179, 51, 0.8);
-  border: rgba(223, 179, 51, .8);
-}
-
-.background-photo {
-  background: url(/images/benni-talent-238911.jpg) no-repeat center center fixed; 
-  background-size: cover;
+  /* border: rgba(223, 179, 51, .8); */
 }
 
 .btn-success {
-  background-color: rgba(240, 84, 80, .5); 
-  border-color: rgba(240, 84, 80, .5); 
+  background-color: rgba(240, 84, 80, .5);
+  border-color: rgba(240, 84, 80, .5);
 }
 
 .btn-success:hover {
@@ -55,87 +82,36 @@ a.back {
   border: rgba(223, 179, 51, .8);
 }
 
+.btn-xs.btn-danger {
+  background-color: rgba(223, 179, 51, .75);
+  border-color: rgba(223, 179, 51, .75);
+}
+
 .results {
-  color: white; 
-  border: 1px solid; 
+  color: white;
+  border: 1px solid;
   border-color: rgba(240, 84, 80, .3);
 }
-
-.container {
-  text-align: center;
-}
-
-.form-control{
-  text-align: center;
-}
-
-.forms {
-  overflow: hidden;
-}
-
-span b {
-  font-size: 15px;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  }
-
-  footer {
-    color: white;
-    padding: 0;
-    margin-bottom: 0;
-    position: sticky;
-    border-top: 1px solid rgba(240, 84, 80, .8);
-  }
 
 .itin {
   border: 1px solid;
   border-color: rgba(240, 84, 80, .2);
   background: rgba(255,255,255,.75);
-  color: black;
-  border-radius: 5px;
-}
-
-.showtop {
-  /* text-align: center; */
-  color: black;
-  color: white;
-}
-
-
-.yelp {
-  color: rgb(240, 84, 80);
-  -webkit-text-stroke: 1px;
-}
-
-.btn-xs.btn-danger {
-  background-color: rgba(223, 179, 51, .75);
-  border-color: rgba(223, 179, 51, .75);
   border-radius: 5px;
 }
 
 .card {
   color: black;
   margin: 10px auto;
-  background-color:rgba(250,250,250,0.8);
+  background-color: rgba(250, 250, 250, 0.8);
   width: 19rem;
 }
 
-.container.devborder {
-  border-radius: 25px;
+.card-holder {
+  padding: 10px !important;
 }
 
- .devborder {
-   border-color: rgba(240, 84, 80, .8);
- }
-
- .card-holder {
-   padding: 10px !important;
- }
-
- .card-block {
+.card-block {
   background-color: rgba(250, 250, 250, .2) !important;
 }
 
@@ -144,7 +120,7 @@ img {
 }
 
 .nav-link {
-color: rgba(223, 179, 51, .75)
+  color: rgba(223, 179, 51, .75);
 }
 
 .footer {
@@ -156,14 +132,18 @@ color: rgba(223, 179, 51, .75)
   text-align: center;
 }
 
-.backdiv, .btnholder {
+.backdiv, .btnholder, .container, .form-control {
   text-align: center;
 }
 
 .custom-toggler.navbar-toggler {
-  border-color: rgba(240, 84, 80, .8);
+  margin-top: 5px;
+  border-color: #00B7FF;
 }
 
+.star {
+  margin-bottom: 15px;
+}
 
 .dead {
   color: grey;
@@ -173,17 +153,23 @@ color: rgba(223, 179, 51, .75)
   color: rgba(240, 84, 80, .8);
 }
 
-#navHeader{
-  background-color: rgba(0, 0, 0, .7);
+#burger,#NavbarNavDropdown, .btn:focus, .btn:active:focus, .btn.active:focus {
+  outline: 0 none;
+  box-shadow: none;
+}
+
+#navHeader {
+  background-color: rgba(0, 0, 0, .8);
   color: rgb(240, 84, 80);
   border-bottom: 1px solid rgba(240, 84, 80, .8);
 }
 
-#headLogo{
+#headLogo {
   margin-bottom: 10px;
-  margin-top: 60px;
+  margin-top: 90px;
 }
 
-#copyright, #burger {
+#copyright,
+#burger {
   color: rgba(240, 84, 80, .8);
 }

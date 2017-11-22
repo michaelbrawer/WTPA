@@ -6,7 +6,7 @@
 
 <!-- container to hold all itinerary stops -->
 <div class="container">
-<table class="col-sm-12">
+<table class="col-xs-12 col-sm-11 col-md-10">
     
 <% if (stops) {%>
     <% stops.forEach(function(stop, idx) { %>
@@ -15,12 +15,22 @@
             <td style="border: 1px solid black; padding: 0 5px 0 5px">
                  <% if (user) { %>   
                     <% if (idx == 0) { %>
-                    <a href="/party/move?dir=d&id=<%=stop.id%>">DOWN</a>
+                    <a href="/party/move?dir=d&id=<%=stop.id%>">
+                        <i class="downArrow fa fa-3x fa-arrow-circle-down" aria-hidden="true"></i>
+                    </a>
+                    <span><i class="dead fa fa-3x fa-arrow-circle-up" aria-hidden="true"></i></span>
                     <% } else if (idx < stops.length -1) { %>
-                    <a href="/party/move?dir=u&id=<%=stop.id%>">UP</a>
-                    <a href="/party/move?dir=d&id=<%=stop.id%>">DOWN</a>
+                    <a href="/party/move?dir=u&id=<%=stop.id%>">
+                        <i class="fa fa-3x fa-arrow-circle-up" aria-hidden="true"></i>
+                    </a>
+                    <a href="/party/move?dir=d&id=<%=stop.id%>">
+                        <i class="downArrow fa fa-3x fa-arrow-circle-down" aria-hidden="true"></i>
+                    </a>
                     <% } else { %>
-                    <a href="/party/move?dir=u&id=<%=stop.id%>">UP</a>
+                    <a href="/party/move?dir=u&id=<%=stop.id%>">
+                        <i class="fa fa-3x fa-arrow-circle-up" aria-hidden="true"></i>
+                    </a>
+                    <span><i class="dead fa fa-3x fa-arrow-circle-down" aria-hidden="true"></i></span>
                     <% } %>
                 <% } %>
             </td>
@@ -37,11 +47,12 @@
                             <input type='hidden' value='<%=stop.id%>' name="stop_id">
                             <button class="btn btn-danger btn-sm">remove</button>
                         </form>
-                        <form action="?_edit=<%= stop.id %>" method="GET">
+
+                        <!-- <form action="?_edit=<%= stop.id %>" method="GET">
                             <input type='hidden' value='<%=stop.id%>' name="edit">
                                 <button class="btn btn-warning btn-sm">edit</button>
-                            
-                        </form>
+                        </form> -->
+                        
                         <% if (edit == stop.id) { %>
                             <form>
                                 <input type="text" value="<%stop.time%>" name="time">
@@ -51,7 +62,7 @@
                     <% } %>
                 <% } %>
                             
-                <button class="btn btn-info btn-sm"><a style="color: white;" href="<%= stop.url %>" target="blank" class="yelp">To Yelp</a><br></button>
+                <button class="btn btn-info btn-sm"><a style="color: white;" href="<%= stop.url %>" target="blank" class="yelp"><i class="fa fa-yelp" aria-hidden="true"></i>To Yelp</a><br></button>
             </td>  
         </tr>
     <% }); %>

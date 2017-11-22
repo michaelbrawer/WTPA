@@ -1,9 +1,9 @@
 <%- include('./_partials/header') %>
 
 
-<div class ="container forms"><br><br>
+<div class ="container forms"><br>
     <div class="row">
-        <div class="col-12 text-center">
+        <div class="col-sm-11 text-center">
             <form class="form-inline justify-content-center" action="/" method="POST">
                 <div class="form-group">
                     <input size="50" type="text" name="term" class="form-control" placeholder="What would you like to eat?" <% if (searchRequest.term) { %> value="<%=searchRequest.term%>" <% }%> >
@@ -11,60 +11,58 @@
                     <input size="50" type="text" name="location" class="form-control" placeholder="Where?" <% if (searchRequest.location) { %> value="<%=searchRequest.location%>" <% } %> >
                     <span class="btn-group-vertical"></span>
                 </div>
-  
-                    <div class="btn-group" style="margin-bottom: 50px;">
-                    <button class="btn btn-success" style="margin: 5px;" type="submit">Go!</button>
-                    <button class="btn btn-danger" style="height: 50%; margin-top: 5px;" formaction="/?random=true" type="submit">I'm Feeling Adventurous</button>
+                    <div class="btn-group" style="margin-bottom: 4px">
+                            <button class="btn btn-info" style="margin-top: 5px;" type="submit">Search!</button>
+                            <button class="btn btn-danger" style="margin-top: 5px;" formaction="/?random=true" type="submit">I'm Feeling Adventurous</button>
                 </div>
             </form>
- 
-            
         </div>
     </div>
 </div>
 
 
 
-<div class="container devborder">
+<div class="container">
         <% if (restaurantInfo[0]) {%>
-        <div class="row devborder">
+        <div class="row">
         <% restaurantInfo.forEach(function(elem) { %>
-        <div class="col-sm-12 col-md-6 col-lg-4 card-holder">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 card-holder">
         
-    <div class="card devborder">
+    <div class="card">
             <img class="card-img-top" src="<%=elem.image_url%>" alt="Card image cap" style="max-height: 318px;">
             <div class="card-block">
               <h4 class="card-title"><%= elem.name %></h4>
               <p class="card-text"><%= elem.location.address1 %></p>
               <% if (elem.rating > 4.5) { %>
-                  <img src="https://i.imgur.com/Txb8gc7.png" alt="">
+                  <img class="star" src="https://i.imgur.com/Txb8gc7.png" alt="">
               <% } else if (elem.rating > 4) { %>
-                  <img src="https://i.imgur.com/gqda4ac.png" alt="">
+                  <img class="star" src="https://i.imgur.com/gqda4ac.png" alt="">
               <% } else if (elem.rating > 3.5) { %>
-                  <img src="https://i.imgur.com/6SAS36b.png" alt="">
+                  <img class="star" src="https://i.imgur.com/6SAS36b.png" alt="">
               <% } else if (elem.rating > 3) { %>
-                  <img src="https://i.imgur.com/6vTujHW.png" alt="">
+                  <img class="star" src="https://i.imgur.com/6vTujHW.png" alt="">
               <% } else if (elem.rating > 2.5) { %>
-                  <img src="https://i.imgur.com/fGWvIdW.png" alt="">
+                  <img class="star" src="https://i.imgur.com/fGWvIdW.png" alt="">
               <% } else if (elem.rating > 2) { %>
-                  <img src="https://i.imgur.com/foXPxGQ.png" alt="">
+                  <img class="star" src="https://i.imgur.com/foXPxGQ.png" alt="">
               <% } else if (elem.rating > 1.5) { %>
-                  <img src="https://i.imgur.com/efkDsmw.png" alt="">
+                  <img class="star" src="https://i.imgur.com/efkDsmw.png" alt="">
               <% } else if (elem.rating > 1) { %>
-                  <img src="https://i.imgur.com/7CYmk0E.png" alt="">
+                  <img class="star" src="https://i.imgur.com/7CYmk0E.png" alt="">
               <% } else if (elem.rating > 0) { %>
-                  <img src="https://i.imgur.com/URy6dxD.png" alt="">
+                  <img class="star" src="https://i.imgur.com/URy6dxD.png" alt="">
               <% } else { %>
-                  <img src="https://i.imgur.com/2bEGMs1.png" alt="">
-              <% } %><br>
+                  <img class="star" src="https://i.imgur.com/2bEGMs1.png" alt="">
+              <% } %>
+              <br>
               <div class="btn-group">
-              <a href="<%= elem.url %> "  target="_blank" class="btn btn-primary" style="margin: 5px; border-radius: 2px;">To Yelp</a><br><br>
+                    <a href="<%= elem.url %> "  target="_blank"><button class='btn btn-danger'><i class="fa fa-yelp" aria-hidden="true"></i>Yelp</button></a>
              <% if (user) {%>
                 <form class="form-inline" action="/party/<%=user.id%>" method="POST">
                     <input type="hidden" value="<%=elem.name%>" name="name">
                     <input type="hidden" value="<%=elem.location.address1%>" name="location">
                     <input type="hidden" value="<%=elem.url%>" name="url">
-                    <button type="submit" class='btn btn-warning'>add</button>
+                    <button type="submit" class='btn btn-warning'><i class="fa fa-plus" aria-hidden="true"></i>Add</button>
                 </form>
                 <% } %>
             </div>
