@@ -19,7 +19,7 @@ function index(req, res){
   edit = req.query.edit ? req.query.edit : null;
   user = req.user ? req.user : null;
   User.findById(req.params.id).populate('stops').exec(function(err, userPage) {
-      res.render('party/show', {user: user, edit: edit, stops: userPage.stops, pageId: req.params.id, goBack: false});
+      res.render('party/show', {user: user, userPage, stops: userPage.stops, pageId: req.params.id, goBack: false});
   });
 }
 
@@ -29,6 +29,7 @@ function newUser(req, res){
 
 function addStop(req, res, itin){
   user = req.user;
+  userPage = user;
   edit = req.query.edit ? req.query.edit : null;  
   var newStop = new Stop({
     name: req.body.name,
@@ -40,7 +41,7 @@ function addStop(req, res, itin){
     req.user.stops.push(newStop);
     req.user.save(function(err) {
       req.user.populate('stops', function(err) {
-        res.render('party/show', {user, edit, stops: req.user.stops, pageId: req.params.id, goBack: false});
+        res.render('party/show', {user, userPage, stops: req.user.stops, pageId: req.params.id, goBack: false});
       });
     });
   });

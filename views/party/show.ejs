@@ -47,18 +47,6 @@
                             <input type='hidden' value='<%=stop.id%>' name="stop_id">
                             <button class="btn btn-danger btn-sm">remove</button>
                         </form>
-
-                        <!-- <form action="?_edit=<%= stop.id %>" method="GET">
-                            <input type='hidden' value='<%=stop.id%>' name="edit">
-                                <button class="btn btn-warning btn-sm">edit</button>
-                        </form> -->
-                        
-                        <% if (edit == stop.id) { %>
-                            <form>
-                                <input type="text" value="<%stop.time%>" name="time">
-                                <button>edit</button>
-                            </form>
-                        <% } %>
                     <% } %>
                 <% } %>
                             
@@ -86,7 +74,7 @@
     <h4 style="color: red;">Comments:</h4>
 
     <table>
-        <% user.comments.forEach(comment => { %>
+        <% userPage.comments.forEach(comment => { %>
             <tr class="itin">
                 <td>Name Goes Here</td>
                 <td><%= comment.text %></td>
