@@ -131,7 +131,7 @@ input.form-control {
 }
 
 .custom-toggler.navbar-toggler {
-  border-color: rgba(240, 84, 80, .8);
+  border-color: #00B7FF;
 }
 
 .star {
@@ -144,6 +144,11 @@ input.form-control {
 
 .downArrow {
   color: rgba(240, 84, 80, .8);
+}
+
+#burger,#NavbarNavDropdown, .btn:focus, .btn:active:focus, .btn.active:focus {
+  outline: 0 none;
+  box-shadow: none;
 }
 
 #navHeader {
