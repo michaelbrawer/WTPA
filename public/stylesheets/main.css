@@ -114,6 +114,7 @@ input.form-control {
   /* border: 1px solid; */
   border-color: rgba(240, 84, 80, .2);
   background: rgba(255,255,255,.75);
+  border-radius: 5px;
 }
 
 .card {
