@@ -6,7 +6,7 @@ function createComment (req, res) {
     console.log('WHY!!!')
     console.log(req.user)
     User.findById(req.params.id, function(err) {
-        user.comments.push({text:req.body.text});
+        user.comments.push({text:req.body.text, name: req.body.name});
         user.save(function(err) {
             res.redirect(`/party/${req.user.id}`, )
         })
