@@ -4,17 +4,21 @@ var passport = require('passport');
 var stopsCtrl = require('../controllers/stopsCtrl');
 var usersCtrl = require('../controllers/usersCtrl');
 
+function isLoggedIn(req, res, next) {
+    if (req.isAuthenticated()) return next();
+    res.redirect('/auth/google');
+} 
 
 /* GET users listing. */
-router.get('/new', stopsCtrl.new);
-router.get('/move', stopsCtrl.move);
+router.get('/new', isLoggedIn, stopsCtrl.new);
+router.get('/move', isLoggedIn, stopsCtrl.move);
 router.get('/:id/', stopsCtrl.index);
-router.post('/comment/:id', usersCtrl.createComment);
-router.delete('/out/:id', usersCtrl.removeComment);
-router.post('/:id', stopsCtrl.add);
-router.post('/', stopsCtrl.create);
-router.delete('/all', stopsCtrl.deleteAll);
-router.delete('/:id', stopsCtrl.remove);
+router.post('/comment/:id', isLoggedIn, usersCtrl.createComment);
+router.delete('/out/:id', isLoggedIn, usersCtrl.removeComment);
+router.post('/:id', isLoggedIn, stopsCtrl.add);
+router.post('/', isLoggedIn, stopsCtrl.create);
+router.delete('/all', isLoggedIn, stopsCtrl.deleteAll);
+router.delete('/:id', isLoggedIn, stopsCtrl.remove);
 
 
 
