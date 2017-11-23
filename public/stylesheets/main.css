@@ -16,7 +16,6 @@ table {
 a {
   color: #5bc0de;
   text-decoration: none !important;
-  /* font-weight: 200; */
 }
 
 h4 {
@@ -66,8 +65,6 @@ td {
 
 
 input.form-control {
-  /* background-color: darkgrey;
-  color: rgb(240, 84, 80); */
   border: 1px solid #5bc0de;
   text-align: center;
   font-family: 'Dosis', sans-serif;
@@ -129,7 +126,6 @@ input.form-control {
 }
 
 .itin {
-  /* border: 1px solid; */
   border-color: rgba(240, 84, 80, .2);
   background: rgba(255,255,255,.75);
   border-radius: 5px;
