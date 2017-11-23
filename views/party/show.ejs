@@ -50,7 +50,7 @@
             </td>
             <!-- holds stop data -->
             <td>
-            Name: <%= stop.name %><br>
+            <span class="table"><%= stop.name %></span><br>
             Location: <%= stop.location %><br>
             </td>
             <td>
@@ -59,11 +59,11 @@
                     <% if (user.id === pageId) { %>
                         <form action='/party/<%= pageId %>?_method=DELETE' method='POST'>
                             <input type='hidden' value='<%=stop.id%>' name="stop_id">
-                            <button class="btn btn-danger btn-sm">remove</button>
+                            <button class="table btn btn-danger btn-sm">remove</button>
                         </form>
                     <% } %>
                 <% } %>        
-                <button class="btn btn-info btn-sm"><a style="color: white;" href="<%= stop.yelpUrl %>" target="blank" class="yelp"><i class="fa fa-yelp" aria-hidden="true"></i>To Yelp</a><br></button>
+                <button class="table btn btn-info btn-sm"><a style="color: white;" href="<%= stop.yelpUrl %>" target="blank" class="yelp"><i class="fa fa-yelp" aria-hidden="true"></i>To Yelp</a><br></button>
             </td>  
         </tr>
     <% }); %>
@@ -72,27 +72,29 @@
 </div>
 
     <!-- comments go here -->
-    <div class="commentBlock col-md-3" style="margin: 0 auto;">
+    <div class="commentBlock col-md-4" style="padding: 0; margin: 0 auto;">
             <div class='commentTable container'>
-                    <div class="itin col-12" style="min-width: 130px">
-                <h4>Comments</h4>
+                    <div class="itin col-12" style="margin-top: 10px; min-width: 130px">
+                <h4>Comments:</h4>
             </div>
    
     <table id="comments" class="col-12">
         <% userPage.comments.forEach(comment => { %>
             <tr class="itin">
-                <td><%= comment.name %></td>
-                <td><%= comment.text %></td>
-                <td style="min-width: 50px">
-                <% if (user) { %>
-                    <% if (user.id === pageId || user.name == comment.name) { %>
-                    <form action='/party/out/<%=pageId%>?_method=DELETE' method='POST'>
-                        <input type='hidden' value='<%=comment.id%>' name="comment_id">
-                        <button class="btn btn-danger btn-sm">remove</button>
-                    </form>
-                    <% } %>
-                <% } %>
+                 <td>
+                    <span style="font-size: 20px;"><%= comment.name %></span><br>
+                    <span>• <%= comment.text %></span>
                 </td>
+                <td>
+                        <% if (user) { %>
+                            <% if (user.id === pageId || user.name == comment.name) { %>
+                            <form action='/party/out/<%=pageId%>?_method=DELETE' method='POST'>
+                                <input type='hidden' value='<%=comment.id%>' name="comment_id">
+                                <button style="float: right;" class="btn btn-danger btn-sm">X</button>
+                            </form>
+                            <% } %>
+                        <% } %>
+                        </td>
             </tr>
         <% }) %>
     </table>
