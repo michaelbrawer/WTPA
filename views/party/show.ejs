@@ -77,8 +77,9 @@
    
     <table id="comments" class="col-12">
         <% userPage.comments.forEach(comment => { %>
-            <tr class="itin">
+            <tr class="commentBox itin">
                  <td>
+                     <div style="float:right;">
                         <% if (user) { %>
                             <% if (user.id === pageId || user.name == comment.name) { %>
                             <form action='/party/out/<%=pageId%>?_method=DELETE' method='POST'>
@@ -88,8 +89,11 @@
                             <% } %>
                         <% } %>
                         <br>
+                    </div>
+                    <div style="float:left; padding-left: 20px;">
                     <span style="font-size: 20px;"><%= comment.name %></span><br>
                     <span>• <%= comment.text %></span>
+                    </div>
                 </td>
             </tr>
         <% }) %>

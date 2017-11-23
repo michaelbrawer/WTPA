@@ -114,6 +114,10 @@ input.form-control {
   text-align: center;
 }
 
+.commentBox {
+  text-align: left !important;
+}
+
 .results {
   color: white;
   border: 1px solid;
