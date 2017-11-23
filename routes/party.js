@@ -10,13 +10,11 @@ function isLoggedIn(req, res, next) {
 } 
 
 /* GET users listing. */
-router.get('/new', isLoggedIn, stopsCtrl.new);
 router.get('/move', isLoggedIn, stopsCtrl.move);
 router.get('/:id/', stopsCtrl.index);
 router.post('/comment/:id', isLoggedIn, usersCtrl.createComment);
 router.delete('/out/:id', isLoggedIn, usersCtrl.removeComment);
 router.post('/:id', isLoggedIn, stopsCtrl.add);
-router.post('/', isLoggedIn, stopsCtrl.create);
 router.delete('/all', isLoggedIn, stopsCtrl.deleteAll);
 router.delete('/:id', isLoggedIn, stopsCtrl.remove);
 

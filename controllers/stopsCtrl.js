@@ -2,24 +2,18 @@ var User = require('../models/User');
 var Stop = require('../models/Stop');
 
 module.exports = {
-  index: index,
-  new: newUser,
+  index,
   add: addStop,
-  create,
-  update,
   remove: removeStop,
   deleteAll: removeAllStops,
-  edit,
-  move
-  // deleteAll
+  move,
 };
 
 function index(req, res) {
-  edit = req.query.edit ? req.query.edit : null;
   user = req.user ? req.user : null;
   User.findById(req.params.id).populate('stops').exec(function(err, userPage) {
     res.render('party/show', {
-      user: user,
+      user,
       userPage,
       stops: userPage.stops,
       pageId: req.params.id,
@@ -28,16 +22,9 @@ function index(req, res) {
   });
 }
 
-function newUser(req, res) {
-  res.render('party/new', {
-    user: req.user
-  });
-}
-
 function addStop(req, res, itin) {
   user = req.user;
   userPage = user;
-  edit = req.query.edit ? req.query.edit : null;
   var newStop = new Stop({
     name: req.body.name,
     location: req.body.location,
@@ -51,7 +38,7 @@ function addStop(req, res, itin) {
         res.render('party/show', {
           user,
           userPage,
-          stops: req.user.stops,
+          stops: user.stops,
           pageId: req.params.id,
           goBack: false
         });
@@ -77,6 +64,8 @@ function removeAllStops(req, res) {
   });
 }
 
+// moves stop order in user.stops array
+
 function move(req, res) {
   var idx = req.user.stops.indexOf(req.query.id);
   var temp = req.user.stops.splice(idx, 1)[0];
@@ -88,17 +77,4 @@ function move(req, res) {
   req.user.save(function(err) {
     res.redirect(`/party/${req.user._id}`);
   });
-}
-
-
-function create(req, res) {
-
-}
-
-function edit(req, res, next) {
-
-}
-
-function update(req, res, next) {
-
 }

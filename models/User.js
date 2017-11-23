@@ -13,7 +13,6 @@ var userSchema = new Schema({
     name: String,
     email: String,
     password: String,
-    photo: String,
     googleId: String,
     stops: [{type: mongoose.Schema.Types.ObjectId, ref: "Stop"}],
     comments: [commentSchema]
