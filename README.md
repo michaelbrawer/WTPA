@@ -1,6 +1,6 @@
 # Where's The Party App? 
 ### *A Mongoose/Express/Node App For Organizing a Night Out.*
-#### (ScreenShot Goes Here)
+#### ![Screenshot](https://i.imgur.com/rXXLt1v.png)
 ### Team Blue Jays
 ---
 ### Core Technologies Used:
