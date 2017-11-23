@@ -3,7 +3,9 @@ var router = express.Router();
 var passport = require('passport');
 var usersCtrl = require('../controllers/api/users');
 
-router.get('/users', usersCtrl.getAllUsers);
+router.get('/stops', usersCtrl.getStops);
+router.get('/users/:id', usersCtrl.getOneUser);
+router.get('/stops/:id', usersCtrl.oneStop)
 
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) return next();
