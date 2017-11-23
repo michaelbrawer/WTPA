@@ -7,7 +7,7 @@ function getOneUser (req, res) {
     })
 }
 
-function getStops(req, res) {
+function getAllStops(req, res) {
     Stop.find({}, function(err, stops) {
         res.status(200).json(stops);
     });
@@ -19,8 +19,15 @@ function oneStop(req, res) {
     });
 }
 
+function getUserStops (req, res) {
+    User.findById(req.params.id).populate('stops').exec(function(err, stops) {    
+        res.status(200).json(stops)}
+)}
+    
+
 module.exports = {
     getOneUser,
-    getStops,
-    oneStop
+    getAllStops,
+    oneStop,
+    getUserStops
 };
