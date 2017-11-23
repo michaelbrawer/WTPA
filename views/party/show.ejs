@@ -8,7 +8,7 @@
         <% if (user.id === pageId) { %>
 <tr class="itin">
     <td><a class="btn btn-warning" href='/'>Add More</a> </td>
-    <td class="tableHead">Where The Party's App:</td>
+    <td class="tableHead">Where The Party's <br> App:</td>
     <td>
         <% if (stops && stops.length) { %>
         <form action="/party/all?_method=DELETE" method="POST">
@@ -69,7 +69,7 @@
 </div>
 
     <!-- comments go here -->
-    <div class="commentBlock col-md-4" style="padding: 0; margin: 0 auto;">
+    <div class="commentBlock col-md-3" style="padding: 0; float: left;">
             <div class='commentTable container'>
                     <div class="itin col-12" style="margin-top: 10px; min-width: 130px">
                 <h4>Comments:</h4>
