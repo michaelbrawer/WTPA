@@ -202,7 +202,6 @@ input.form-control {
 
 #navHeader {
   background-color: rgba(0, 0, 0, .8);
-  color: rgb(240, 84, 80);
   border-bottom: 1px solid rgba(240, 84, 80, .8);
 }
 
@@ -212,6 +211,12 @@ input.form-control {
 }
 
 #copyright,
-#burger {
+#burger, #loginMessage, #itinLink, #navHeader {
   color: rgba(240, 84, 80, .8);
 }
+
+#welcomeMessage, #logoutMessage, #googleIcon {
+  color: #5bc0de;
+}
+
+
