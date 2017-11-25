@@ -220,4 +220,7 @@ input.form-control {
   color: #5bc0de;
 }
 
+.commentDeleteBtn {
+  float: right !important;
+}
 
