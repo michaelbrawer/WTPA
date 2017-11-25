@@ -5,12 +5,21 @@ html {
 body {
   font-family: 'Dosis', sans-serif;
   margin-bottom: 100px;
-  ;
 }
 
 table {
   margin: 0 auto;
   margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+tr {
+  border-radius: 5px;
+}
+
+td {
+  border: 1px solid black; 
+  padding: 10px;
 }
 
 a {
@@ -30,16 +39,16 @@ img {
   height: auto;
 }
 
-a.nav-link {
-  font-size: 20px;
-}
-
 footer {
   color: white;
   padding: 0;
   margin-bottom: 0;
   position: sticky;
   border-top: 1px solid rgba(240, 84, 80, .8);
+}
+
+a.nav-link {
+  font-size: 20px;
 }
 
 button.table{
@@ -57,12 +66,6 @@ a.back {
   border-radius: 2px;
   font-size: 18px;
 }
-
-td {
-  border: 1px solid black; 
-  padding: 10px;
-}
-
 
 input.form-control {
   border: 1px solid #5bc0de;
@@ -180,11 +183,9 @@ input.form-control {
   color: grey;
 }
 
-
 .downArrow, .fa-arrow-circle-up {
   color: rgb(91, 192, 222);
 }
-
 
 .tableHead{
   font-size: 30px;

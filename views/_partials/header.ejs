@@ -33,15 +33,15 @@
             </li>
             <% } %>
               <% } catch(e) { %>
-                  <% } %>
+                <% } %>
+                  <li class="nav-item">
+                    <a id="logoutMessage" class='nav-link' href="/logout">Logout</a>
+                  </li>
+                  <% } else { %>
                     <li class="nav-item">
-                      <a id="logoutMessage" class='nav-link' href="/logout">Logout</a>
+                      <a id="loginMessage" class='nav-link' href="/auth/google">Login With Google  <i id="googleIcon" class="fa fa-google-plus-square" aria-hidden="true"></i></a>
                     </li>
-                    <% } else { %>
-                      <li class="nav-item">
-                        <a id="loginMessage" class='nav-link' href="/auth/google">Login With Google  <i id="googleIcon" class="fa fa-google-plus-square" aria-hidden="true"></i></a>
-                      </li>
-                      <% } %>
+                    <% } %>
     </ul>
   </div>
 </nav>
