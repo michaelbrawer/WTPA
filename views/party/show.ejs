@@ -10,7 +10,7 @@
               <td><a class="btn btn-warning" href='/'>Add More</a></td>
               <td class="tableHead">The Party's App:</td>
               <td>
-                <% if (stops && stops.length) { %>
+                <% if (stops && stops.length +1) { %>
                   <form action="/party/all?_method=DELETE" method="POST">
                     <button type="submit" class="btn btn-danger">Clear Party</button>
                   </form>
