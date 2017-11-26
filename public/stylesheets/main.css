@@ -223,9 +223,7 @@ input.form-control {
 }
 
 #headLogo {
-  margin-bottom: 10px;
-  margin-top: 90px;
-  margin-left: 10px;
+  margin: 90px 0 10px 10px;
 }
 
 #copyright,
