@@ -119,6 +119,10 @@ input.form-control {
   text-align: center;
 }
 
+.commentDeleteBtn {
+  float: right !important;
+}
+
 .commentBox {
   text-align: left !important;
 }
@@ -227,9 +231,5 @@ input.form-control {
 
 #welcomeMessage, #logoutMessage, #googleIcon {
   color: #5bc0de;
-}
-
-.commentDeleteBtn {
-  float: right !important;
 }
 
