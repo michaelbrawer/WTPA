@@ -31,7 +31,7 @@ Access Where the Party App?'s API and search for an individual user, their stops
 
 #### API Endpoints:
 
-| URI        | Method           | Required URL Params | Use  |
+| URL        | Method           | Required URL Params | Use  |
 | ------------- |:-------------:| -----:| -----: |
 | /api/users/{userId}   | Get | userId=[integer] | Retrieves a single user |
 | /api/users/{userId}/stops      | Get | userId=[integer]   |   Retrieves all strops for a single user |
