@@ -17,7 +17,8 @@ function index(req, res) {
       userPage,
       stops: userPage.stops,
       pageId: req.params.id,
-      goBack: false
+      goBack: false,
+      goHome: true
     });
   });
 }
@@ -40,7 +41,8 @@ function addStop(req, res, itin) {
           userPage,
           stops: user.stops,
           pageId: req.params.id,
-          goBack: false
+          goBack: false,
+          goHome: true
         });
       });
     });
