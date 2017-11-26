@@ -34,7 +34,9 @@ function returnSearch(req, res, next, offsetVal, limitVal, sortVal) {
       res.render('landing', {
         restaurantInfo,
         user: req.user,
-        searchRequest
+        searchRequest,
+        goBack: true,
+        goHome: false
       });
     });
   });
@@ -54,6 +56,7 @@ function landing(req, res, next) {
     restaurantInfo,
     user: req.user,
     searchRequest,
-    goBack: true
+    goBack: true,
+    goHome: false
   });
 }
