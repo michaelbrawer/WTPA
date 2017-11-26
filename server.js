@@ -16,7 +16,7 @@ require('./config/passport');
 
 var party = require('./routes/party');
 var index = require('./routes/index');
-var api = require('./routes/api')
+var api = require('./routes/api');
 
 var app = express();
 
