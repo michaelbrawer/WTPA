@@ -31,13 +31,15 @@ Access Where the Party App?'s API and search for an individual user, their stops
 
 #### API Endpoints:
 
-| URI        | HTTP Verb           | Use  |
-| ------------- |:-------------:| -----:|
-| /api/users/{userId}   | Get | Retrieves a single user |
-| /api/users/{userId}/stops      | Get    |   Retrieves all strops for a single user |
-| /api/stops | Get      |    Retrieves all stops |
-| /api/stops/{stopId} | Get      |    Retrieves an individual stop |
+| URI        | Method           | Required URL Params | Use  |
+| ------------- |:-------------:| -----:| -----: |
+| /api/users/{userId}   | Get | userId=[integer] | Retrieves a single user |
+| /api/users/{userId}/stops      | Get | userId=[integer]   |   Retrieves all strops for a single user |
+| /api/stops | Get      | None |   Retrieves all stops |
+| /api/stops/{stopId} | Get      |  stopId=[integer] |Retrieves an individual stop |
 
+Sample Call (returning a single stop):
+https://wtpa.herokuapp.com/api/stops/5a1a36898166804b3deedd35
 
 ----
 ### Next Steps / Planned Features:
