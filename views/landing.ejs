@@ -9,9 +9,9 @@
             <input size="50" required pattern="[\w\s]+" type="text" name="location" class="form-control" placeholder="Where?" <% if (searchRequest.location) { %> value="<%=searchRequest.location%>"<% } %> >
             <span class="btn-group-vertical"></span>
           </div>
-          <div class="btn-group" style="margin-bottom: 4px">
-            <button class="btn btn-info" style="margin-top: 5px;" type="submit">Search!</button>
-            <button class="btn btn-danger" style="margin-top: 5px;" formaction="/?random=true" type="submit">I'm Feeling Adventurous</button>
+          <div class="searchBtn btn-group">
+            <button class="searchBtn btn btn-info" type="submit">Search!</button>
+            <button class="searchBtn btn btn-danger" formaction="/?random=true" type="submit">I'm Feeling Adventurous</button>
           </div>
         </form>
       </div>
@@ -24,7 +24,7 @@
         <% restaurantInfo.forEach(function(elem) { %>
           <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 card-holder">
             <div class="card">
-              <img class="card-img-top" src="<%=elem.image_url%>" alt="Restaurant Image" style="max-height: 318px;">
+              <img class="card-img-top" src="<%=elem.image_url%>" alt="Restaurant Image">
               <div class="card-block">
                 <h4 class="card-title">
                   <%= elem.name %>

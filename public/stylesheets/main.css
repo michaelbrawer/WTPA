@@ -108,6 +108,11 @@ input.form-control {
   border: rgba(91, 192, 222, .8);
 }
 
+.searchBtn {
+  margin-top: 5px;
+  margin-bottom: 4px;
+}
+
 .btn-xs.btn-danger {
   background-color: rgba(91, 192, 222, .75);
   border-color: rgba(91, 192, 222, .75);
@@ -139,6 +144,10 @@ input.form-control {
   margin: 10px auto;
   background-color: rgba(250, 250, 250, 0.8);
   width: 19rem;
+}
+
+.card-img-top{
+  max-height: 318px;
 }
 
 .card-holder {
