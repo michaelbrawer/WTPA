@@ -76,7 +76,8 @@ function move(req, res) {
   } else if (req.query.dir === 'd') {
     req.user.stops.splice(idx + 1, 0, temp);
   }
-  req.user.save(function(err) {
+  function renderStop(){req.user.save(function(err) {
     res.redirect(`/party/${req.user._id}`);
-  });
+  });}
+  renderStop();
 }
