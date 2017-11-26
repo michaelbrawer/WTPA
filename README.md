@@ -34,6 +34,12 @@ Access Where the Party App?'s API and search for an individual user, their stops
 - All stops: https://wtpa.herokuapp.com/api/stops
 - Invididual stop: https://wtpa.herokuapp.com/api/stops/{stopId}
 
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+
 ----
 ### Next Steps / Planned Features:
 - Geolocation
