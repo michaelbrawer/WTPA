@@ -18,7 +18,7 @@ tr {
 }
 
 td {
-  border: 1px solid black; 
+  border: 1px solid black;
   padding: 10px;
 }
 
@@ -51,12 +51,12 @@ a.nav-link {
   font-size: 20px;
 }
 
-button.table{
+button.table {
   width: 80%;
   margin: 2px;
 }
 
-span.table{
+span.table {
   font-size: 20px;
 }
 
@@ -142,7 +142,7 @@ input.form-control {
 
 .itin {
   border-color: rgba(240, 84, 80, .2);
-  background: rgba(255,255,255,.75);
+  background: rgba(255, 255, 255, .75);
   border-radius: 5px;
 }
 
@@ -153,7 +153,7 @@ input.form-control {
   width: 19rem;
 }
 
-.card-img-top{
+.card-img-top {
   max-height: 318px;
 }
 
@@ -182,7 +182,10 @@ input.form-control {
   text-align: center;
 }
 
-.backdiv, .btnholder, .container, .form-control {
+.backdiv,
+.btnholder,
+.container,
+.form-control {
   text-align: center;
 }
 
@@ -195,15 +198,17 @@ input.form-control {
   margin-bottom: 15px;
 }
 
-.dead, .dead.fa-arrow-circle-up {
+.dead,
+.dead.fa-arrow-circle-up {
   color: grey;
 }
 
-.downArrow, .fa-arrow-circle-up {
+.downArrow,
+.fa-arrow-circle-up {
   color: rgb(91, 192, 222);
 }
 
-.tableHead{
+.tableHead {
   font-size: 30px;
   line-height: .8;
 }
@@ -212,7 +217,11 @@ input.form-control {
   padding: 0 !important;
 }
 
-#burger,#NavbarNavDropdown, .btn:focus, .btn:active:focus, .btn.active:focus {
+#burger,
+#NavbarNavDropdown,
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus {
   outline: 0 none;
   box-shadow: none;
 }
@@ -227,14 +236,19 @@ input.form-control {
 }
 
 #copyright,
-#burger, #loginMessage, #itinLink, #navHeader {
+#burger,
+#loginMessage,
+#itinLink,
+#navHeader {
   color: rgba(240, 84, 80, .8);
 }
 
-#welcomeMessage, #logoutMessage, #googleIcon {
+#welcomeMessage,
+#logoutMessage,
+#googleIcon {
   color: #5bc0de;
 }
 
-#searchGroup{
+#searchGroup {
   margin: 0 auto;
 }
