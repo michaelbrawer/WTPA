@@ -69,8 +69,11 @@ a.back {
 
 input.form-control {
   border: 1px solid #5bc0de;
+  font-size: 18px;
   text-align: center;
   font-family: 'Dosis', sans-serif;
+  margin-left: 5px;
+  margin-top: 5px;
 }
 
 .background-photo {
