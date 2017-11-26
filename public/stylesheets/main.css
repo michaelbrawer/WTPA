@@ -252,3 +252,8 @@ input.form-control {
 #searchGroup {
   margin: 0 auto;
 }
+
+#commentIn {
+  margin-bottom: 5px;
+  margin-left: 0;
+}

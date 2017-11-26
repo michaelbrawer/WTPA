@@ -103,7 +103,7 @@
         <% if (user) { %>
           <div class="" style="margin: 0 auto; text-align: center;" class="container">
             <form action="/party/comment/<%= pageId %>" method="POST">
-              <input type="text" name="text" class="form-control" placeholder="add comment..." style="margin-bottom: 5px">
+              <input id="commentIn" type="text" name="text" class="form-control" placeholder="add comment...">
               <button type="submit" class="col-12 btn btn-info"><i class="fa fa-plus" aria-hidden="true"></i>Add Comment</button>
             </form><br>
           </div>
