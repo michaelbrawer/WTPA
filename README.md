@@ -29,16 +29,15 @@ By accessing the excellent Yelp! Fusion API our app enables users to search for 
 ### WTPA's API:
 Access Where the Party App?'s API and search for an individual user, their stops, an individual stop or simply fetch all of our users' planned destinations:
 
-- Individual user: https://wtpa.herokuapp.com/api/users/{userId}
-- User's stops: https://wtpa.herokuapp.com/api/users/{userId}/stops
-- All stops: https://wtpa.herokuapp.com/api/stops
-- Invididual stop: https://wtpa.herokuapp.com/api/stops/{stopId}
+#### API Endpoints:
 
-| Tables        | Are           | Cool  |
+| URI        | HTTP Verb           | Use  |
 | ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+| /api/users/{userId}   | Get | Retrieves a single user |
+| /api/users/{userId}/stops      | Get    |   Retrieves all strops for a single user |
+| /api/stops | Get      |    Retrieves all stops |
+| /api/stops/{stopId} | Get      |    Retrieves an individual stop |
+
 
 ----
 ### Next Steps / Planned Features:
