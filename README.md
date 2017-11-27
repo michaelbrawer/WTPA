@@ -46,10 +46,11 @@ https://wtpa.herokuapp.com/api/stops/5a1a36898166804b3deedd35
 ----
 ### Next Steps / Planned Features:
 - Geolocation
-- Social media share functionality
 - calendar view / multiple itineraries
 ----
-
+#### Unsolved Problems:
+- Social media share functionality
+----
 ### App Development:
 #### [Trello Board](https://trello.com/b/ELxyn47s/blue-jays-nite-out)
 
