@@ -217,6 +217,12 @@ input.form-control {
   padding: 0 !important;
 }
 
+.shareBlock{
+  margin-top: 10px; 
+  margin-bottom: 10px;
+  font-size: 10px;
+}
+
 .shareIcon{
   margin-right: 15px;
   margin-top: 5px;
