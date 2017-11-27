@@ -18,56 +18,56 @@
               </td>
             </tr>
             <% } %>
-              <% } %>
-                <!--will up down arrows -->
-                <% if (stops) { %>
-                  <% stops.forEach(function(stop, idx) { %>
-                    <tr class="itin">
-                      <td>
-                        <% if (user) { %>
-                          <% if (user.id === pageId) { %>
-                            <% if (idx === 0 && stops.length === 1) { %>
-                              <span><i class="dead fa fa-3x fa-arrow-circle-up" aria-hidden="true"></i></span>
-                              <span><i class="dead fa fa-3x fa-arrow-circle-down" aria-hidden="true"></i></span>
-                              <% } else if (idx == 0) { %>
-                                <span><i class="dead fa fa-3x fa-arrow-circle-up" aria-hidden="true"></i></span>
-                                <a href="/party/move?dir=d&id=<%=stop.id%>"><i class="downArrow fa fa-3x fa-arrow-circle-down" aria-hidden="true"></i></a>
-                                <% } else if (idx < stops.length -1) { %>
-                                  <a href="/party/move?dir=u&id=<%=stop.id%>"><i class="fa fa-3x fa-arrow-circle-up" aria-hidden="true"></i></a>
-                                  <a href="/party/move?dir=d&id=<%=stop.id%>"><i class="downArrow fa fa-3x fa-arrow-circle-down" aria-hidden="true"></i></a>
-                                  <% } else { %>
-                                    <a href="/party/move?dir=u&id=<%=stop.id%>"><i class="fa fa-3x fa-arrow-circle-up" aria-hidden="true"></i></a>
-                                    <span><i class="dead fa fa-3x fa-arrow-circle-down" aria-hidden="true"></i></span>
-                                    <% } %>
-                                      <% } else { %>
-                                        <span><i class="dead fa fa-3x fa-arrow-circle-up" aria-hidden="true"></i></span>
-                                        <span><i class="dead fa fa-3x fa-arrow-circle-down" aria-hidden="true"></i></span>
-                                        <% } %>
-                                          <% } else { %>
-                                            <span><i class="dead fa fa-3x fa-arrow-circle-up" aria-hidden="true"></i></span>
-                                            <span><i class="dead fa fa-3x fa-arrow-circle-down" aria-hidden="true"></i></span>
-                                            <% } %>
-                      </td>
-                      <!-- holds stop data -->
-                      <td>
-                        <span class="table"><%= stop.name %></span><br>
-                        <%= stop.location %><br>
-                      </td>
-                      <td>
-                        <!-- adds delete if user owns page -->
-                        <% if (user) { %>
-                          <% if (user.id === pageId) { %>
-                            <form action='/party/<%= pageId %>?_method=DELETE' method='POST'>
-                              <input type='hidden' value='<%=stop.id%>' name="stop_id">
-                              <button class="table btn btn-danger btn-sm">remove</button>
-                            </form>
-                            <% } %>
-                              <% } %>
-                                <a style="color: white;" href="<%= stop.yelpUrl %>" target="blank" class="yelp"><button class="table btn btn-info btn-sm"><i class="fa fa-yelp" aria-hidden="true"></i>To Yelp</button></a><br>
-                      </td>
-                    </tr>
-                    <% }); %>
+          <% } %>
+          <!--will up down arrows -->
+          <% if (stops) { %>
+            <% stops.forEach(function(stop, idx) { %>
+              <tr class="itin">
+                <td>
+                  <% if (user) { %>
+                    <% if (user.id === pageId) { %>
+                      <% if (idx === 0 && stops.length === 1) { %>
+                        <span><i class="dead fa fa-3x fa-arrow-circle-up" aria-hidden="true"></i></span>
+                        <span><i class="dead fa fa-3x fa-arrow-circle-down" aria-hidden="true"></i></span>
+                      <% } else if (idx == 0) { %>
+                        <span><i class="dead fa fa-3x fa-arrow-circle-up" aria-hidden="true"></i></span>
+                        <a href="/party/move?dir=d&id=<%=stop.id%>"><i class="downArrow fa fa-3x fa-arrow-circle-down" aria-hidden="true"></i></a>
+                      <% } else if (idx < stops.length -1) { %>
+                        <a href="/party/move?dir=u&id=<%=stop.id%>"><i class="fa fa-3x fa-arrow-circle-up" aria-hidden="true"></i></a>
+                        <a href="/party/move?dir=d&id=<%=stop.id%>"><i class="downArrow fa fa-3x fa-arrow-circle-down" aria-hidden="true"></i></a>
+                      <% } else { %>
+                        <a href="/party/move?dir=u&id=<%=stop.id%>"><i class="fa fa-3x fa-arrow-circle-up" aria-hidden="true"></i></a>
+                        <span><i class="dead fa fa-3x fa-arrow-circle-down" aria-hidden="true"></i></span>
                       <% } %>
+                    <% } else { %>
+                      <span><i class="dead fa fa-3x fa-arrow-circle-up" aria-hidden="true"></i></span>
+                      <span><i class="dead fa fa-3x fa-arrow-circle-down" aria-hidden="true"></i></span>
+                    <% } %>
+                  <% } else { %>
+                    <span><i class="dead fa fa-3x fa-arrow-circle-up" aria-hidden="true"></i></span>
+                    <span><i class="dead fa fa-3x fa-arrow-circle-down" aria-hidden="true"></i></span>
+                  <% } %>
+                </td>
+                <!-- holds stop data -->
+                <td>
+                  <span class="table"><%= stop.name %></span><br>
+                  <%= stop.location %><br>
+                </td>
+                <td>
+                  <!-- adds delete if user owns page -->
+                  <% if (user) { %>
+                    <% if (user.id === pageId) { %>
+                      <form action='/party/<%= pageId %>?_method=DELETE' method='POST'>
+                        <input type='hidden' value='<%=stop.id%>' name="stop_id">
+                        <button class="table btn btn-danger btn-sm">remove</button>
+                      </form>
+                    <% } %>
+                  <% } %>
+                  <a style="color: white;" href="<%= stop.yelpUrl %>" target="blank" class="yelp"><button class="table btn btn-info btn-sm"><i class="fa fa-yelp" aria-hidden="true"></i>To Yelp</button></a><br>
+                </td>
+              </tr>
+            <% }); %>
+          <% } %>
       </table>
     </div>
     <!-- comments go here -->
@@ -88,9 +88,9 @@
                         <input type='hidden' value='<%=comment.id%>' name="comment_id">
                         <button class="commentDeleteBtn btn btn-danger btn-sm">X</button>
                       </form>
-                      <% } %>
-                        <% } %>
-                          <br>
+                    <% } %>
+                  <% } %>
+                  <br>
                 </div>
                 <div style="float:left; padding-left: 20px;">
                   <span style="font-size: 20px;"><%= comment.name %></span><br>
@@ -98,7 +98,7 @@
                 </div>
               </td>
             </tr>
-            <% }) %>
+          <% }) %>
         </table>
         <% if (user) { %>
           <div class="" style="margin: 0 auto; text-align: center;" class="container">
