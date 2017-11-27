@@ -6,7 +6,7 @@
         <form class="form-inline justify-content-center" action="/" method="POST">
           <div class="form-group">
             <input size="50" type="text" name="term" class="form-control" placeholder="What would you like?" <% if (searchRequest.term) { %> value="<%=searchRequest.term%>"<% }%> >
-            <input size="50" required pattern="[\w\s]+" type="text" name="location" class="form-control" placeholder="Where?" <% if (searchRequest.location) { %> value="<%=searchRequest.location%>"<% } %> >
+            <input size="50" required pattern=".+" type="text" name="location" class="form-control" placeholder="Where?" <% if (searchRequest.location) { %> value="<%=searchRequest.location%>"<% } %> >
             <span class="btn-group-vertical"></span>
           </div>
           <div class="searchBtn btn-group">
