@@ -55,7 +55,7 @@ https://wtpa.herokuapp.com/api/stops/5a1a36898166804b3deedd35
 
 #### Data Model:
 
-#### ![Data Model](https://i.imgur.com/d8FcfvZ.png)
+#### ![Data Model](https://i.imgur.com/IdqBwrg.png)
 
 #### Initial Erd:
 
