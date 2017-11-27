@@ -33,10 +33,10 @@ Access Where the Party App?'s API and search for an individual user, their stops
 
 | URL        | Method           | Required URL Params | Use  |
 | ------------- |:-------------:| -----:| -----: |
-| /api/users/{userId}   | Get | userId=[integer] | Retrieves a single user |
-| /api/users/{userId}/stops      | Get | userId=[integer]   |   Retrieves all strops for a single user |
+| /api/users/{userId}   | Get | userId=[string] | Retrieves a single user |
+| /api/users/{userId}/stops      | Get | userId=[string]   |   Retrieves all strops for a single user |
 | /api/stops | Get      | None |   Retrieves all stops |
-| /api/stops/{stopId} | Get      |  stopId=[integer] |Retrieves an individual stop |
+| /api/stops/{stopId} | Get      |  stopId=[string] |Retrieves an individual stop |
 
 Sample Call (returning a single stop):
 https://wtpa.herokuapp.com/api/stops/5a1a36898166804b3deedd35
@@ -48,9 +48,11 @@ https://wtpa.herokuapp.com/api/stops/5a1a36898166804b3deedd35
 - calendar view / multiple itineraries
 ----
 
-### Game Development:
+### App Development:
 #### [Trello Board](https://trello.com/b/ELxyn47s/blue-jays-nite-out)
 
-### ![Initial ERD](https://i.imgur.com/54Z4v4H.png)
+#### ![Data Model](https://i.imgur.com/d8FcfvZ.png)
 
-### [Initial Wires](https://i.imgur.com/XTe15kP.jpg)
+###$ ![Initial ERD](https://i.imgur.com/54Z4v4H.png)
+
+###  [Initial Wires](https://i.imgur.com/XTe15kP.jpg)
