@@ -70,14 +70,16 @@
           <% } %>
       </table>
     </div>
-    <!-- comments go here -->
+    <!-- share buttons go here -->
     <div class="commentBlock col-md-3" style="padding: 0; float: left;">
       <div class='commentTable container'>
-        <div class="itin col-12"style="font-size: 10px;"><i class="fa fa-share" aria-hidden="true"></i> Share this link:<br> wtpa.herokuapp.com/party/<%=pageId%></div>
+        <div class="itin col-12"style="font-size: 10px;">
+        <i class="shareIcon fa fa-snapchat-square fa-2x" aria-hidden="true"></i><i class="shareIcon fa fa-facebook-square fa-2x" aria-hidden="true"></i><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i><br>
+        <i class="fa fa-share" aria-hidden="true"></i> Share this link:<br> wtpa.herokuapp.com/party/<%=pageId%></div>
         <div class="itin col-12" style="margin-top: 10px; min-width: 130px">
+        <!-- comments go here -->
           <h4>Comments:</h4>
         </div>
-
         <table id="comments" class="col-12">
           <% userPage.comments.forEach(comment => { %>
             <tr class="commentBox itin">
