@@ -51,7 +51,11 @@ https://wtpa.herokuapp.com/api/stops/5a1a36898166804b3deedd35
 ### App Development:
 #### [Trello Board](https://trello.com/b/ELxyn47s/blue-jays-nite-out)
 
+#### Data Model:
+
 #### ![Data Model](https://i.imgur.com/d8FcfvZ.png)
+
+#### Initial Erd:
 
 #### ![Initial ERD](https://i.imgur.com/54Z4v4H.png)
 
