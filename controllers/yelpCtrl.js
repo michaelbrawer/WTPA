@@ -52,6 +52,12 @@ function decideSearch(req, res, next) {
 }
 
 function landing(req, res, next) {
+  user = req.user ? req.user : null;
+  if (user === null) {
+    searchRequest.term = null;
+    searchRequest.location = null;
+    restaurantInfo[0] = null;
+  }  
   res.render('landing', {
     restaurantInfo,
     user: req.user,
