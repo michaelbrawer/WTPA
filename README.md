@@ -1,7 +1,9 @@
 # Where's The Party App? 
 ### *A Mongoose/Express/Node App For Organizing a Night Out.*
 #### ![Screenshot](https://i.imgur.com/dMaedgB.png)
-### Team Blue Jays
+
+---
+### Team Blue Jays: [Alonso Tacanga](https://github.com/likealonso), [Devin Fox](https://github.com/devinfox), [Kevin de Roulet](https://github.com/kderoulet), [Michael Brawer](https://github.com/michaelbrawer)
 ---
 ### Core Technologies Used:
 - HTML
