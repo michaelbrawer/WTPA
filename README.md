@@ -53,6 +53,6 @@ https://wtpa.herokuapp.com/api/stops/5a1a36898166804b3deedd35
 
 #### ![Data Model](https://i.imgur.com/d8FcfvZ.png)
 
-###$ ![Initial ERD](https://i.imgur.com/54Z4v4H.png)
+#### ![Initial ERD](https://i.imgur.com/54Z4v4H.png)
 
-###  [Initial Wires](https://i.imgur.com/XTe15kP.jpg)
+#### [Initial Wires](https://i.imgur.com/XTe15kP.jpg)
