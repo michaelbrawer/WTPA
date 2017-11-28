@@ -7,11 +7,9 @@ module.exports = {
 var yelp = require('yelp-fusion');
 var clientId = process.env.YELP_CLIENT_ID;
 var clientSecret = process.env.YELP_SECRET;
-var searchRequest = {};
-var restaurantInfo = [];
 
 function returnSearch(req, res, next, offsetVal, limitVal, sortVal) {
-  searchRequest = {
+  var searchRequest = {
     term: req.body.term,
     location: req.body.location,
     categories: 'restaurants, bars',
@@ -25,7 +23,7 @@ function returnSearch(req, res, next, offsetVal, limitVal, sortVal) {
     // execute search 
     client.search(searchRequest).then(response => {
       const results = response.jsonBody.businesses;
-      restaurantInfo = [];
+      var restaurantInfo = [];
       // store results as objects in restaurantInfo array
       for (var i = 0; i < results.length; i++) {
         restaurantInfo.push(results[i]);
@@ -53,11 +51,8 @@ function decideSearch(req, res, next) {
 
 function landing(req, res, next) {
   user = req.user ? req.user : null;
-  if (user === null) {
-    searchRequest.term = null;
-    searchRequest.location = null;
-    restaurantInfo[0] = null;
-  }  
+  restaurantInfo = req.restaurantInfo ? req.restaurantInfo : null;
+  searchRequest = req.searchRequest ? req.searchRequest : null;  
   res.render('landing', {
     restaurantInfo,
     user: req.user,
