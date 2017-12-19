@@ -19,7 +19,7 @@
 - fontAwesome - for icons
 - Passport.js / Google oAuth - for authentication / authorization
 ----
-### Getting Started: [Click Here](https://wtpa.herokuapp.com/) to Play-In-Browser.
+### Getting Started: [Click Here](https://wtpa.herokuapp.com/) to View-In-Browser.
 ----
 Where the Party App? is designed to address a centuries old problem for humanity:  Why am I finding myself at this terrible bar / restaurant?  And where are all of my friends?  What is the cause of this dreadful paradigm?  Where lies the seat of my morose?
 
